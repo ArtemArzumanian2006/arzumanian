@@ -1,0 +1,2949 @@
+/* ==========================================================================
+   style.css — Artem Arzumanian portfolio
+
+   1. LEGACY  — styles still used by the LO pages, project pages and the
+                home sections that haven't been rebuilt yet
+   2. REDESIGN — new styles (hero, header, "Let's Talk" tab), at the bottom
+   ========================================================================== */
+
+
+@font-face {
+    font-family: 'Teko Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Teko Regular'), url('fonts/teko/Teko-Regular.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Teko Light';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Teko Light'), url('fonts/teko/Teko-Light.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Teko Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Teko Medium'), url('fonts/teko/Teko-Medium.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Teko SemiBold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Teko SemiBold'), url('fonts/teko/Teko-SemiBold.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Teko Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Teko Bold'), url('fonts/teko/Teko-Bold.woff') format('woff');
+    }
+
+
+
+
+    @font-face {
+        font-family: 'Vazirmatn Thin';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Vazirmatn Thin'), url('fonts/Vazirmatn/Vazirmatn-Thin.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Vazirmatn Regular';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Vazirmatn Regular'), url('fonts/Vazirmatn/Vazirmatn-Regular.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Vazirmatn Medium';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Vazirmatn Medium'), url('fonts/Vazirmatn/Vazirmatn-Medium.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Vazirmatn SemiBold';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Vazirmatn SemiBold'), url('fonts/Vazirmatn/Vazirmatn-SemiBold.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Vazirmatn Bold';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Vazirmatn Bold'), url('fonts/Vazirmatn/Vazirmatn-Bold.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Vazirmatn ExtraBold';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Vazirmatn ExtraBold'), url('fonts/Vazirmatn/Vazirmatn-ExtraBold.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Vazirmatn Black';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Vazirmatn Black'), url('fonts/Vazirmatn/Vazirmatn-Black.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Vazirmatn Light';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Vazirmatn Light'), url('fonts/Vazirmatn/Vazirmatn-Light.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Vazirmatn ExtraLight';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Vazirmatn ExtraLight'), url('fonts/Vazirmatn/Vazirmatn-ExtraLight.woff') format('woff');
+    }
+
+    
+
+    :root {
+        --color-orange: #FEBA88;
+        --color-blue: #8095C6;
+        --color-background: #161616;
+        --color-white: #FFFFFF;
+        --locolor: #000;
+        --defaultBackground: #ffffff;
+        --sectionBackground: #EDEDED;
+        --textColor: #333;
+    }
+    
+    /* Body and General Styles */
+    body {
+        font-family: 'Teko Medium', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #0D0D0D;
+        color: var(--color-white);
+    }
+    
+    /* Navbar */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 200px;
+        padding: 20px 0;
+        font-size: 18px;
+        margin-top: 30px;
+        z-index: 100;
+    }
+    
+    .logo {
+        height: 34px;
+        width: auto;
+        z-index: 100;
+    }
+    
+    .logo-link img {
+        transition: opacity 0.3s ease;
+    }
+    
+    .logo-link img:hover {
+        opacity: 0.7;
+    }
+    
+    .navbar-right {
+        display: flex;
+        gap: 60px;
+        align-items: center;
+        transform: translateY(10px);
+        z-index: 100;
+
+    }
+    
+    .dropdown {
+        position: relative;
+    }
+    
+    /* Remove default list styles */
+    .dropdown, .navbar-right ul {
+        list-style-type: none; /* Removes bullets */
+        margin: 0; /* Removes margin */
+        padding: 0; /* Removes padding */
+    }
+    
+    .dropbtn {
+        background: none;
+        border: none;
+        font-family: 'Teko Regular', sans-serif;
+        font-size: 24px;
+        cursor: pointer;
+        color: var(--color-white);
+        transition: opacity 0.3s ease;
+    }
+    
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        box-shadow: 0px 8px 16px rgba(242, 242, 242, 0.3);
+        min-width: 160px;
+        z-index: 1;
+        font-size: 20px;
+    }
+    
+    .dropdown-content a {
+        color: black;
+        padding: 9px 12px;
+        text-decoration: none;
+        display: block;
+    }
+    
+    .dropdown-content a:hover {
+        background-color: #c0cff2;
+    }
+    
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    
+    .dropdown:hover .dropbtn {
+        opacity: 0.7;
+    }
+    
+    .logo-link {
+        display: flex;
+        align-items: center;
+    }
+    
+    
+    
+/* outcome section */
+
+    .outcome_section {
+        position: absolute;
+        top: 100vh;
+        left: 0;
+        width: 100%;
+        height: 104vh;
+        background-color: var(--sectionBackground);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+    
+    .outcome_section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--sectionBackground);
+        clip-path: polygon(0 0, 100% 10%, 100% 90%, 0% 100%);
+        z-index: -1;
+    }
+    
+
+    .options {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        overflow: hidden;
+        min-width: 780px;
+        max-width: 1170px;
+        width: calc(100% - 100px);
+        height: 600px;
+    }
+    
+    @media screen and (max-width: 718px) {
+        .options {
+            min-width: 676px;
+        }
+        .option:nth-child(5) {
+            display: none;
+        }
+    }
+    
+    @media screen and (max-width: 638px) {
+        .options {
+            min-width: 572px;
+        }
+        .option:nth-child(4) {
+            display: none;
+        }
+    }
+    
+    @media screen and (max-width: 558px) {
+        .options {
+            min-width: 468px;
+        }
+        .option:nth-child(3) {
+            display: none;
+        }
+    }
+    
+    .option {
+        position: relative;
+        overflow: hidden;
+        min-width: 78px;
+        margin: 13px;
+        background: var(--optionBackground, var(--defaultBackground));
+        background-size: auto 120%;
+        background-position: center;
+        transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+        border-radius: 30px;
+        flex-grow: 1;
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    .option.active {
+        flex-grow: 10000;
+        transform: scale(1);
+        max-width: 780px;
+        margin: 0px;
+        border-radius: 30px;
+        background-size: auto 100%;
+    }
+
+    .option.active .label {
+        bottom: 26px;
+        left: 26px;
+    }
+
+    .option.active .label .info > div {
+        left: 0px;
+        opacity: 1;
+    }
+
+    .option:hover {
+        flex-grow: 10000;
+        transform: scale(1);
+        max-width: 780px;
+        margin: 0px;
+        border-radius: 30px;
+        background-size: auto 100%;
+    }
+    
+    .option:hover .label {
+        bottom: 26px;
+        left: 26px;
+    }
+    
+    .option:hover .label .info > div {
+        left: 0px;
+        opacity: 1;
+    }
+    
+    .option:not(:hover):not(.active) {
+        flex-grow: 1;
+        margin: 13px;
+    }
+
+    .option:not(:hover):not(.active) .label {
+        bottom: 13px;
+        left: 13px;
+    }
+
+    .option:not(:hover):not(.active) .label .info > div {
+        left: 20px;
+        opacity: 0;
+    }
+    
+    .shadow {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        height: 130px;
+        transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+    }
+    
+    .label {
+        display: flex;
+        position: absolute;
+        right: 0px;
+        height: 52px;
+        transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+    }
+    
+    .icon {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        min-width: 52px;
+        max-width: 52px;
+        height: 52px;
+        border-radius: 100%;
+        background-color: white;
+        transition: background-color 0.25s;
+        font-size: 22px;
+    }
+    
+    .option:nth-child(1) .icon { color: var(--locolor); }
+    .option:nth-child(2) .icon { color: var(--locolor); }
+    .option:nth-child(3) .icon { color: var(--locolor); }
+    .option:nth-child(4) .icon { color: var(--locolor); }
+    .option:nth-child(5) .icon { color: var(--locolor); }
+    
+    .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 13px;
+        color: white;
+        white-space: pre;
+    }
+    
+    .info > div {
+        position: relative;
+        transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity 0.5s ease-out;
+    }
+    
+    .info .main {
+        font-weight: bold;
+        font-size: 1.8rem;
+        font-weight: 500;
+        top: 4px;
+    }
+    
+    .info .sub {
+        transition-delay: 0.1s;
+        font-size: 1.3rem;
+        font-weight: 500;
+        bottom: 6px;
+        color: #e9e9e9;
+    }
+     
+
+   footer {  
+    position: relative;  
+    width: 100%;  
+    height: 300px;  
+    color: #fff;  
+    text-align: left;  
+}  
+     
+.footer-background {  
+    background-size: cover;  
+    background-position: center;  
+    height: 100%;  
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+    position: relative;
+}  
+
+.footer-quote {
+    position: absolute;
+    font-family: 'Teko Regular', sans-serif;
+    font-size: 24px;
+    color: #fff;
+    top: 106px;
+    right: 386px;
+    margin: 0;
+    padding: 0;
+    line-height: 1.1;
+    
+}
+     
+.footer-content {  
+    width: 74%;  
+    margin: 0 auto;  
+    margin-top: -30px;
+}  
+
+.footer-lists-container {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    max-width: 800px;
+}
+
+.footer-list {
+    flex: 1;
+}
+
+.footer-list h3 {  
+    font-size: 34px;  
+    font-weight: 500;
+    margin-bottom: 10px;
+} 
+
+.footer-list ul {  
+    list-style: none;  
+    padding: 0;  
+    margin: 0;  
+    font-size: 18px;  
+    font-weight: 500;
+}  
+     
+.footer-list li {  
+    margin-bottom: 8px;  
+    font-weight: 500;
+}  
+     
+.footer-list a {  
+    text-decoration: none;  
+    transition: color 0.3s ease;  
+    color: #939393;
+
+}  
+     
+.footer-list a:hover {  
+    color: #dadada;  
+}
+
+
+
+
+
+/* Learning outcomes pages */
+.lo1-cover-container {
+    position: relative;
+    width: 100%;
+    text-align: center; /* Ensures child elements are horizontally centered */
+    overflow: hidden; /* Ensures content stays within bounds */
+    margin-top: 25px;
+  }
+  
+  .lo1-cover-image {
+    width: 100%;
+    height: auto;
+    display: block; /* Removes extra whitespace below the image */
+  }
+  
+  .main-name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 28px;
+    color: #ffffff;
+    text-align: center;
+  }
+  
+
+.lo1-flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8% 0;
+    margin-bottom: 100px;
+    margin-top: 60px;
+  }
+  
+  .lo1-text-container {
+    width: 54%;
+    margin-top: 20px;
+  }
+  .lo1-text-container p{
+    font-family: 'Vazirmatn Regular', sans-serif;
+  }
+  .lo1-text-container h2{
+    font-family: 'Teko Regular', sans-serif;
+    font-size: 28px;
+  }
+  .lo1-text-container h3{
+    font-family: 'Teko Regular', sans-serif;
+    font-size: 24px;
+  }
+
+
+  .lo1-image-container {
+    width: 40%;
+    margin-top: 20px;
+  }
+  
+  .lo1-image-container figure {
+    width: 100%;
+  }
+  
+  .green-heading {
+    font-weight: bold;
+    color: var(--color-blue);
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .lo1-image {
+    width: 100%; 
+  }
+  
+  .lo1-image-container .image-scroll-container {
+    margin-top: 20px;
+    height: 500px;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  
+  .lo1-image-container .image-scroll-container img {
+    width: auto;
+    height: 450px;
+    margin-right: 10px;
+  }
+  
+  .button-lo1 {
+    font-size: 18px;
+    display: inline-block;
+    padding: 8px 28px;
+    background-color: #81a0e9;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.5s;
+  }
+  
+  .button-lo1:hover {
+    background-color: var(--color-orange);
+  }
+  
+  .button-lo2 {
+    font-size: 18px;
+    display: inline-block;
+    padding: 8px 28px;
+    background-color: var(--color-blue);
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.5s;
+  }
+  
+  
+  .button-lo1:hover {
+    background-color: var(--color-orange);
+  }
+
+
+
+
+
+
+
+  /* web-image-section styles */
+.web-image-section {
+    width: 100%;
+    margin: 60px 0;
+}
+
+.web-image-section img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Button container for web-image-section */
+.image-container-web {
+    position: relative;
+    display: inline-block; /* Ensures it wraps around the image size */
+    width: 100%; /* Adjusts based on parent or specified size */
+}
+
+.image-container-web img {
+    width: 100%;
+    height: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    pointer-events: none;
+}
+
+/* Circular button for web-image-section */
+.circular-button-web {
+    position: absolute;
+    right: 17.2%;
+    top: 12%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    background-color: #F8CDCB;
+    border-radius: 50%;
+    border: none;
+    color: black;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 20;
+    font-family: 'Teko Regular', sans-serif;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.circular-button-web:hover {
+    background-color: #fff7f6;
+    transform: scale(1.15);
+}
+
+.circular-button-web span {
+    display: inline-block; /* Ensure the transform property applies properly */
+    position: relative;
+    transition: transform 0.2s ease-out; /* Adjust duration and easing as needed */
+}
+.circular-button-web1 {
+    position: absolute;
+    right: 17.2%;
+    top: 12%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    background-color: #8095C6;
+    border-radius: 50%;
+    border: none;
+    color: black;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 20;
+    font-family: 'Teko Regular', sans-serif;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.circular-button-web1:hover {
+    background-color: #b5c7f0;
+    transform: scale(1.15);
+}
+
+.circular-button-web1 span {
+    display: inline-block; /* Ensure the transform property applies properly */
+    position: relative;
+    transition: transform 0.2s ease-out; /* Adjust duration and easing as needed */
+}
+.circular-button-web2 {
+    position: absolute;
+    right: 17.2%;
+    top: 12%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    background-color: #BBDF32;
+    border-radius: 50%;
+    border: none;
+    color: black;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 20;
+    font-family: 'Teko Regular', sans-serif;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.circular-button-web2:hover {
+    background-color: #efffad;
+    transform: scale(1.15);
+}
+
+.circular-button-web2 span {
+    display: inline-block; /* Ensure the transform property applies properly */
+    position: relative;
+    transition: transform 0.2s ease-out; /* Adjust duration and easing as needed */
+}
+
+
+
+
+
+
+/*  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$    Projects pages   $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$      */
+.main-content {
+    background-color: #ffffff;
+    margin-bottom: 60px;
+}
+
+
+
+.project-cover {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin-top: 26px;
+}
+
+.project-cover-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.project-cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+}
+
+/* Project Cover Content */
+.project-cover-content {
+    position: absolute;
+    top: 50%;
+    left: 12.5%; /* Adjust content to the left */
+    transform: translate(0, -30%); /* Keep it vertically centered */
+    color: white;
+    font-family: 'Vazirmatn Regular', sans-serif;
+    width: 60%;
+}
+
+/* Flexbox Container for Two Columns */
+.project-cover-content .flex-container {
+    display: flex;
+    flex-direction: row; /* Align sections side by side */
+    justify-content: space-between; /* Add space between the columns */
+    gap: 0px; /* Adjust spacing between the two columns */
+}
+
+.left-column,
+.right-column {
+    display: flex;
+    flex-direction: column; /* Stack elements within each column */
+    flex: 1; /* Allow both columns to have equal width */
+}
+
+/* Brand Section */
+.brand-section,
+.project-section {
+    text-align: left; /* Left-align text for left sections */
+    margin-bottom: 20px; /* Space between sections */
+}
+
+.project-section {
+    margin-top: 14px;
+}
+
+.brand-title, 
+.project-title {
+    font-family: 'Teko Light', sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ADADAD;
+}
+
+.brand-logo {
+    width: 150px; /* Adjust logo size */
+    margin-top: 10px;
+}
+
+.project-text {
+    font-family: 'Teko Regular', sans-serif;
+    font-size: 60px;
+    margin-top: -10px;
+}
+
+/* Responsibilities and Description Section */
+.responsibilities-section,
+.description-section {
+    text-align: left; /* Left-align text for right sections */
+    margin-bottom: 20px; /* Space between sections */
+}
+
+.responsibilities-title, 
+.description-title {
+    font-family: 'Teko Light', sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: -8px;
+    color: #ADADAD;
+}
+
+.responsibilities-text,
+.description-text {
+    font-family: 'Vazirmatn', sans-serif; /* Ensure Vazirmatn font is applied */
+    font-size: 18px;
+    line-height: 1.3;
+}
+
+/* Ensure overall font family is applied to the content */
+.project-cover-content {
+    font-family: 'Vazirmatn', sans-serif;
+}
+
+.description-section {
+    text-align: left;
+    max-width: 400px;
+    word-wrap: break-word;
+}
+
+
+.challenge-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full viewport height */
+    padding: 20px; /* Add padding for spacing */
+}
+
+.challenge-container {
+    display: flex;
+    align-items: center;
+    max-width: 1200px; /* Optional maximum width */
+    width: 100%; /* Full width */
+    gap: 0px; /* Space between text and image */
+}
+
+.challenge-text {
+    flex: 1; /* Text takes up half the space */
+}
+
+.challenge-title {
+    font-family: 'Teko Regular', sans-serif;
+    font-size: 36px;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.challenge-description {
+    font-family: 'Vazirmatn', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555555;
+}
+
+.challenge-image {
+    flex: 1; /* Image takes up half the space */
+    display: flex;
+    justify-content: flex-end; /* Align image to the right */
+}
+
+.challenge-image img {
+    max-width: 80%; /* Ensure image is responsive */
+    height: auto;
+
+}
+
+
+
+
+
+.prj-image-section {
+    width: 100%;
+    margin: 60px 0;
+}
+
+.prj-image-section img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    object-fit: cover;
+}
+
+.prj-image-section1 {  
+    width: 100%;  
+    margin-bottom: 60px;
+    overflow: hidden; /* Add this rule to prevent the Swiper container from exceeding the screen size */  
+ }
+
+.prj-image-section1 img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.prj-image-section2 {
+    width: 100%;
+    margin: 0px 0;
+}
+
+.prj-image-section2 img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    object-fit: cover;
+}
+
+
+
+
+
+
+
+/* Project Article Section */  
+.wrapper {  
+    width: 100%;  
+    position: relative;  
+  }  
+    
+  .project-article-section {  
+    max-width: 1300px;  
+    margin: 0 auto;  
+    padding: 160px 20px;  
+    display: flex;  
+    align-items: flex-start;  
+    justify-content: left;  
+    gap: 50px;  
+  }  
+    
+  .project-article-tag {  
+    display: flex;  
+    align-items: center;  
+    gap: 20px;  
+    margin-top: 62px;  
+  }  
+    
+  .project-article-line {  
+    background-color: #8D8A8A; /* Line color */  
+    width: 60px;  
+    height: 1.8px;  
+    margin-bottom: 2px;  
+  }  
+    
+  .project-article-text {  
+    font-family: 'Teko Regular', sans-serif;  
+    font-size: 18px;  
+    color: #8D8A8A; /* Text color matching the line */  
+    text-transform: uppercase;  
+  }  
+    
+  .project-article-content {  
+    max-width: 650px;  
+    width: 100%;  
+    padding: 20px;  
+    z-index: 10;
+  }  
+    
+  .project-article-title {  
+    font-family: 'Teko Light', sans-serif;  
+    font-size: 36px;  
+    margin-bottom: 20px;  
+    color: #333333;  
+  }  
+    
+  .project-article-description {  
+    font-family: 'Vazirmatn', sans-serif;  
+    font-size: 18px;  
+    line-height: 1.5;  
+    color: #333;  
+    text-align: justify;  
+  }  
+    
+  .project-article-image {  
+    position: absolute;  
+    right: 0;  
+    top: 50%;  
+    transform: translateY(-50%);  
+  }  
+    
+  .project-article-image img {  
+    max-width: 500px;  
+    height: auto;  
+  }
+
+
+
+/* Text Within Image Styles */
+
+.text-within-image-intro {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 50px;
+    padding: 60px 20px 0px 20px;  
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    }
+    
+    .text-within-image-tag {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 62px;
+    }
+    
+    .text-within-image-divider {
+    background-color: #8D8A8A;
+    width: 60px;
+    height: 1.8px;
+    margin-bottom: 2px;
+    }
+    
+    .text-within-image-category {
+    font-family: 'Teko Regular', sans-serif;
+    font-size: 18px;
+    color: #8D8A8A;
+    text-transform: uppercase;
+    }
+    
+    .text-within-image-content {
+    max-width: 650px;
+    width: 100%;
+    padding: 20px;
+    }
+    
+    .text-within-image-background {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    }
+    
+    .text-within-image-title {
+    font-family: 'Teko Light', sans-serif;
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333333;
+    }
+    
+    .text-within-image-description {
+    font-family: 'Vazirmatn', sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #333;
+    text-align: justify;
+    }
+
+
+
+
+
+/* standard artciles */  
+.standard-article-intro {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 50px;
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    }
+    
+    .standard-article-tag {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 62px;
+    }
+    
+    .standard-article-divider {
+    background-color: #8D8A8A;
+    width: 60px;
+    height: 1.8px;
+    margin-bottom: 2px;
+    }
+    
+    .standard-article-category {
+    font-family: 'Teko Regular', sans-serif;
+    font-size: 18px;
+    color: #8D8A8A;
+    text-transform: uppercase;
+    }
+    
+    .standard-article-content {
+    max-width: 650px;
+    width: 100%;
+    padding: 20px;
+    }
+    
+    .standard-article-title {
+    font-family: 'Teko Light', sans-serif;
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333333;
+    }
+    
+    .standard-article-description {
+    font-family: 'Vazirmatn', sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #333;
+    text-align: justify;
+    }
+
+
+
+
+
+
+    .wrapper4 {  
+        width: 100%;  
+        position: relative;  
+        margin-top: 200px;  
+        margin-bottom: 600px;
+      }
+      
+        
+        .grey-background {  
+            position: absolute;  
+            top: 0;  
+            left: 0;  
+            width: 100%;  
+            height: 1300px;
+            background-color: #F2F2F2;  
+            z-index: 1;  
+          }
+          
+        
+        .project-article-section4 {  
+        max-width: 1200px;  
+        margin: 0 auto;  
+        padding: 160px 20px;  
+        display: flex;  
+        align-items: flex-start;  
+        justify-content: left;  
+        gap: 50px;  
+        position: relative;
+        z-index: 2;
+        }
+        
+        .project-article-section4-2 {
+        margin-top: 140px;
+        }
+        
+        .project-article-tag4 {  
+        display: flex;  
+        align-items: center;  
+        gap: 20px;  
+        position: absolute;
+        left: -112px;
+        }
+        
+        .project-article-line4 {  
+        background-color: #8D8A8A; /* Line color */  
+        width: 60px;  
+        height: 1.8px;  
+        margin-bottom: 2px;  
+        }
+        
+        .project-article-text4 {  
+        font-family: 'Teko Regular', sans-serif;  
+        font-size: 18px;  
+        color: #8D8A8A; /* Text color matching the line */  
+        text-transform: uppercase;  
+        }
+        
+        .project-article-content4 {  
+        max-width: 530px;  
+        width: 100%;  
+        padding: 20px;  
+        position: absolute;
+        top: 100px;
+        left: 100px;
+        }
+        
+        .project-article-title4 {  
+        font-family: 'Teko Light', sans-serif;  
+        font-size: 36px;  
+        margin-bottom: 20px;  
+        color: #333333;  
+        }
+        
+        .project-article-description4 {  
+        font-family: 'Vazirmatn', sans-serif;  
+        font-size: 18px;  
+        line-height: 1.5;  
+        color: #333;  
+        text-align: justify;  
+        }
+        
+        .project-article-image4 {  
+        position: absolute;  
+        right: -0px;  
+        top: -100px;  
+        z-index: -1;
+        }
+        
+        .project-article-image4 img {  
+        max-width: 500px;  
+        height: auto;  
+        }
+        
+        .project-article-image5 {
+        position: absolute;
+        left: 50%;
+        top: 115%;
+        transform: translateX(-50%);
+        z-index: 3;
+        }
+        
+        .project-article-image5 img {
+        width: 1400px;
+        height: auto;
+        }
+
+
+
+
+        /* specific-standard articles */  
+        .specific-standard-article-intro {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 50px;
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-top: 2300px;
+        }
+            
+        .specific-standard-article-tag {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-top: 62px;
+        }
+            
+        .specific-standard-article-divider {
+            background-color: #8D8A8A;
+            width: 60px;
+            height: 1.8px;
+            margin-bottom: 2px;
+        }
+            
+        .specific-standard-article-category {
+            font-family: 'Teko Regular', sans-serif;
+            font-size: 18px;
+            color: #8D8A8A;
+            text-transform: uppercase;
+        }
+            
+        .specific-standard-article-content {
+            max-width: 650px;
+            width: 100%;
+            padding: 20px;
+        }
+            
+        .specific-standard-article-title {
+            font-family: 'Teko Light', sans-serif;
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #333333;
+        }
+            
+        .specific-standard-article-description {
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 18px;
+            line-height: 1.5;
+            color: #333;
+            text-align: justify;
+        }
+
+
+
+
+
+
+
+
+
+
+
+        /* Motivation Article Intro */
+.motivation-article-intro {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 50px;
+    padding: 60px 140px 60px 0px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 80px;
+}
+
+.motivation-article-tag {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 62px;
+}
+
+.motivation-article-divider {
+    background-color: #8D8A8A;
+    width: 60px;
+    height: 1.8px;
+    margin-bottom: 2px;
+}
+
+.motivation-article-category {
+    font-family: 'Teko Regular', sans-serif;
+    font-size: 18px;
+    color: #8D8A8A;
+    text-transform: uppercase;
+}
+
+.motivation-article-content {
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+}
+
+.motivation-article-title {
+    font-family: 'Teko Light', sans-serif;
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+/* Pink Shape with Centered Text */
+.pink-shape {
+    background-color: #FFF3F3;
+    text-align: left;
+    padding: 50px;
+
+}
+
+.pink-shape-text {
+    font-family: 'Vazirmatn', sans-serif;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #333;
+}
+
+
+.blue-shape {
+    background-color: #F3F6FF;
+    text-align: left;
+    padding: 50px;
+
+}
+.green-shape {
+    background-color: #F4FFCA;
+    text-align: left;
+    padding: 50px;
+
+}
+
+/* Flexbox Container */
+.flex-container {
+    display: flex;
+    gap: 70px;
+    margin-top: 20px;
+}
+
+/* Flexbox Item */
+/* Flexbox Item */
+.flex-item {
+    flex: 1;
+    padding: 0px;
+    min-height: 300px;
+}
+
+.flex-item h2 {
+    font-family: 'Vazirmatn', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 16px; /* Added more spacing below the title */
+}
+
+.flex-item p {
+    font-family: 'Vazirmatn', sans-serif;
+    font-size: 16px;
+    line-height: 1.8; /* Slightly increased line height for better readability */
+    color: #333;
+}
+
+
+
+
+/* Swiper Container */
+.swiper {  
+    width: 90%;  
+    max-width: 847px;  
+    height: 484px;  
+    border-radius: 10px;  
+    overflow: hidden;  
+    position: relative;  
+    overflow-x: hidden;  
+    margin: 0 auto;
+ }  
+   
+
+ 
+
+/* Swiper Slide Styling */
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border-radius: 5px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* Image Styling */
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+
+
+
+
+/* See Next Project Section */
+.see-next-project {
+    position: relative;
+    width: auto;
+    height: 116px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.next-project-link {
+    display: block;
+    width: 1078px;
+    height: 236px;
+    text-decoration: none;
+    position: relative;
+}
+
+.next-project-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+/* Portfolio project "SEE NEXT PROJECT" button */
+
+.next-project-text-pink {
+    position: absolute;
+    top: -32px;
+    left: 140px;
+    font-family: 'Teko Medium', sans-serif;
+    font-size: 42px;
+    color: rgba(0, 0, 0, 0.277);
+    text-align: center;
+    text-transform: uppercase;
+    transition: color 0.3s ease, opacity 0.3s ease;
+    transition: 0.4s;
+}
+
+.next-project-image:hover .next-project-text-pink {
+    scale: 1.08;
+    color: #dc9fa4;
+}
+/* Sakura project "SEE NEXT PROJECT" button */
+
+.next-project-text-blue {
+    position: absolute;
+    top: -32px;
+    left: 140px;
+    font-family: 'Teko Medium', sans-serif;
+    font-size: 42px;
+    color: rgba(182, 182, 182, 0.661);
+    text-align: center;
+    text-transform: uppercase;
+    transition: color 0.3s ease, opacity 0.3s ease;
+    transition: 0.4s;
+}
+
+.next-project-image:hover .next-project-text-blue {
+    scale: 1.08;
+    color: #8095C6;
+}
+/* Partout project "SEE NEXT PROJECT" button */
+
+.next-project-text-green {
+    position: absolute;
+    top: -32px;
+    left: 140px;
+    font-family: 'Teko Medium', sans-serif;
+    font-size: 42px;
+    color: rgba(189, 189, 189, 0.829);
+    text-align: center;
+    text-transform: uppercase;
+    transition: color 0.3s ease, opacity 0.3s ease;
+    transition: 0.4s;
+}
+
+.next-project-image:hover .next-project-text-green {
+    scale: 1.08;
+    color: #BBDF32;
+}
+/* Passion project "SEE NEXT PROJECT" button */
+.next-project-text-last {
+    position: absolute;
+    top: -32px;
+    left: 140px;
+    font-family: 'Teko Medium', sans-serif;
+    font-size: 42px;
+    color: rgba(0, 0, 0, 0.277);
+    text-align: center;
+    text-transform: uppercase;
+    transition: color 0.3s ease, opacity 0.3s ease;
+    transition: 0.4s;
+}
+
+.next-project-image:hover .next-project-text-last {
+    scale: 1.08;
+    color: #8997e6;
+}
+
+
+
+/* See Next Learning Outcome Section */
+.see-next-lo {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Reduced height to half */
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.next-lo-link {
+    display: block;
+    width: 50%;
+    height: 100%;
+    text-decoration: none;
+    position: relative;
+}
+
+.next-lo-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.next-lo-text {
+    position: absolute;
+    top: -28px;
+    left: 100px;
+    font-family: 'Teko Regular', sans-serif;
+    font-size: 36px;
+    color: rgba(255, 255, 255, 0.414);
+    text-align: center;
+    text-transform: uppercase;
+    transition: color 0.3s ease, opacity 0.3s ease;
+    transition: 0.4s;
+}
+
+.next-lo-image:hover .next-lo-text {
+    scale: 1.08;
+    color: rgba(255, 255, 255, 1);
+}
+
+
+
+/* ==========================================================================
+   REDESIGN (2026)
+   New styles for the rebuilt sections. Class names don't overlap with the
+   legacy styles above, so old pages keep working while sections are migrated.
+   ========================================================================== */
+
+/* ---------- Fonts ---------- */
+/* One family, real weights. Replaces the old "Teko Medium"-style family names. */
+@font-face {
+    font-family: 'Teko';
+    src: url('fonts/teko/Teko-Light.woff') format('woff');
+    font-weight: 300;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Teko';
+    src: url('fonts/teko/Teko-Regular.woff') format('woff');
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Teko';
+    src: url('fonts/teko/Teko-Medium.woff') format('woff');
+    font-weight: 500;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Teko';
+    src: url('fonts/teko/Teko-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Teko';
+    src: url('fonts/teko/Teko-Bold.woff') format('woff');
+    font-weight: 700;
+    font-display: swap;
+}
+
+/* ---------- Tokens ---------- */
+:root {
+    --ink: #0D0D0D;          /* page black */
+    --snow: #FFFFFF;         /* primary text on dark */
+    --glacier: #8095C6;      /* AR / TEM blue */
+    --signal: #EF8E34;       /* "Let's Talk" orange */
+    --signal-dark: #D9761C;
+
+    --font-display: 'Teko', 'Arial Narrow', sans-serif;
+
+    --focus-ring: 2px solid var(--glacier);
+}
+
+/* ---------- Utilities ---------- */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+
+/* ==========================================================================
+   Hero (landing)
+   --------------------------------------------------------------------------
+   The hero is laid out on a "stage" with the same aspect ratio as the Figma
+   frame (1800 × 1032). Everything inside is positioned and sized in cqw
+   (1cqw = 1% of the stage width), so the composition scales as one piece,
+   exactly like the design. Numbers below are measured from the Figma export.
+
+   On screens taller than the design ratio the hero grows a little (up to
+   66vw) and the extra space shows more of the shirt rather than a gap.
+   ========================================================================== */
+.landing {
+    position: relative;
+    height: min(100svh, 66vw);
+    overflow: hidden;
+    background: var(--ink);
+    color: var(--snow);
+    touch-action: pan-y;                  /* vertical scroll stays native on touch */
+}
+
+/* Two identical stages stacked on top of each other:
+   back = portrait, front = header + lettering, with the snow in between. */
+.landing__stage {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    translate: -50% 0;
+    width: min(100%, 174.42svh);         /* 1800 / 1032 */
+    aspect-ratio: 1800 / 1032;
+    container-type: size;
+}
+.landing__stage--back  { z-index: 1; }
+.landing__stage--front {
+    z-index: 3;
+    pointer-events: none;                /* the cursor reveal works through the front layer */
+}
+.landing__stage--front .site-header { pointer-events: auto; }
+
+/* ---------- Contour lines (topographic map) behind everything ---------- */
+.landing__lines {
+    position: absolute;
+    z-index: 0;
+    inset: -3%;                          /* a little oversized so parallax never shows an edge */
+    width: 106%;
+    height: 106%;
+    object-fit: cover;
+    opacity: 0.05;
+    pointer-events: none;
+    will-change: transform;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+    position: absolute;
+    top: 3.5cqw;
+    left: 11.11cqw;
+    right: 11.11cqw;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.site-header__logo {
+    display: block;
+    line-height: 0;
+    transition: opacity 0.25s ease;
+}
+.site-header__logo:hover { opacity: 0.7; }
+.site-header__logo img {
+    height: max(24px, 2.33cqw);
+    width: auto;
+}
+
+/* "Projects" button: opens the full-screen menu (see "Full-screen menu" below) */
+.menu-toggle {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--snow);
+    font: 400 max(18px, 2.2cqw) / 1 var(--font-display);
+    cursor: pointer;
+    transition: opacity 0.25s ease;
+}
+.menu-toggle:hover { opacity: 0.7; }
+
+/* Header on project / LO pages (not inside the hero) */
+.site-header--page {
+    position: relative;
+    z-index: 10;
+    top: auto;
+    left: auto;
+    right: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 48px 11.11vw 24px;
+}
+/* Same sizes as the home page header (there they scale with the hero stage,
+   which is at most 174.42svh wide, hence the min()) */
+.site-header--page .site-header__logo img { height: max(24px, min(2.33vw, 4.06svh)); }
+.site-header--page .menu-toggle { font-size: max(18px, min(2.2vw, 3.84svh)); }
+
+@media (max-aspect-ratio: 1/1) {
+    .site-header--page { padding: 6vw 6vw 16px; }
+    .site-header--page .site-header__logo img { height: max(22px, 6vw); }
+    .site-header--page .menu-toggle { font-size: max(18px, 5.5vw); }
+}
+
+/* ---------- Portrait ---------- */
+.landing__portrait {
+    position: absolute;
+    top: 3.72cqw;
+    left: 50%;
+    width: 60.6cqw;
+    margin-left: -30.3cqw;               /* centring via margin keeps transform free for parallax */
+    aspect-ratio: 2000 / 2088;
+    will-change: transform;
+}
+
+.landing__portrait img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* WebGL layer: draws portrait, snow and lettering with the liquid reveal.
+   Sits under the front stage so the header stays clickable on top. */
+.landing__fx {
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Once the WebGL layer runs it draws these itself, so hide the HTML versions
+   (they keep their size and position, which the WebGL layer reads). */
+.landing.is-fx-ready .landing__portrait img,
+.landing.is-fx-ready .landing__snow {
+    visibility: hidden;
+}
+.landing.is-fx-ready [data-recolor] {
+    color: transparent;
+}
+
+/* ---------- Snow peaks along the bottom edge ---------- */
+.landing__snow {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+}
+
+/* ---------- Name lettering ---------- */
+/* The name block is exactly as wide as "ARZUMANIAN" (the only word in the
+   normal flow). "AR" sits on its left edge and "TEM" on its right edge, so
+   all three words line up whatever the font's exact letter widths are. */
+.landing__name {
+    position: absolute;
+    top: 0;
+    left: 23.9cqw;
+    width: max-content;
+    margin: 0;
+    font-weight: inherit;
+}
+
+.landing__word {
+    position: absolute;
+    font: 500 12.7cqw / 1 var(--font-display);
+    letter-spacing: 0;
+    white-space: nowrap;
+    will-change: transform;
+}
+
+/* top = cap-height position from Figma minus the gap above the caps (0.12em in Teko) */
+.landing__word--ar {
+    left: 0;
+    top: calc(18.06cqw - 0.12em);
+}
+
+.landing__word--tem {
+    right: 0;
+    top: calc(34.44cqw - 0.12em);
+}
+
+.landing__word--surname {
+    position: relative;                  /* in the flow: sets the width of the name block */
+    display: block;
+    margin-top: calc(45.28cqw - 0.12em);
+}
+
+/* Text colours. --text-color is the normal colour; --ink-color is the colour
+   inside the liquid (hero.js swaps between them). Blue ↔ white by default. */
+.landing__word--ar,
+.landing__word--tem {
+    --text-color: var(--glacier);
+    --ink-color: var(--snow);
+}
+.landing__word--surname,
+.landing__tagline,
+.landing__meta {
+    --text-color: var(--snow);
+    --ink-color: var(--glacier);
+}
+[data-recolor] { color: var(--text-color); }
+
+/* ---------- Small copy ---------- */
+.landing__tagline,
+.landing__meta {
+    position: absolute;
+    margin: 0;
+    font: 500 max(13px, 1.78cqw) / 1.18 var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+}
+
+.landing__tagline {
+    left: 11.11cqw;
+    top: calc(34.44cqw - 0.12em);
+}
+
+.landing__meta {
+    right: 11.11cqw;
+    top: calc(17.8cqw - 0.12em);
+    text-align: right;
+}
+
+
+/* ---------- Tall screens (phones, portrait tablets) ---------- */
+/* The stage becomes the full screen; cqw = screen width, cqh = screen height. */
+@media (max-aspect-ratio: 1/1) {
+    .landing {
+        height: 100svh;
+        min-height: 560px;
+    }
+
+    .landing__stage {
+        aspect-ratio: auto;
+        width: 100%;
+        height: 100%;
+    }
+
+    .site-header {
+        top: 6cqw;
+        left: 6cqw;
+        right: 6cqw;
+    }
+    .site-header__logo img { height: max(22px, 6cqw); }
+    .menu-toggle { font-size: max(18px, 5.5cqw); }
+
+    /* Portrait sized by screen height; the words are placed relative to it
+       using the same proportions as the desktop layout. */
+    .landing__stage {
+        --pw: min(160cqw, 72cqh);                    /* portrait width  */
+        --ph: calc(var(--pw) * 1.044);               /* portrait height */
+        --pt: calc(100cqh + 8cqh - var(--ph));       /* portrait top    */
+    }
+
+    .landing__portrait {
+        top: var(--pt);
+        width: var(--pw);
+        margin-left: calc(var(--pw) / -2);
+    }
+
+    .landing__word { font-size: 21.6cqw; }
+
+    .landing__name { left: 6cqw; }
+    .landing__word--ar {
+        left: 0;
+        top: calc(var(--pt) + var(--ph) * 0.227 - 0.12em);
+    }
+    .landing__word--tem {
+        right: 0;
+        top: calc(var(--pt) + var(--ph) * 0.485 - 0.12em);
+    }
+    .landing__word--surname {
+        line-height: 0.8;
+        margin-top: calc(100cqh - 3cqw - 0.8em);   /* sits 3cqw above the bottom */
+    }
+
+    .landing__tagline,
+    .landing__meta {
+        font-size: max(14px, 4.2cqw);
+    }
+    .landing__tagline {
+        left: 6cqw;
+        top: calc(6cqw + 22cqw);
+    }
+    .landing__meta {
+        right: 6cqw;
+        top: calc(6cqw + 22cqw);
+    }
+}
+
+
+/* ==========================================================================
+   About
+   --------------------------------------------------------------------------
+   Starts directly under the hero. Positions are measured from the Figma frame
+   and set in cqw (1cqw = 1% of the section width), like the hero.
+   Scroll effects live in script/about.js:
+   - [data-speed]  moves faster (+) or slower (−) than the page while scrolling
+   - [data-lines]  colours in line by line, from --about-muted to --about-ink
+   - [data-signature] draws itself stroke by stroke
+   ========================================================================== */
+.about {
+    --about-bg: #EDEDED;
+    --about-muted: #BDBDBD;              /* text colour before it's scrolled in */
+    --about-ink: #0D0D0D;                /* text colour once it's scrolled in */
+    --about-grid: rgba(0, 0, 0, 0.035);  /* faint column lines */
+
+    position: relative;
+    overflow: hidden;
+    container-type: inline-size;
+    min-height: 108cqw;
+    background-color: var(--about-bg);
+    /* 7 columns, as in the design */
+    background-image: repeating-linear-gradient(
+        90deg,
+        transparent 0,
+        transparent calc(100% / 7 - 1px),
+        var(--about-grid) calc(100% / 7 - 1px),
+        var(--about-grid) calc(100% / 7)
+    );
+    color: var(--about-ink);
+}
+
+.about__inner {
+    position: relative;
+    z-index: 2;
+}
+
+.about__signature {
+    position: absolute;
+    left: 23.7cqw;
+    top: 13.9cqw;
+    width: 13.9cqw;
+    height: auto;
+    color: #2A2A2A;
+    overflow: visible;
+}
+
+.about__intro,
+.about__statement {
+    position: absolute;
+    margin: 0;
+    text-transform: uppercase;
+    will-change: transform;
+}
+
+.about__intro {
+    left: 36.6cqw;
+    top: calc(20.3cqw - 0.29em);
+    width: 49cqw;
+    font: 400 2.6cqw / 1.36 var(--font-display);
+    text-indent: 11.7cqw;
+}
+
+.about__statement {
+    left: 50%;
+    top: calc(51.7cqw - 0.21em);
+    width: 78cqw;
+    margin-left: -39cqw;
+    font: 500 4.47cqw / 1.16 var(--font-display);
+    text-align: center;
+}
+
+/* Lines made by about.js start muted; the script darkens them one by one */
+.about [data-lines] .line { color: var(--about-muted); }
+
+.about__mountains {
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    bottom: -6cqw;                       /* runs past the bottom, so the slower scroll never shows a gap */
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+    will-change: transform;
+}
+
+/* Phones / tall screens: stacked, larger type */
+@media (max-aspect-ratio: 1/1) {
+    .about {
+        min-height: 0;
+        padding: 18cqw 6cqw 70cqw;
+    }
+    .about__signature,
+    .about__intro,
+    .about__statement {
+        position: relative;
+        left: auto;
+        top: auto;
+        margin: 0;
+    }
+    .about__signature { width: 30cqw; display: block; margin-bottom: 8cqw; }
+    .about__intro {
+        width: auto;
+        font-size: 5.6cqw;
+        text-indent: 20cqw;
+        margin-bottom: 18cqw;
+    }
+    .about__statement {
+        width: auto;
+        font-size: 8.2cqw;
+    }
+    .about__mountains { bottom: -4cqw; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .about [data-lines] .line { color: var(--about-ink); }
+}
+
+
+/* ==========================================================================
+   Projects — stacking cards
+   --------------------------------------------------------------------------
+   Every card sticks at the same spot, so the next card slides over the
+   previous one. script/projects.js sets --depth on each card (how many cards
+   are on top of it); CSS uses it to lift the card up by --stack-gap per
+   level, shrink and dim it, so the cards behind peek out above the front one.
+   ========================================================================== */
+/* The About section's 7 vertical column lines, continued through the dark
+   Projects and Let's talk sections (same positions, so they line up) */
+.projects,
+.contact {
+    --dark-grid: rgba(255, 255, 255, 0.05);
+    background-image: repeating-linear-gradient(
+        90deg,
+        transparent 0,
+        transparent calc(100% / 7 - 1px),
+        var(--dark-grid) calc(100% / 7 - 1px),
+        var(--dark-grid) calc(100% / 7)
+    );
+}
+
+.projects {
+    --stack-top: 10vh;                   /* top of the stack (the furthest-back card) */
+    --stack-gap: 60px;                   /* how much of each card behind peeks out above the next */
+    --stack-visible: 3;                  /* how many cards behind the front one stay visible */
+    --card-scroll: 40vh;                 /* scroll distance between two cards */
+
+    position: relative;
+    padding: 18vh 0 0;
+    background-color: var(--ink);
+}
+
+.projects__stack {
+    --hold: 50vh;                        /* how long the full stack stays put after the last card lands */
+    width: min(1163px, 88vw);
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+/* Extra room at the end of the list. Sticky cards can only stay stuck while
+   there's list left below them, so this lets the last card land in the stack
+   and the whole stack hold before it scrolls away together. */
+.projects__stack::after {
+    content: '';
+    display: block;
+    height: var(--hold);
+}
+
+.projects__item {
+    position: sticky;
+    /* leave room above for the cards peeking out behind */
+    top: calc(var(--stack-top) + var(--stack-visible) * var(--stack-gap));
+    margin-bottom: var(--card-scroll);
+}
+
+.project-card {
+    --depth: 0;
+    position: relative;
+    display: block;
+    aspect-ratio: 1163 / 497;
+    background: #1A1A1A;
+    transform-origin: 50% 0;
+    transform:
+        translateY(calc(var(--depth) * var(--stack-gap) * -1))
+        scale(calc(1 - var(--depth) * 0.05));
+    filter: brightness(calc(1 - var(--depth) * 0.18));
+    /* cards deeper than --stack-visible fade out */
+    opacity: clamp(0, calc(var(--stack-visible) + 1 - var(--depth)), 1);
+    will-change: transform, filter, opacity;
+}
+
+.project-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Hover circle with arrow: follows the cursor over the card (script/projects.js
+   sets its position), grows in on hover and shrinks away when you leave */
+.project-card__arrow {
+    --size: clamp(110px, 10vw, 160px);
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: var(--size);
+    height: var(--size);
+    margin: calc(var(--size) / -2) 0 0 calc(var(--size) / -2);   /* centre it on the cursor */
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--accent, var(--glacier));
+    color: var(--ink);
+    scale: 0;
+    transition: scale 0.35s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+    pointer-events: none;
+    will-change: translate;
+}
+.project-card__arrow svg {
+    width: 38%;
+    height: 38%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.project-card.is-hovered .project-card__arrow { scale: 1; }
+
+/* Keyboard focus: show the circle in the middle of the card */
+.project-card:focus-visible .project-card__arrow {
+    scale: 1;
+    left: 50%;
+    top: 50%;
+    translate: none;
+}
+.project-card:focus-visible {
+    outline: var(--focus-ring);
+    outline-offset: 6px;
+}
+
+@media (max-aspect-ratio: 1/1) {
+    .projects { --stack-top: 10vh; --stack-gap: 28px; --card-scroll: 35vh; }
+    .projects__stack { width: 92vw; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .project-card { transform: none; filter: none; }
+    .project-card__arrow { transition: none; }
+}
+
+
+/* ==========================================================================
+   Full-screen menu
+   --------------------------------------------------------------------------
+   A dark grid with one big row per project. Hovering a row fills it with the
+   project's --accent colour. Opens with a wipe from the top; rows slide in
+   one after another. Open/close logic: script/nav.js.
+   ========================================================================== */
+.site-menu {
+    --line: rgba(255, 255, 255, 0.12);
+    --pad: clamp(16px, 3vw, 48px);       /* space around the framed grid */
+
+    position: fixed;
+    z-index: 100;
+    inset: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    padding: var(--pad);
+    background-color: #111;
+    /* faint 4-column grid, like the design inspiration */
+    background-image: repeating-linear-gradient(
+        90deg,
+        transparent 0,
+        transparent calc(25% - 1px),
+        var(--line) calc(25% - 1px),
+        var(--line) 25%
+    );
+    color: var(--snow);
+    clip-path: inset(0 0 100% 0);
+    visibility: hidden;
+    transition: clip-path 0.6s cubic-bezier(0.76, 0, 0.24, 1), visibility 0s linear 0.6s;
+}
+.site-menu.is-open {
+    clip-path: inset(0 0 0 0);
+    visibility: visible;
+    transition: clip-path 0.6s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+/* Top bar: close · logo ··· let's talk */
+.site-menu__bar {
+    display: flex;
+    align-items: stretch;
+    border: 1px solid var(--line);
+    background: #111;
+}
+.site-menu__close {
+    display: grid;
+    place-items: center;
+    width: clamp(52px, 5vw, 72px);
+    border: 0;
+    border-right: 1px solid var(--line);
+    background: none;
+    color: var(--snow);
+    cursor: pointer;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+.site-menu__close:hover { background: var(--snow); color: var(--ink); }
+.site-menu__close svg { width: 22px; height: 22px; }
+
+.site-menu__logo {
+    display: flex;
+    align-items: center;
+    padding: 0 clamp(16px, 2vw, 28px);
+    border-right: 1px solid var(--line);
+}
+.site-menu__logo img { height: clamp(20px, 2vw, 30px); width: auto; }
+
+.site-menu__cta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-left: auto;
+    padding: 18px clamp(16px, 2vw, 28px);
+    border-left: 1px solid var(--line);
+    color: var(--snow);
+    font: 500 clamp(16px, 1.3vw, 22px) / 1 var(--font-display);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+.site-menu__cta:hover { background: var(--signal); }
+
+/* Shared arrow icon */
+.site-menu svg {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.site-menu__cta svg,
+.site-menu__foot svg { width: 1em; height: 1em; }
+
+/* Project rows */
+.site-menu__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-inline: 1px solid var(--line);
+}
+.site-menu__list li { border-bottom: 1px solid var(--line); }
+.site-menu__list li:first-child { border-top: 1px solid var(--line); }
+
+.site-menu__link {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 0.06em clamp(16px, 2vw, 28px) 0;
+    color: var(--snow);
+    font: 500 clamp(52px, 8.5vw, 140px) / 1 var(--font-display);
+    text-transform: uppercase;
+    text-decoration: none;
+    overflow: hidden;
+    isolation: isolate;
+    transition: color 0.35s ease;
+}
+
+/* Colour fill that rises from the bottom on hover */
+.site-menu__link::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: var(--accent, var(--snow));
+    transform: scaleY(0);
+    transform-origin: 50% 100%;
+    transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1);
+}
+.site-menu__link:hover,
+.site-menu__link:focus-visible { color: var(--ink); outline: none; }
+.site-menu__link:hover::before,
+.site-menu__link:focus-visible::before { transform: scaleY(1); }
+
+.site-menu__num {
+    font: 500 clamp(14px, 1.1vw, 18px) / 1 var(--font-display);
+    letter-spacing: 0.08em;
+    opacity: 0.6;
+}
+.site-menu__label {
+    grid-column: 2;
+    transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1);
+}
+.site-menu__link:hover .site-menu__label { transform: translateX(-0.12em); }
+
+.site-menu__arrow {
+    justify-self: end;
+    display: grid;
+    width: 0.45em;
+    height: 0.45em;
+    opacity: 0;
+    transform: translate(-0.4em, 0.4em);
+    transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.76, 0, 0.24, 1);
+}
+.site-menu__arrow svg { width: 100%; height: 100%; stroke-width: 1.5; }
+.site-menu__link:hover .site-menu__arrow,
+.site-menu__link:focus-visible .site-menu__arrow {
+    opacity: 1;
+    transform: none;
+}
+
+/* Bottom links */
+.site-menu__foot {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--line);
+    border-top: 0;
+    background: #111;
+}
+.site-menu__foot a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px clamp(16px, 2vw, 28px);
+    color: var(--snow);
+    font: 500 clamp(14px, 1.1vw, 18px) / 1 var(--font-display);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+.site-menu__foot a + a { border-left: 1px solid var(--line); }
+.site-menu__foot a:hover { background: var(--snow); color: var(--ink); }
+
+.site-menu a:focus-visible,
+.site-menu button:focus-visible {
+    outline: var(--focus-ring);
+    outline-offset: -4px;
+}
+
+/* Rows slide up one after another when the menu opens */
+.site-menu__list li,
+.site-menu__foot {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.4s ease, transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.site-menu.is-open .site-menu__list li,
+.site-menu.is-open .site-menu__foot {
+    opacity: 1;
+    transform: none;
+}
+.site-menu.is-open .site-menu__list li:nth-child(1) { transition-delay: 0.25s; }
+.site-menu.is-open .site-menu__list li:nth-child(2) { transition-delay: 0.32s; }
+.site-menu.is-open .site-menu__list li:nth-child(3) { transition-delay: 0.39s; }
+.site-menu.is-open .site-menu__list li:nth-child(4) { transition-delay: 0.46s; }
+.site-menu.is-open .site-menu__list li:nth-child(5) { transition-delay: 0.53s; }
+.site-menu.is-open .site-menu__list li:nth-child(6) { transition-delay: 0.6s; }
+.site-menu.is-open .site-menu__foot { transition-delay: 0.45s; }
+
+@media (max-width: 600px) {
+    .site-menu__cta { font-size: 0; gap: 0; }          /* icon only on small phones */
+    .site-menu__cta svg { width: 20px; height: 20px; }
+    .site-menu__num { display: none; }
+    .site-menu__link { grid-template-columns: 0 auto 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .site-menu,
+    .site-menu.is-open,
+    .site-menu__list li,
+    .site-menu__foot,
+    .site-menu__link::before,
+    .site-menu__label,
+    .site-menu__arrow { transition: none; }
+}
+
+
+/* ==========================================================================
+   Let's talk
+   --------------------------------------------------------------------------
+   Left: huge "Let's / Talk". Right: a short intro, the email and
+   LinkedIn rows, and a spinning badge. Scripts: script/contact.js
+   ========================================================================== */
+.contact {
+    --line: rgba(255, 255, 255, 0.14);
+    /* Pulls the section up into the empty space after the project cards.
+       Higher = closer to the cards. Keep it below --card-scroll (40vh),
+       otherwise it would slide over the cards. */
+    --pull-up: 22vh;
+    position: relative;
+    margin-top: calc(var(--pull-up) * -1);
+    padding: 18vh 11.11vw 16vh;
+    background-color: var(--ink);
+    color: var(--snow);
+    overflow: hidden;
+}
+
+.contact__inner {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 4vw;
+    align-items: center;
+}
+
+/* Title */
+.contact__title-wrap {
+    position: relative;
+}
+.contact__title {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    font: 500 clamp(110px, 17.5vw, 330px) / 0.82 var(--font-display);
+    letter-spacing: -0.005em;
+}
+.contact__line {
+    display: block;
+    overflow: hidden;                    /* letters rise up from behind this edge */
+    padding-top: 0.06em;
+}
+.contact__line > span {
+    display: inline-block;
+    transform: translateY(105%);
+    transition: transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.contact.is-in .contact__line > span { transform: none; }
+/* Stagger: each letter a little later (set per letter in contact.js) */
+.contact__line > span { transition-delay: calc(var(--d, 0) * 45ms); }
+
+/* Right side */
+.contact__intro {
+    margin: 0 0 4vh;
+    font: 500 clamp(18px, 1.7vw, 30px) / 1.15 var(--font-display);
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.55);
+}
+.contact__intro span { color: var(--snow); }
+
+.contact__links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid var(--line);
+}
+.contact__links li {
+    position: relative;
+    border-bottom: 1px solid var(--line);
+}
+
+.contact__link {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+        "label arrow"
+        "value arrow";
+    align-items: center;
+    padding: 2.2vh 1vw 1.8vh;
+    color: var(--snow);
+    text-decoration: none;
+    isolation: isolate;
+    overflow: hidden;
+}
+/* Fill that wipes in from the left on hover */
+.contact__link::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: var(--glacier);
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+.contact__link:hover::before,
+.contact__link:focus-visible::before { transform: scaleX(1); }
+.contact__link:hover,
+.contact__link:focus-visible { color: var(--ink); outline: none; }
+
+.contact__label {
+    grid-area: label;
+    font: 500 clamp(13px, 0.95vw, 16px) / 1 var(--font-display);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+.contact__value {
+    grid-area: value;
+    margin-top: 0.6vh;
+    font: 500 clamp(22px, 2.1vw, 40px) / 1 var(--font-display);
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1), color 0.3s ease;
+}
+.contact__link:hover .contact__value { transform: translateX(0.4vw); }
+
+.contact__arrow {
+    grid-area: arrow;
+    width: clamp(28px, 2.4vw, 44px);
+    height: clamp(28px, 2.4vw, 44px);
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+.contact__arrow svg,
+.contact__badge-arrow svg,
+.site-footer svg {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.contact__link:hover .contact__arrow { transform: rotate(45deg); }
+
+/* Small "Copy" chip next to the email */
+.contact__copy {
+    position: absolute;
+    z-index: 1;
+    top: 2.2vh;
+    right: calc(1vw + clamp(28px, 2.4vw, 44px) + 14px);
+    padding: 4px 10px 2px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    font: 500 13px / 1 var(--font-display);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+.contact__copy:hover { background: var(--snow); color: var(--ink); border-color: var(--snow); }
+.contact__links li:hover .contact__copy { color: var(--ink); border-color: rgba(13, 13, 13, 0.3); }
+.contact__links li:hover .contact__copy:hover { background: var(--ink); color: var(--snow); }
+.contact__copy.is-copied { background: var(--signal); border-color: var(--signal); color: var(--snow); }
+
+/* Spinning badge */
+.contact__badge {
+    position: relative;
+    display: block;
+    width: clamp(120px, 10vw, 180px);
+    aspect-ratio: 1;
+    margin: 6vh 0 0 auto;
+    color: var(--snow);
+}
+.contact__badge-ring {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    will-change: transform;
+}
+.contact__badge-ring text {
+    fill: currentColor;
+    font: 500 19px var(--font-display);
+    letter-spacing: 0.12em;
+}
+.contact__badge-arrow {
+    position: absolute;
+    inset: 26%;
+    display: grid;
+    place-items: center;
+    padding: 18%;
+    border-radius: 50%;
+    background: var(--snow);
+    color: var(--ink);
+    transition: background-color 0.3s ease, transform 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.3);
+}
+.contact__badge:hover .contact__badge-arrow {
+    background: var(--signal);
+    color: var(--snow);
+    transform: scale(1.12) rotate(45deg);
+}
+
+.contact a:focus-visible,
+.contact button:focus-visible {
+    outline: var(--focus-ring);
+    outline-offset: 4px;
+}
+
+@media (max-width: 900px), (max-aspect-ratio: 1/1) {
+    .contact { padding: 14vh 6vw 10vh; }
+    .contact__inner { grid-template-columns: 1fr; gap: 7vh; }
+    .contact__title { font-size: 30vw; }
+    .contact__value { font-size: 5.6vw; }
+    .contact__copy { top: 14px; right: calc(16px + 28px + 14px); }
+    .contact__link { padding: 14px 16px 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .contact__line > span { transform: none; transition: none; }
+}
+
+
+/* ==========================================================================
+   Footer (all pages)
+   One band with the mountain image (images/footer.svg) sitting right on the
+   bottom edge of the page, the quote where it was, columns on the left and
+   "Back to top" in the bottom-left corner.
+   ========================================================================== */
+.site-footer {
+    height: auto;                        /* overrides the old `footer { height: 300px }` */
+    background: var(--ink);
+    color: var(--snow);
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.site-footer__main {
+    position: relative;
+    height: 300px;
+    background-size: cover;
+    background-position: center bottom;  /* mountain starts at the very bottom */
+}
+
+.site-footer__cols {
+    position: absolute;
+    top: 44%;
+    left: 13%;
+    translate: 0 -50%;
+    display: flex;
+    gap: clamp(32px, 5vw, 90px);
+}
+
+.site-footer__brand img { height: 28px; width: auto; display: block; }
+.site-footer__brand p {
+    margin: 14px 0 0;
+    font: 400 18px / 1.2 var(--font-display);
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.site-footer__col h3 {
+    margin: 0 0 12px;
+    font: 500 22px / 1 var(--font-display);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+.site-footer__col ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.site-footer__col li + li { margin-top: 6px; }
+.site-footer__col a {
+    position: relative;
+    color: #939393;
+    font: 500 18px / 1.2 var(--font-display);
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+/* Underline that draws in on hover */
+.site-footer__col a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: transform 0.35s cubic-bezier(0.76, 0, 0.24, 1);
+}
+.site-footer__col a:hover { color: var(--snow); }
+.site-footer__col a:hover::after { transform: scaleX(1); }
+
+/* Same spot as the old footer quote, so it lines up with footer.svg */
+.site-footer__quote {
+    position: absolute;
+    top: 106px;
+    right: 386px;
+    margin: 0;
+    font: 400 24px / 1.1 var(--font-display);
+}
+
+.site-footer__top {
+    position: absolute;
+    left: 13%;
+    bottom: 26px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: rgba(255, 255, 255, 0.45);
+    font: 400 16px / 1 var(--font-display);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.25s ease;
+}
+.site-footer__top svg { width: 14px; height: 14px; transition: transform 0.35s ease; }
+.site-footer__top:hover { color: var(--snow); }
+.site-footer__top:hover svg { transform: translateY(-3px); }
+
+.site-footer a:focus-visible,
+.site-footer button:focus-visible {
+    outline: var(--focus-ring);
+    outline-offset: 4px;
+}
+
+@media (max-width: 900px) {
+    .site-footer__main { height: auto; padding: 48px 6vw 200px; background-position: right bottom; }
+    .site-footer__cols { position: static; translate: none; flex-wrap: wrap; }
+    .site-footer__quote { top: auto; right: 6vw; bottom: 40px; font-size: 20px; }
+    .site-footer__top { left: 6vw; }
+}
+
+
+/* ==========================================================================
+   Page transitions (script/transition.js)
+   A black panel slides up over the page while the mountain icon fills from
+   grey to white; on the next page the panel slides away.
+   ========================================================================== */
+
+/* Arriving: cover the page from the very first paint until the panel is ready */
+html.pt-cover::after {
+    content: '';
+    position: fixed;
+    z-index: 10000;
+    inset: 0;
+    background: #0D0D0D;
+}
+
+.pt {
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background: #0D0D0D;
+    transform: translateY(100%);
+    transition: transform 0.38s cubic-bezier(0.76, 0, 0.24, 1);
+    pointer-events: none;
+}
+.pt.is-covering {
+    transform: none;
+    pointer-events: auto;                /* blocks double clicks while it plays */
+}
+.pt.is-leaving {
+    transform: translateY(-100%);
+    transition-duration: 0.52s;
+}
+.pt.no-anim,
+.pt.no-anim * { transition: none !important; }
+
+.pt__icon {
+    position: relative;
+    width: clamp(40px, 3.6vw, 60px);
+    aspect-ratio: 116 / 168;
+    transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1), opacity 0.3s ease;
+}
+.pt__icon svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+.pt__base { fill: #3A3A3A; }
+.pt__fill {
+    fill: #FFFFFF;
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 0.42s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.pt.is-filled .pt__fill { clip-path: inset(0 0 0 0); }
+.pt.is-leaving .pt__icon {
+    transform: translateY(-24px);
+    opacity: 0;
+}
+
+
+/* ==========================================================================
+   "Let's Talk" tab — fixed on the right edge on every page
+   ========================================================================== */
+.talk-tab {
+    --pad-y: clamp(28px, 3.4vw, 64px);
+    position: fixed;
+    z-index: 50;
+    right: 0;
+    top: 50%;
+    translate: 0 -50%;
+    writing-mode: vertical-rl;
+    rotate: 180deg;                      /* reads bottom-to-top, as in the design */
+    padding: var(--pad-y) clamp(10px, 1vw, 18px);
+    background: var(--signal);
+    color: var(--snow);
+    font: 500 clamp(18px, 1.75vw, 32px) / 1 var(--font-display);
+    text-decoration: none;
+    transition:
+        padding-top 0.55s cubic-bezier(0.76, 0, 0.24, 1),
+        padding-bottom 0.55s cubic-bezier(0.76, 0, 0.24, 1),
+        translate 0.6s cubic-bezier(0.76, 0, 0.24, 1),
+        background-color 0.25s ease;
+}
+/* Slid out to the right while the Let's talk section is on screen (contact.js) */
+.talk-tab.is-hidden {
+    translate: 100% -50%;
+    pointer-events: none;
+}
+/* Hover: the box grows to twice its height (the text, ~3em long, stays centred) */
+.talk-tab:hover,
+.talk-tab:focus-visible {
+    padding-top: calc(var(--pad-y) * 2 + 1.5em);
+    padding-bottom: calc(var(--pad-y) * 2 + 1.5em);
+}
+
+
+/* ---------- Focus & motion ---------- */
+.site-header a:focus-visible,
+.menu-toggle:focus-visible,
+.talk-tab:focus-visible {
+    outline: var(--focus-ring);
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .talk-tab,
+    .site-header__logo {
+        transition: none;
+    }
+}

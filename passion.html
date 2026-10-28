@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to external stylesheet and font-awesome library -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Page title -->
+    <title>Arzumanian | Portfolio</title>
+</head>
+<body>
+    <!-- Navigation Bar Section -->
+    <nav class="navbar">
+        <!-- Logo 0n the left side, linking back to the homepage -->
+        <a href="index.html" class="logo-link">
+            <img src="images/logo.svg" alt="Logo" class="logo">
+        </a>
+        
+        <!-- Navbar right section containing dropdown menus -->
+        <section class="navbar-right">
+            <!-- Dropdown menu for Learning Outcomes -->
+            <ul class="dropdown">
+                <li>
+                    <button class="dropbtn">LEARNING OUTCOMES</button>
+                    <ul class="dropdown-content">
+                        <li><a href="lo1.html">Lo 1</a></li>
+                        <li><a href="lo2.html">Lo 2</a></li>
+                        <li><a href="lo3.html">Lo 3</a></li>
+                        <li><a href="lo4.html">Lo 4</a></li>
+                        <li><a href="lo5.html">Lo 5</a></li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <!-- Dropdown menu for Projects -->
+            <ul class="dropdown">
+                <li>
+                    <button class="dropbtn">PROJECTS</button>
+                    <ul class="dropdown-content">
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="sakura_creative.html">Sakura Creative</a></li>
+                        <li><a href="partout_cbr.html">Partout CBR</a></li>
+                        <li><a href="passion.html">Passion Project</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </nav>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="project-cover">
+            <div class="project-cover-container">
+                <img src="images/passion-cover.png" alt="Project Cover" class="project-cover-image">
+                <div class="project-cover-content">
+                    <div class="flex-container">
+                        <!-- Column 1: Brand and Project -->
+                        <div class="left-column">
+                            <div class="brand-section">
+                                <h1 class="brand-title">BRAND</h1>
+                                <img src="images/logo.svg" alt="Sakura Logo" class="brand-logo">
+                            </div>
+                            <div class="project-section">
+                                <h1 class="project-title">PROJECT</h1>
+                                <p class="project-text">PASSION</p>
+                            </div>
+                        </div>
+                        <!-- Column 2: Responsibilities and Description -->
+                        <div class="right-column">
+                            <div class="responsibilities-section">
+                                <h1 class="responsibilities-title">RESPONSIBILITIES</h1>
+                                <p class="responsibilities-text">Research<br>Design<br>Development</p>
+                            </div>
+                            <div class="description-section">
+                                <h1 class="description-title">DESCRIPTION</h1>
+                                <p class="description-text">
+                                    The project goal is to create an easy-to-use tool that assists students in writing and integrating well-structured learning outcomes into their portfolio websites.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>            
+            </div>
+        </section>
+
+        <section class="challenge-section">
+            <div class="challenge-container">
+                <div class="challenge-text">
+                    <h1 class="challenge-title">THE CHALLENGE</h1>
+                    <p class="challenge-description">
+                       Content coming soon
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        
+        <!-- See Next Project Section -->
+        <section class="see-next-project">
+            <a href="portfolio.html" class="next-project-link">
+                <div class="next-project-image" style="background-image: url('images/next_portfolio.png');">
+                    <div class="next-project-text-blue">SEE NEXT PROJECT</div>
+                </div>
+            </a>
+        </section>
+
+    </main>
+
+    
+        <!-- Footer Section -->
+        <footer>  
+            <div class="footer-background" style="background-image: url('images/footer.svg');">  
+                <div class="footer-content">  
+                    <!-- Footer quote on the right -->
+                    <blockquote class="footer-quote">
+                        Do not fear the height of the mountain, <br> only fear having a short ambition.
+                    </blockquote>
+                    <!-- Footer lists on the left side with links to Learning Outcomes and Projects -->
+                    <div class="footer-lists-container">
+                        <div class="footer-list">  
+                            <h3>LEARNING OUTCOMES</h3>  
+                            <ul>  
+                                <li><a href="lo1.html">Conceptualize, design, and develop interactive media products</a></li>  
+                                <li><a href="lo2.html">Transferable production</a></li>  
+                                <li><a href="lo3.html">Creative iterations</a></li>  
+                                <li><a href="lo4.html">Professional standards</a></li>  
+                                <li><a href="lo5.html">Personal leadership</a></li>  
+                            </ul>  
+                        </div>  
+                        <div class="footer-list">  
+                            <h3>PROJECTS</h3>  
+                            <ul>  
+                                <li><a href="portfolio.html">Portfolio</a></li>  
+                                <li><a href="sakura_creative.html">Sakura Creative</a></li>  
+                                <li><a href="partout_cbr.html">Partout CBR</a></li>  
+                                <li><a href="passion.html">Passion Project</a></li>  
+                            </ul>  
+                        </div>  
+                    </div>  
+                </div>  
+            </div>  
+        </footer>
+            <script src="script/nav.js" defer></script>
+
+</body>
+</html>
