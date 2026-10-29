@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Site root: this page also opens for missing URLs deep inside the site
+         (e.g. /arzumanian/old/page), so all links below are resolved from the
+         root of the site instead of from the current URL. On GitHub Pages the
+         site lives in a subfolder (/arzumanian/), elsewhere at "/". -->
+    <script>
+        (function () {
+            var root = '/';
+            if (/\.(github|gitlab)\.io$/.test(location.hostname)) {
+                var first = location.pathname.split('/')[1];
+                if (first) root = '/' + first + '/';
+            }
+            var base = document.createElement('base');
+            base.href = root;
+            document.head.appendChild(base);
+        })();
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <!-- Page transitions: must load in the head, without defer -->
+    <script src="script/transition.js"></script>
+    <title>Arzumanian | Page not found</title>
+    <style>
+        /* ==================================================================
+           404 page. Same look as the hero: black, contour lines, snow peaks
+           along the bottom, Teko lettering in glacier blue and white.
+           ================================================================== */
+        /* Header on top, the 404 section fills the rest of the screen */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100svh;
+            background: var(--ink);
+        }
+        /* style.css's phone rule for the home hero shifts this header sideways */
+        .site-header--page { left: auto; right: auto; top: auto; }
+
+        .lost {
+            position: relative;
+            flex: 1;
+            display: grid;
+            place-items: center;
+            padding: 24px 20px 6vw;
+            overflow: hidden;
+            background: var(--ink);
+            color: var(--snow);
+            text-align: center;
+        }
+
+        /* Contour lines, faint, like the home page */
+        .lost__lines {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.05;
+            pointer-events: none;
+        }
+
+        /* Snow peaks along the bottom edge */
+        .lost__snow {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: auto;
+            pointer-events: none;
+        }
+
+        .lost__content { position: relative; z-index: 1; }
+
+        .lost__code {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            font: 600 clamp(130px, min(46vw, 42svh), 380px) / 0.8 var(--font-display);
+            letter-spacing: 0.01em;
+        }
+        .lost__code span {
+            display: inline-block;
+            color: var(--glacier);
+            animation: lost-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+            animation-delay: calc(var(--i) * 0.12s);
+        }
+        .lost__code span:nth-child(2) { color: var(--snow); }
+
+        .lost__text {
+            margin: clamp(18px, 2.4vw, 36px) 0 clamp(32px, 4vw, 56px);
+            font: 400 clamp(22px, 2.4vw, 38px) / 1.1 var(--font-display);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            animation: lost-fade 0.8s ease 0.45s both;
+        }
+
+        /* Round button, same as "Visit site" on the project pages */
+        .lost__btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: var(--glacier);
+            color: #000;
+            font: 400 24px / 1 var(--font-display);
+            text-decoration: none;
+            transition: background-color 0.3s ease, scale 0.3s ease;
+            animation: lost-fade 0.8s ease 0.6s both;
+        }
+        .lost__btn span { display: inline-block; transition: transform 0.2s ease-out; }
+        .lost__btn:hover { background: #B5C7F0; scale: 1.15; }
+        .lost__btn:focus-visible { outline: var(--focus-ring); outline-offset: 6px; }
+
+        @keyframes lost-rise {
+            from { opacity: 0; transform: translateY(40%); }
+        }
+        @keyframes lost-fade {
+            from { opacity: 0; transform: translateY(12px); }
+        }
+
+        @media (max-aspect-ratio: 1/1) {
+            .lost { padding-bottom: 16vw; }
+            .lost__text { max-width: 13em; margin-inline: auto; font-size: 26px; }
+            .lost__btn { width: 120px; height: 120px; font-size: 20px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .lost__code span, .lost__text, .lost__btn { animation: none; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header: logo + "Projects" (opens the full-screen menu at the bottom of the page) -->
+    <header class="site-header site-header--page">
+        <a href="index.html" class="site-header__logo" aria-label="Artem Arzumanian, home">
+            <img src="images/logo.svg" alt="">
+        </a>
+        <nav aria-label="Main">
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+                Projects
+            </button>
+        </nav>
+    </header>
+
+    <main class="lost">
+        <img src="images/hero/contours.svg" alt="" class="lost__lines">
+        <div class="lost__content">
+            <h1 class="lost__code" aria-label="404">
+                <span style="--i: 0;" aria-hidden="true">4</span>
+                <span style="--i: 1;" aria-hidden="true">0</span>
+                <span style="--i: 2;" aria-hidden="true">4</span>
+            </h1>
+            <p class="lost__text">Oops, this page is still under construction</p>
+            <a href="index.html" class="lost__btn" data-magnet>
+                <span>BACK HOME</span>
+            </a>
+        </div>
+        <img src="images/hero_mount1.png" alt="" class="lost__snow">
+    </main>
+
+    <!-- ================= Full-screen menu (opened by "Projects") ================= -->
+    <!-- Rows: href = page, --accent = colour the row fills with on hover. -->
+    <div class="site-menu" id="site-menu" role="dialog" aria-modal="true" aria-label="Projects" inert>
+        <div class="site-menu__bar">
+            <button class="site-menu__close" type="button" aria-label="Close menu">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+            </button>
+            <a href="index.html" class="site-menu__logo" aria-label="Artem Arzumanian, home">
+                <img src="images/logo.svg" alt="">
+            </a>
+            <a href="mailto:artemarzumanyan358@gmail.com?subject=Hi%20Artem" class="site-menu__cta">
+                Let’s talk <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </a>
+        </div>
+
+        <ul class="site-menu__list">
+            <li>
+                <a href="swissquote.html" class="site-menu__link" style="--accent: #FA5B35;">
+                    <span class="site-menu__num">01</span>
+                    <span class="site-menu__label">Swissquote</span>
+                    <span class="site-menu__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+                </a>
+            </li>
+            <li>
+                <a href="yomi.html" class="site-menu__link" style="--accent: #C33149;">
+                    <span class="site-menu__num">02</span>
+                    <span class="site-menu__label">Yomi</span>
+                    <span class="site-menu__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+                </a>
+            </li>
+            <li>
+                <a href="brandzaak.html" class="site-menu__link" style="--accent: #ED9D46;">
+                    <span class="site-menu__num">03</span>
+                    <span class="site-menu__label">BrandZaak</span>
+                    <span class="site-menu__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+                </a>
+            </li>
+            <li>
+                <a href="portfolio.html" class="site-menu__link" style="--accent: #8095C6;">
+                    <span class="site-menu__num">04</span>
+                    <span class="site-menu__label">Portfolio</span>
+                    <span class="site-menu__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+                </a>
+            </li>
+            <li>
+                <a href="sakura_creative.html" class="site-menu__link" style="--accent: #F8CDCB;">
+                    <span class="site-menu__num">05</span>
+                    <span class="site-menu__label">Sakura Creative</span>
+                    <span class="site-menu__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+                </a>
+            </li>
+            <li>
+                <a href="partout_cbr.html" class="site-menu__link" style="--accent: #BBDF32;">
+                    <span class="site-menu__num">06</span>
+                    <span class="site-menu__label">Partout CBR</span>
+                    <span class="site-menu__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="site-menu__foot">
+            <a href="mailto:artemarzumanyan358@gmail.com?subject=Hi%20Artem">Email <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+            <a href="https://www.linkedin.com/in/artem-arzumanian-358b90312/" target="_blank" rel="noopener">LinkedIn <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+    </div>
+
+    <a href="index.html#contact" class="talk-tab">Let's Talk</a>
+
+    <script>
+        /* Magnetic "Back home" button: pulls toward the cursor when it's close */
+        (() => {
+            const btn = document.querySelector('[data-magnet]');
+            if (!btn || window.matchMedia('(hover: none), (prefers-reduced-motion: reduce)').matches) return;
+            const label = btn.querySelector('span');
+            const RANGE = 160;
+            document.addEventListener('mousemove', (e) => {
+                const r = btn.getBoundingClientRect();
+                const dx = e.clientX - (r.left + r.width / 2);
+                const dy = e.clientY - (r.top + r.height / 2);
+                const dist = Math.hypot(dx, dy);
+                if (dist < RANGE) {
+                    const f = (RANGE - dist) / RANGE;
+                    btn.style.transform = `translate(${dx * f}px, ${dy * f}px)`;
+                    label.style.transform = `translate(${dx * f * 0.3}px, ${dy * f * 0.3}px)`;
+                } else {
+                    btn.style.transform = '';
+                    label.style.transform = '';
+                }
+            });
+        })();
+    </script>
+    <script src="script/nav.js" defer></script>
+    <script src="script/contact.js" defer></script>
+</body>
+</html>

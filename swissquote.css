@@ -741,7 +741,7 @@
 
 
 /* ==========================================================================
-   9. Reflection colour block + next project text (Swissquote orange)
+   9. Reflection colour block (Swissquote orange)
    ========================================================================== */
 .orange-shape {
     background-color: var(--sq-orange-soft);
@@ -749,20 +749,6 @@
     padding: 50px;
 }
 
-.next-project-text-orange {
-    position: absolute;
-    top: -32px;
-    left: 140px;
-    font-family: 'Teko Medium', sans-serif;
-    font-size: 42px;
-    color: rgba(189, 189, 189, 0.829);
-    text-transform: uppercase;
-    transition: 0.4s;
-}
-.next-project-image:hover .next-project-text-orange {
-    scale: 1.08;
-    color: #FA5B35;
-}
 
 
 /* ==========================================================================
@@ -804,9 +790,6 @@
     .sq-page :is(.standard-article-description, .text-within-image-description) { text-align: left; }
     .sq-page .motivation-article-intro .flex-container { flex-direction: column; gap: 0; }
     .sq-page .orange-shape { padding: 28px; }
-    .sq-page .see-next-project { height: auto; padding: 60px 20px 40px; }
-    .sq-page .next-project-link { width: 100%; height: auto; aspect-ratio: 5448 / 1212; }
-    .sq-page .see-next-project [class*="next-project-text"] { top: -36px; left: 0; font-size: 30px; }
 
     .sq-stats__grid { grid-template-columns: 1fr 1fr; row-gap: 36px; }
     .sq-stats__item:nth-child(3) { padding-left: 0; border-left: 0; }

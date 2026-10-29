@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to external stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="next-project.css">
+    <link rel="stylesheet" href="yomi.css">
+    <!-- Page transitions: must load in the head, without defer -->
+    <script src="script/transition.js"></script>
+    <!-- 3D can viewer (drag to spin) -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@4.1.0/dist/model-viewer.min.js"></script>
+    <!-- Page title -->
+    <title>Arzumanian | Yomi</title>
+</head>
+<body class="yo-page">
+    <!-- Header: logo + "Projects" (opens the full-screen menu at the bottom of the page) -->
+    <header class="site-header site-header--page">
+        <a href="index.html" class="site-header__logo" aria-label="Artem Arzumanian, home">
+            <img src="images/logo.svg" alt="">
+        </a>
+        <nav aria-label="Main">
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+                Projects
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- ================= Cover ================= -->
+        <!-- images/yomi_project_cover.webp = the cover you design (1920 × 812, like the other covers) -->
+        <section class="project-cover">
+            <div class="project-cover-container">
+                <img src="images/yomi_project_cover.webp" alt="" class="project-cover-image">
+                <div class="project-cover-content">
+                    <div class="flex-container">
+                        <!-- Column 1: Brand and Project -->
+                        <div class="left-column">
+                            <div class="brand-section">
+                                <h1 class="brand-title">BRAND</h1>
+                                <img src="images/yomi/yomi_logo.webp" alt="Yomi" class="brand-logo">
+                            </div>
+                            <div class="project-section">
+                                <h1 class="project-title">PROJECT</h1>
+                                <p class="project-text">YOMI</p>
+                            </div>
+                        </div>
+                        <!-- Column 2: Responsibilities and Description -->
+                        <div class="right-column">
+                            <div class="responsibilities-section">
+                                <h1 class="responsibilities-title">RESPONSIBILITIES</h1>
+                                <p class="responsibilities-text">Packaging design<br>3D modelling<br>Web development</p>
+                            </div>
+                            <div class="description-section">
+                                <h1 class="description-title">DESCRIPTION</h1>
+                                <p class="description-text">
+                                    With a teammate I created Yomi, a soft drink brand with a mystery twist. I designed the cans, built the 3D model and coded the website.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= Challenge ================= -->
+        <section class="challenge-section">
+            <div class="challenge-container">
+                <div class="challenge-text">
+                    <h1 class="challenge-title">THE CHALLENGE</h1>
+                    <p class="challenge-description">
+                        In a two-week school project, my teammate and I had to invent our own soft drink brand. Our twist was a mystery flavour: the label hides a clue that only shows up once the can is empty. Collect them all and win prizes, from Olympic tickets to front-row concert seats.
+                    </p>
+                </div>
+                <div class="challenge-image">
+                    <img src="images/yomi/yomi_pic.webp" width="1400" height="1625" alt="Kiwi and orange Yomi cans on ice, in a polaroid frame">
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= The range, edge to edge ================= -->
+        <ul class="yo-lineup" aria-label="The four Yomi flavours">
+            <li><img src="images/yomi/can-front-strawberry.webp" width="1200" height="900" alt="Strawberry Yomi cans on ice" loading="lazy"></li>
+            <li><img src="images/yomi/can-front-orange.webp" width="1200" height="900" alt="Orange Yomi cans on ice" loading="lazy"></li>
+            <li><img src="images/yomi/can-front-kiwi.webp" width="1200" height="900" alt="Kiwi Yomi cans on ice" loading="lazy"></li>
+            <li><img src="images/yomi/can-front-blueberry.webp" width="1200" height="900" alt="Blueberry Yomi cans on ice" loading="lazy"></li>
+        </ul>
+
+
+        <!-- ================= Research ================= -->
+        <section class="standard-article-intro">
+            <div class="standard-article-tag">
+                <div class="standard-article-divider"></div>
+                <span class="standard-article-category">RESEARCH</span>
+            </div>
+            <div class="standard-article-content">
+                <h1 class="standard-article-title">TAKING NOTES</h1>
+                <p class="standard-article-description">
+                    We started by collecting can designs we liked and pinning what was worth exploring in our own: bold type, big juicy fruit and playful colour.
+                </p>
+            </div>
+        </section>
+
+        <section class="yo-band yo-band--canvas">
+            <div class="yo-wrap">
+                <img src="images/yomi/research-references.webp" width="1920" height="1454" alt="Reference board of soft drink can designs with our notes" loading="lazy">
+            </div>
+        </section>
+
+
+        <section class="text-within-image-intro">
+            <div class="text-within-image-tag">
+                <div class="text-within-image-divider"></div>
+                <span class="text-within-image-category">RESEARCH</span>
+            </div>
+            <div class="text-within-image-content">
+                <h1 class="text-within-image-title">TWO PEOPLE, ONE CAN</h1>
+                <p class="text-within-image-description">
+                    The brief's twist: please both the people who love a surprise and the ones who want to know what they're drinking. We built the brand around two personas, Bram (22) and Sem (10).
+                </p>
+            </div>
+        </section>
+
+        <section class="yo-band yo-band--clear">
+            <div class="yo-wrap">
+                <img src="images/yomi/research-personas.webp" width="1600" height="1389" alt="Personas: Bram, 22, a student in Eindhoven, and Sem, 10, from Utrecht" loading="lazy">
+            </div>
+        </section>
+
+
+        <section class="standard-article-intro">
+            <div class="standard-article-tag">
+                <div class="standard-article-divider"></div>
+                <span class="standard-article-category">RESEARCH</span>
+            </div>
+            <div class="standard-article-content">
+                <h1 class="standard-article-title">SETTING THE MOOD</h1>
+                <p class="standard-article-description">
+                    Ice, fresh fruit, water and running tracks: cold, fresh and sporty. The moodboard also set a bold header font and a bright palette.
+                </p>
+            </div>
+        </section>
+
+        <section class="yo-band yo-band--clear">
+            <div class="yo-wrap">
+                <img src="images/yomi/research-moodboard.webp" width="1800" height="1841" alt="Yomi moodboard with ice, limes, water, running tracks, palette and typography" loading="lazy">
+            </div>
+        </section>
+
+
+        <!-- ================= Design: label iterations ================= -->
+        <section class="text-within-image-intro">
+            <div class="text-within-image-tag">
+                <div class="text-within-image-divider"></div>
+                <span class="text-within-image-category">PACKAGING</span>
+            </div>
+            <div class="text-within-image-content">
+                <h1 class="text-within-image-title">QUANTITY OVER QUALITY</h1>
+                <p class="text-within-image-description">
+                    Instead of aiming for the perfect label straight away, I designed fast and a lot: strawberry first, then orange, then the Olympic edition. Every version fixed something from the last. Here is a selection, straight from Figma.
+                </p>
+            </div>
+        </section>
+
+        <!-- One row per flavour; figcaption = the frame name in Figma -->
+        <section class="yo-band yo-band--canvas">
+            <div class="yo-wrap yo-wrap--wide">
+                <div class="yo-canvas__row">
+                    <div class="yo-canvas__head"><h3>Strawberry</h3><span>6 versions</span></div>
+                    <ul class="yo-canvas__grid">
+                        <li><figure class="yo-frame"><figcaption>Sticker version 4</figcaption><div class="yo-frame__img"><img src="images/yomi/iter-strawberry-04.webp" width="720" height="416" alt="Strawberry label, version 4" loading="lazy"></div></figure></li>
+                        <li><figure class="yo-frame"><figcaption>Sticker version 13</figcaption><div class="yo-frame__img"><img src="images/yomi/iter-strawberry-13.webp" width="720" height="416" alt="Strawberry label, version 13" loading="lazy"></div></figure></li>
+                        <li><figure class="yo-frame"><figcaption>Sticker version 14</figcaption><div class="yo-frame__img"><img src="images/yomi/iter-strawberry-14.webp" width="720" height="416" alt="Strawberry label, version 14" loading="lazy"></div></figure></li>
+                        <li><figure class="yo-frame"><figcaption>Sticker version 15</figcaption><div class="yo-frame__img"><img src="images/yomi/iter-strawberry-15.webp" width="720" height="416" alt="Strawberry label, version 15" loading="lazy"></div></figure></li>
+                        <li><figure class="yo-frame"><figcaption>Sticker version 16</figcaption><div class="yo-frame__img"><img src="images/yomi/iter-strawberry-16.webp" width="720" height="416" alt="Strawberry label, version 16" loading="lazy"></div></figure></li>
+                        <li><figure class="yo-frame"><figcaption>Sticker version 17</figcaption><div class="yo-frame__img"><img src="images/yomi/iter-strawberry-17.webp" width="720" height="416" alt="Strawberry label, version 17" loading="lazy"></div></figure></li>
+                    </ul>
+                </div>
+                <div class="yo-canvas__row">
+                    <div class="yo-canvas__head"><h3>Orange</h3><span>6 versions</span></div>
+                    <ul class="yo-canvas__grid">
+                        <li><figure class="yo-frame"><figcaption>Sticker version 5</figcaption><div class="yo-frame__img"><img src="images/yomi/iter-orange-05.webp" width="720" height="416" alt="Orange label, version 5" loading="lazy"></div></figure></li>
+                        <li><figure class="yo-frame"><figcaption>Sticker version 22</figcaption><div class="yo-frame__img"><img src="images/yomi/iter-orange-22.webp" width="720" height="416" alt="Orange label, version 22" loading="lazy"></div></figure></li>
+                        <li><figure class="yo-frame"><figcaption>Sticker version 23</figcaption><div class="yo-frame__img"><img src="images/yomi/iter-orange-23.webp" width="720" height="416" alt="Orange label, version 23" loading="lazy"></div></figure></li>
+                        <li><figure class="yo-frame"><figcaption>Sticker version 24</figcaption><div class="yo-frame__img"><img src="images/yomi/iter-orange-24.webp" width="720" height="416" alt="Orange label, version 24" loading="lazy"></div></figure></li>
+                        <li><figure class="yo-frame"><figcaption>Sticker version 42</figcaption><div class="yo-frame__img"><img src="images/yomi/iter-orange-42.webp" width="720" height="416" alt="Orange label, version 42" loading="lazy"></div></figure></li>
+                        <li><figure class="yo-frame"><figcaption>Sticker version 43</figcaption><div class="yo-frame__img"><img src="images/yomi/iter-orange-43.webp" width="720" height="416" alt="Orange label, version 43" loading="lazy"></div></figure></li>
+                    </ul>
+                </div>
+                <div class="yo-canvas__row">
+                    <div class="yo-canvas__head"><h3>Olympic edition</h3><span>5 versions</span></div>
+                    <ul class="yo-canvas__grid">
+                        <li><figure class="yo-frame"><figcaption>olymp</figcaption><div class="yo-frame__img"><img src="images/yomi/iter-olympic-0.webp" width="720" height="416" alt="Olympic label, first version" loading="lazy"></div></figure></li>
+                        <li><figure class="yo-frame"><figcaption>olymp-1</figcaption><div class="yo-frame__img"><img src="images/yomi/iter-olympic-1.webp" width="720" height="416" alt="Olympic label, version 1" loading="lazy"></div></figure></li>
+                        <li><figure class="yo-frame"><figcaption>olymp-2</figcaption><div class="yo-frame__img"><img src="images/yomi/iter-olympic-2.webp" width="720" height="416" alt="Olympic label, version 2" loading="lazy"></div></figure></li>
+                        <li><figure class="yo-frame"><figcaption>olymp-3</figcaption><div class="yo-frame__img"><img src="images/yomi/iter-olympic-3.webp" width="720" height="416" alt="Olympic label, version 3" loading="lazy"></div></figure></li>
+                        <li><figure class="yo-frame"><figcaption>olymp-4</figcaption><div class="yo-frame__img"><img src="images/yomi/iter-olympic-4.webp" width="720" height="416" alt="Olympic label, version 4" loading="lazy"></div></figure></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= Design: final flavours ================= -->
+        <section class="standard-article-intro">
+            <div class="standard-article-tag">
+                <div class="standard-article-divider"></div>
+                <span class="standard-article-category">PACKAGING</span>
+            </div>
+            <div class="standard-article-content">
+                <h1 class="standard-article-title">THE FINAL FLAVOURS</h1>
+                <p class="standard-article-description">
+                    Strawberry, orange, kiwi and blueberry. One hero fruit per can, the same layout throughout, and a back with nutrition facts and a QR code to join the campaign. Pick a flavour.
+                </p>
+            </div>
+        </section>
+
+        <!-- Swatches: data-flavour = file name part (label-<flavour>.webp, can-back-<flavour>.webp) -->
+        <section class="yo-band yo-flavours" data-flavours>
+            <div class="yo-wrap">
+                <div class="yo-flavours__top">
+                    <p class="yo-flavours__name" data-name aria-live="polite">Strawberry</p>
+                    <div class="yo-swatches" role="group" aria-label="Flavour">
+                        <button class="yo-swatch" type="button" style="--s: var(--yo-strawberry);" data-flavour="strawberry" data-title="Strawberry" aria-pressed="true" aria-label="Strawberry"></button>
+                        <button class="yo-swatch" type="button" style="--s: var(--yo-orange);" data-flavour="orange" data-title="Orange" aria-pressed="false" aria-label="Orange"></button>
+                        <button class="yo-swatch" type="button" style="--s: var(--yo-kiwi);" data-flavour="kiwi" data-title="Kiwi" aria-pressed="false" aria-label="Kiwi"></button>
+                        <button class="yo-swatch" type="button" style="--s: var(--yo-blueberry);" data-flavour="blueberry" data-title="Blueberry" aria-pressed="false" aria-label="Blueberry"></button>
+                    </div>
+                </div>
+                <div class="yo-flavours__grid">
+                    <img src="images/yomi/label-strawberry.webp" width="1600" height="925" alt="Final Strawberry label, flat" data-label loading="lazy">
+                    <img src="images/yomi/can-back-strawberry.webp" width="1400" height="1050" alt="Strawberry cans on ice, back with nutrition facts" data-can loading="lazy">
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= Olympic edition: the reveal ================= -->
+        <section class="text-within-image-intro">
+            <div class="text-within-image-tag">
+                <div class="text-within-image-divider"></div>
+                <span class="text-within-image-category">PACKAGING</span>
+            </div>
+            <div class="text-within-image-content">
+                <h1 class="text-within-image-title">WHAT'S UNDER THE RINGS</h1>
+                <p class="text-within-image-description">
+                    In the Olympic edition the flavour itself is the mystery. While the can is full and cold, the box shows the Olympic rings. Finish it and a flag-coloured QR code appears. Collect every flag to win 2 tickets to Milano Cortina 2026.
+                </p>
+            </div>
+        </section>
+
+        <section class="yo-band yo-band--light">
+            <div class="yo-wrap yo-reveal" data-reveal>
+                <div class="yo-swap yo-reveal__label">
+                    <img src="images/yomi/label-olympic-hidden.webp" width="1600" height="925" alt="Olympic edition label while the can is full: rings in the prize box" loading="lazy">
+                    <img src="images/yomi/label-olympic-revealed.webp" width="1600" height="925" alt="Olympic edition label once the can is empty: a flag QR code in the prize box" loading="lazy">
+                </div>
+                <div class="yo-reveal__side">
+                    <div class="yo-swap yo-reveal__zoom">
+                        <img src="images/yomi/zoom-olympic-hidden.webp" width="340" height="500" alt="" loading="lazy">
+                        <img src="images/yomi/zoom-olympic-revealed.webp" width="340" height="500" alt="" loading="lazy">
+                    </div>
+                    <div>
+                        <button class="yo-toggle" type="button" aria-pressed="false">
+                            <span class="yo-toggle__track" aria-hidden="true"></span>
+                            <span class="yo-toggle__state" aria-live="polite">Full &amp; cold</span>
+                        </button>
+                        <p class="yo-reveal__note">Flip the switch to finish the can.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= 3D can ================= -->
+        <section class="standard-article-intro">
+            <div class="standard-article-tag">
+                <div class="standard-article-divider"></div>
+                <span class="standard-article-category">3D</span>
+            </div>
+            <div class="standard-article-content">
+                <h1 class="standard-article-title">FROM FLAT TO 3D</h1>
+                <p class="standard-article-description">
+                    Starting from a free can model, I mapped my own label onto it in Blender, removed the leftover embossing from the original brand and exported it for the web.
+                </p>
+            </div>
+        </section>
+
+        <!-- images/yomi/yomi_can.glb = the .glb from your Yomi website. Until it's there, the mockup image shows instead. -->
+        <section class="yo-band" style="background: #D9D9D9;">
+            <div class="yo-wrap yo-3d">
+                <model-viewer
+                    src="images/yomi/yomi_can.glb"
+                    poster="images/yomi/can-olympic.webp"
+                    alt="3D model of the Yomi can"
+                    camera-controls
+                    disable-zoom
+                    disable-pan
+                    auto-rotate
+                    auto-rotate-delay="0"
+                    rotation-per-second="24deg"
+                    interaction-prompt="none"
+                    environment-image="neutral"
+                    shadow-intensity="1"
+                    camera-orbit="0deg 80deg auto"
+                    loading="lazy"
+                    reveal="auto"></model-viewer>
+                <span class="yo-3d__hint" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M8 12H3m0 0l3-3m-3 3l3 3M16 12h5m0 0l-3-3m3 3l-3 3"/></svg>
+                    Drag to spin
+                </span>
+            </div>
+        </section>
+
+
+        <!-- ================= Website ================= -->
+        <section class="standard-article-intro">
+            <div class="standard-article-tag">
+                <div class="standard-article-divider"></div>
+                <span class="standard-article-category">DEVELOPMENT</span>
+            </div>
+            <div class="standard-article-content">
+                <h1 class="standard-article-title">ONE SIP CLOSER</h1>
+                <p class="standard-article-description">
+                    From paper sketches through eight Figma versions to a coded one-pager. One scroll animation moves and tilts the 3D can from section to section, and you can flick it to make it spin.
+                </p>
+            </div>
+        </section>
+
+        <section class="yo-band yo-band--canvas">
+            <div class="yo-wrap yo-wrap--wide">
+                <img src="images/yomi/website-iterations.webp" width="2008" height="916" alt="Website sketches and eight Figma iterations of the Yomi one-pager" loading="lazy">
+            </div>
+        </section>
+
+        <!-- Laptop with the live site (same layout as the portfolio page) -->
+        <section class="web-image-section">
+            <div class="image-container-web">
+                <img src="images/yomi/yomi_web.webp" width="1920" height="1164" alt="The Yomi website on a laptop, with the 3D Olympic can in the hero" loading="lazy">
+                <a href="https://yomi-official.wasmer.app/" target="_blank" rel="noopener">
+                    <button class="circular-button-web-yomi" id="magneticButton">
+                        <span>VISIT SITE↗</span>
+                    </button>
+                </a>
+            </div>
+        </section>
+
+
+        <!-- ================= Campaign ================= -->
+        <section class="text-within-image-intro">
+            <div class="text-within-image-tag">
+                <div class="text-within-image-divider"></div>
+                <span class="text-within-image-category">CAMPAIGN</span>
+            </div>
+            <div class="text-within-image-content">
+                <h1 class="text-within-image-title">FUEL THE CHASE</h1>
+                <p class="text-within-image-description">
+                    Three posters for the campaign: sweat, speed and fresh fruit, with a can of Yomi at the centre of each.
+                </p>
+            </div>
+        </section>
+
+        <section class="yo-band yo-band--clear">
+            <ul class="yo-wrap yo-posters">
+                <li><img src="images/yomi/poster-drink.webp" srcset="images/yomi/poster-drink-s.webp 600w, images/yomi/poster-drink.webp 1200w" sizes="(max-width: 600px) 30vw, 360px" width="1200" height="1698" alt="Poster: athlete pouring Yomi Mystery flavour into his mouth, Milano Cortina 2026" loading="lazy"></li>
+                <li><img src="images/yomi/poster-chase.webp" srcset="images/yomi/poster-chase-s.webp 600w, images/yomi/poster-chase.webp 1200w" sizes="(max-width: 600px) 30vw, 360px" width="1200" height="1698" alt="Poster: Fuel the chase, a Yomi can on a running track with sprinters" loading="lazy"></li>
+                <li><img src="images/yomi/poster-kiwi.webp" srcset="images/yomi/poster-kiwi-s.webp 600w, images/yomi/poster-kiwi.webp 1200w" sizes="(max-width: 600px) 30vw, 360px" width="1200" height="1698" alt="Poster: Kiwi Yomi can with kiwi slices" loading="lazy"></li>
+            </ul>
+        </section>
+
+
+        <!-- ================= Reflection ================= -->
+        <section class="motivation-article-intro">
+            <div class="motivation-article-tag">
+                <div class="motivation-article-divider"></div>
+                <span class="motivation-article-category">REFLECTION</span>
+            </div>
+            <div class="motivation-article-content">
+                <h1 class="motivation-article-title">MEASURING SUCCESS</h1>
+
+                <!-- Cream Shape with Centered Text -->
+                <div class="cream-shape">
+                    <p class="pink-shape-text">
+                        "Two weeks is not much time to build a brand, so I picked speed over perfection: design, look, fix, repeat. Making many versions early taught me more than polishing one, and taking the same label from a flat file to a 3D can on a live website showed me how far one idea can travel."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Next project: the same card as on the home page. Hovering it shows a round
+             button that follows the cursor (next-project.css, script/next-project.js).
+             --accent = circle colour, --accent-ink = arrow colour. -->
+        <section class="next-project" aria-label="Next project">
+            <p class="next-project__label">Up next</p>
+            <a href="brandzaak.html" class="next-card" style="--accent: #ED9D46;">
+                <img src="images/BrandZaak.svg" alt="" loading="lazy">
+                <span class="visually-hidden">Next project: BrandZaak</span>
+                <span class="next-card__arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                </span>
+            </a>
+        </section>
+
+    </main>
+
+    <!-- ================= Footer ================= -->
+    <footer class="site-footer">
+        <div class="site-footer__main" style="background-image: url('images/footer.svg');">
+            <div class="site-footer__cols">
+                <div class="site-footer__brand">
+                    <a href="index.html" aria-label="Artem Arzumanian, home"><img src="images/logo.svg" alt=""></a>
+                    <p>Creative designer &amp; developer<br>from Eindhoven, NL</p>
+                </div>
+                <nav class="site-footer__col" aria-label="Projects">
+                    <h3>Projects</h3>
+                    <ul>
+                        <li><a href="swissquote.html">Swissquote</a></li>
+                        <li><a href="yomi.html">Yomi</a></li>
+                        <li><a href="brandzaak.html">BrandZaak</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="sakura_creative.html">Sakura Creative</a></li>
+                        <li><a href="partout_cbr.html">Partout CBR</a></li>
+                    </ul>
+                </nav>
+                <div class="site-footer__col">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="mailto:artemarzumanyan358@gmail.com?subject=Hi%20Artem">Email</a></li>
+                        <li><a href="https://www.linkedin.com/in/artem-arzumanian-358b90312/" target="_blank" rel="noopener">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <blockquote class="site-footer__quote">
+                Do not fear the height of the mountain, <br> only fear having a short ambition.
+            </blockquote>
+            <button class="site-footer__top" type="button" data-to-top>Back to top <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+        </div>
+    </footer>
+
+    <!-- ================= Full-screen menu (opened by "Projects") ================= -->
+    <!-- Rows: href = page, --accent = colour the row fills with on hover. -->
+    <div class="site-menu" id="site-menu" role="dialog" aria-modal="true" aria-label="Projects" inert>
+        <div class="site-menu__bar">
+            <button class="site-menu__close" type="button" aria-label="Close menu">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+            </button>
+            <a href="index.html" class="site-menu__logo" aria-label="Artem Arzumanian, home">
+                <img src="images/logo.svg" alt="">
+            </a>
+            <a href="mailto:artemarzumanyan358@gmail.com?subject=Hi%20Artem" class="site-menu__cta">
+                Let’s talk <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </a>
+        </div>
+
+        <ul class="site-menu__list">
+            <li>
+                <a href="swissquote.html" class="site-menu__link" style="--accent: #FA5B35;">
+                    <span class="site-menu__num">01</span>
+                    <span class="site-menu__label">Swissquote</span>
+                    <span class="site-menu__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+                </a>
+            </li>
+            <li>
+                <a href="yomi.html" class="site-menu__link" style="--accent: #C33149;">
+                    <span class="site-menu__num">02</span>
+                    <span class="site-menu__label">Yomi</span>
+                    <span class="site-menu__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+                </a>
+            </li>
+            <li>
+                <a href="brandzaak.html" class="site-menu__link" style="--accent: #ED9D46;">
+                    <span class="site-menu__num">03</span>
+                    <span class="site-menu__label">BrandZaak</span>
+                    <span class="site-menu__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+                </a>
+            </li>
+            <li>
+                <a href="portfolio.html" class="site-menu__link" style="--accent: #8095C6;">
+                    <span class="site-menu__num">04</span>
+                    <span class="site-menu__label">Portfolio</span>
+                    <span class="site-menu__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+                </a>
+            </li>
+            <li>
+                <a href="sakura_creative.html" class="site-menu__link" style="--accent: #F8CDCB;">
+                    <span class="site-menu__num">05</span>
+                    <span class="site-menu__label">Sakura Creative</span>
+                    <span class="site-menu__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+                </a>
+            </li>
+            <li>
+                <a href="partout_cbr.html" class="site-menu__link" style="--accent: #BBDF32;">
+                    <span class="site-menu__num">06</span>
+                    <span class="site-menu__label">Partout CBR</span>
+                    <span class="site-menu__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="site-menu__foot">
+            <a href="mailto:artemarzumanyan358@gmail.com?subject=Hi%20Artem">Email <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+            <a href="https://www.linkedin.com/in/artem-arzumanian-358b90312/" target="_blank" rel="noopener">LinkedIn <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+    </div>
+
+    <a href="index.html#contact" class="talk-tab">Let's Talk</a>
+
+    <script src="script/yomi.js" defer></script>
+    <script src="script/sakura.js" defer></script>
+    <script src="script/next-project.js" defer></script>
+    <script src="script/nav.js" defer></script>
+    <script src="script/contact.js" defer></script>
+</body>
+</html>

@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Link to external stylesheet, font-awesome library and scripts -->
         <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="next-project.css">
         <!-- Page transitions: must load in the head, without defer -->
         <script src="script/transition.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -366,12 +367,17 @@
         </section>
         
         
-        <!-- See Next Project Section -->
-        <section class="see-next-project">
-            <a href="sakura_creative.html" class="next-project-link">
-                <div class="next-project-image" style="background-image: url('images/next_sakura.png');">
-                    <div class="next-project-text-pink">SEE NEXT PROJECT</div>
-                </div>
+        <!-- Next project: the same card as on the home page. Hovering it shows a round
+             button that follows the cursor (next-project.css, script/next-project.js).
+             --accent = circle colour, --accent-ink = arrow colour. -->
+        <section class="next-project" aria-label="Next project">
+            <p class="next-project__label">Up next</p>
+            <a href="sakura_creative.html" class="next-card" style="--accent: #F8CDCB;">
+                <img src="images/Sakura Creative.svg" alt="" loading="lazy">
+                <span class="visually-hidden">Next project: Sakura Creative</span>
+                <span class="next-card__arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                </span>
             </a>
         </section>
 
@@ -388,6 +394,9 @@
                 <nav class="site-footer__col" aria-label="Projects">
                     <h3>Projects</h3>
                     <ul>
+                        <li><a href="swissquote.html">Swissquote</a></li>
+                        <li><a href="yomi.html">Yomi</a></li>
+                        <li><a href="brandzaak.html">BrandZaak</a></li>
                         <li><a href="portfolio.html">Portfolio</a></li>
                         <li><a href="sakura_creative.html">Sakura Creative</a></li>
                         <li><a href="partout_cbr.html">Partout CBR</a></li>
@@ -440,22 +449,43 @@
 
         <ul class="site-menu__list">
             <li>
-                <a href="portfolio.html" class="site-menu__link" style="--accent: #8095C6;">
+                <a href="swissquote.html" class="site-menu__link" style="--accent: #FA5B35;">
                     <span class="site-menu__num">01</span>
+                    <span class="site-menu__label">Swissquote</span>
+                    <span class="site-menu__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+                </a>
+            </li>
+            <li>
+                <a href="yomi.html" class="site-menu__link" style="--accent: #C33149;">
+                    <span class="site-menu__num">02</span>
+                    <span class="site-menu__label">Yomi</span>
+                    <span class="site-menu__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+                </a>
+            </li>
+            <li>
+                <a href="brandzaak.html" class="site-menu__link" style="--accent: #ED9D46;">
+                    <span class="site-menu__num">03</span>
+                    <span class="site-menu__label">BrandZaak</span>
+                    <span class="site-menu__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+                </a>
+            </li>
+            <li>
+                <a href="portfolio.html" class="site-menu__link" style="--accent: #8095C6;">
+                    <span class="site-menu__num">04</span>
                     <span class="site-menu__label">Portfolio</span>
                     <span class="site-menu__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
                 </a>
             </li>
             <li>
                 <a href="sakura_creative.html" class="site-menu__link" style="--accent: #F8CDCB;">
-                    <span class="site-menu__num">02</span>
+                    <span class="site-menu__num">05</span>
                     <span class="site-menu__label">Sakura Creative</span>
                     <span class="site-menu__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
                 </a>
             </li>
             <li>
                 <a href="partout_cbr.html" class="site-menu__link" style="--accent: #BBDF32;">
-                    <span class="site-menu__num">03</span>
+                    <span class="site-menu__num">06</span>
                     <span class="site-menu__label">Partout CBR</span>
                     <span class="site-menu__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
                 </a>
@@ -470,6 +500,7 @@
 
     <a href="index.html#contact" class="talk-tab">Let's Talk</a>
 
+    <script src="script/next-project.js" defer></script>
     <script src="script/nav.js" defer></script>
     <script src="script/contact.js" defer></script>
 </body>

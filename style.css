@@ -2381,7 +2381,8 @@
     align-items: center;
     padding: 0.06em clamp(16px, 2vw, 28px) 0;
     color: var(--snow);
-    font: 500 clamp(52px, 8.5vw, 140px) / 1 var(--font-display);
+    /* also limited by screen height, so all six rows fit on a laptop */
+    font: 500 clamp(40px, min(8.5vw, 11svh), 140px) / 1 var(--font-display);
     text-transform: uppercase;
     text-decoration: none;
     overflow: hidden;
@@ -2479,6 +2480,7 @@
 .site-menu.is-open .site-menu__list li:nth-child(4) { transition-delay: 0.46s; }
 .site-menu.is-open .site-menu__list li:nth-child(5) { transition-delay: 0.53s; }
 .site-menu.is-open .site-menu__list li:nth-child(6) { transition-delay: 0.6s; }
+.site-menu.is-open .site-menu__list li:nth-child(7) { transition-delay: 0.67s; }
 .site-menu.is-open .site-menu__foot { transition-delay: 0.45s; }
 
 @media (max-width: 600px) {
