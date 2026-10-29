@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to external stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="swissquote.css">
+    <!-- Page transitions: must load in the head, without defer -->
+    <script src="script/transition.js"></script>
+    <!-- Page title -->
+    <title>Arzumanian | Swissquote</title>
+</head>
+<body class="sq-page">
+    <!-- Header: logo + "Projects" (opens the full-screen menu at the bottom of the page) -->
+    <header class="site-header site-header--page">
+        <a href="index.html" class="site-header__logo" aria-label="Artem Arzumanian, home">
+            <img src="images/logo.svg" alt="">
+        </a>
+        <nav aria-label="Main">
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+                Projects
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- ================= Cover ================= -->
+        <!-- images/swissquote_project_cover.webp = the cover you design (1920 × 812, like the other covers) -->
+        <section class="project-cover">
+            <div class="project-cover-container">
+                <img src="images/swissquote_project_cover.webp" alt="" class="project-cover-image">
+                <div class="project-cover-content">
+                    <div class="flex-container">
+                        <!-- Column 1: Brand and Project -->
+                        <div class="left-column">
+                            <div class="brand-section">
+                                <h1 class="brand-title">BRAND</h1>
+                                <img src="images/swissquote/swissquote_logo.svg" alt="Swissquote" class="brand-logo">
+                            </div>
+                            <div class="project-section">
+                                <h1 class="project-title">PROJECT</h1>
+                                <p class="project-text">SWISSQUOTE</p>
+                            </div>
+                        </div>
+                        <!-- Column 2: Responsibilities and Description -->
+                        <div class="right-column">
+                            <div class="responsibilities-section">
+                                <h1 class="responsibilities-title">RESPONSIBILITIES</h1>
+                                <p class="responsibilities-text">Lead design<br>Social content<br>AI imagery</p>
+                            </div>
+                            <div class="description-section">
+                                <h1 class="description-title">DESCRIPTION</h1>
+                                <p class="description-text">
+                                    As the lead designer on the Swissquote account at Dapper, I turned investing stories into LinkedIn carousels that make people stop, swipe and act.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= Challenge ================= -->
+        <section class="challenge-section">
+            <div class="challenge-container">
+                <div class="challenge-text">
+                    <h1 class="challenge-title">THE CHALLENGE</h1>
+                    <p class="challenge-description">
+                        While working at Dapper, a B2B marketing agency in Rotterdam, I became the main designer for Swissquote, one of Switzerland's leading online banks. The task was to turn complex investing topics into LinkedIn carousels and posts that people actually stop for. Every piece had to follow the brand guidelines, support the copy written by our content managers and push readers to one clear action: read an article, join a webinar or open an account.
+                    </p>
+                </div>
+                <!-- Three carousel covers in a fanned stack (spreads out on hover) -->
+                <div class="challenge-image">
+                    <div class="sq-fan" aria-hidden="true">
+                        <img src="images/swissquote/bonds-01-s.webp" alt="" width="540" height="540">
+                        <img src="images/swissquote/lux-01-s.webp" alt="" width="540" height="540">
+                        <img src="images/swissquote/lombard-01-s.webp" alt="" width="540" height="540">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= Marquee of slides ================= -->
+        <!-- data-marquee = the slides in each row, as set:slide (see SETS in script/swissquote.js) -->
+        <section class="sq-band sq-band--light sq-marquee" aria-label="A selection of Swissquote carousel slides">
+            <div class="sq-marquee__tilt">
+                <div class="sq-marquee__row" data-marquee="lux:1 hedge:2 cycling:1 bonds:1 lombard:1 decade:1 ride:3 numbers:2 lux:3 hedge:6 cycling:3 lombard:6">
+                    <div class="sq-marquee__track"></div>
+                </div>
+                <div class="sq-marquee__row" data-marquee="ride:1 bonds:4 lux:7 cycling:5 numbers:1 lombard:7 hedge:1 decade:5 ride:5 bonds:8 lux:10 lombard:9">
+                    <div class="sq-marquee__track"></div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= Context: the client ================= -->
+        <section class="standard-article-intro">
+            <div class="standard-article-tag">
+                <div class="standard-article-divider"></div>
+                <span class="standard-article-category">CONTEXT</span>
+            </div>
+            <div class="standard-article-content">
+                <h1 class="standard-article-title">A SWISS BANK BUILT ONLINE</h1>
+                <p class="standard-article-description">
+                    Swissquote is a Swiss online bank, headquartered in Gland and listed on the SIX Swiss Exchange since 2000. It gives traders and investors access to stocks, ETFs, crypto and banking in one place. Most of my work was for Swissquote Bank Europe, the group's bank in Luxembourg, speaking to investors who want their money to work harder.
+                </p>
+            </div>
+        </section>
+
+        <!-- Figures: Swissquote half-year report, 30 June 2026. Update data-count-to when new numbers come out. -->
+        <section class="sq-band sq-band--orange" aria-label="Swissquote in numbers">
+            <div class="sq-wrap">
+                <ul class="sq-stats__grid">
+                    <li class="sq-stats__item">
+                        <span class="sq-stats__num" data-count-to="96.3" data-decimals="1" data-prefix="CHF" data-suffix="B"><small>CHF</small>96.3B</span>
+                        <span class="sq-stats__label">in client assets</span>
+                    </li>
+                    <li class="sq-stats__item">
+                        <span class="sq-stats__num" data-count-to="1.2" data-decimals="1" data-suffix="M+">1.2M+</span>
+                        <span class="sq-stats__label">client accounts</span>
+                    </li>
+                    <li class="sq-stats__item">
+                        <span class="sq-stats__num" data-count-to="1500" data-suffix="+">1,500+</span>
+                        <span class="sq-stats__label">employees</span>
+                    </li>
+                    <li class="sq-stats__item">
+                        <span class="sq-stats__num" data-count-to="11">11</span>
+                        <span class="sq-stats__label">office cities, from Gland to Singapore</span>
+                    </li>
+                </ul>
+                <p class="sq-stats__source">Swissquote Group, figures as of 30 June 2026.</p>
+            </div>
+        </section>
+
+
+        <!-- ================= Process: anatomy of a slide ================= -->
+        <section class="text-within-image-intro">
+            <div class="text-within-image-tag">
+                <div class="text-within-image-divider"></div>
+                <span class="text-within-image-category">PROCESS</span>
+            </div>
+            <div class="text-within-image-content">
+                <h1 class="text-within-image-title">COPY IN, STORY OUT</h1>
+                <p class="text-within-image-description">
+                    Every carousel started with three inputs: Swissquote's brand guidelines, the goal of the post and the copy from our content managers. My job was to build the visual story around that copy: what each slide shows, where the eye lands first and how the last slide turns attention into a click. Most carousels went through several feedback rounds before going live. This is how one cover slide comes together.
+                </p>
+            </div>
+        </section>
+
+        <!-- Hotspots: --x / --y = position on the slide in % -->
+        <section class="sq-band sq-band--light">
+            <div class="sq-wrap sq-anatomy" data-anatomy>
+                <figure class="sq-anatomy__figure">
+                    <img src="images/swissquote/lux-01.webp" srcset="images/swissquote/lux-01-s.webp 540w, images/swissquote/lux-01.webp 1080w" sizes="(max-width: 900px) 92vw, 560px" width="1080" height="1080" alt="Cover slide: How much do you need to be wealthy in Luxembourg?" loading="lazy">
+                    <button class="sq-hotspot" type="button" data-note="1" style="--x: 88%; --y: 25%;" aria-label="Note 1: the hook"><span>1</span></button>
+                    <button class="sq-hotspot" type="button" data-note="2" style="--x: 72%; --y: 49%;" aria-label="Note 2: breaking the frame"><span>2</span></button>
+                    <button class="sq-hotspot" type="button" data-note="3" style="--x: 69%; --y: 67%;" aria-label="Note 3: colour echo"><span>3</span></button>
+                    <button class="sq-hotspot" type="button" data-note="4" style="--x: 10%; --y: 74%;" aria-label="Note 4: safe margins"><span>4</span></button>
+                </figure>
+                <div>
+                    <p class="sq-kicker">Anatomy of a cover</p>
+                    <ol class="sq-anatomy__notes">
+                        <li class="sq-anatomy__note" data-note="1">
+                            <h3>The hook</h3>
+                            <p>A question the reader answers in their head. The first half in Swissquote orange grabs attention, the second half in black lands the point.</p>
+                        </li>
+                        <li class="sq-anatomy__note" data-note="2">
+                            <h3>Breaking the frame</h3>
+                            <p>The subject steps out of the photo, which adds depth and pulls the eye from the headline down into the image.</p>
+                        </li>
+                        <li class="sq-anatomy__note" data-note="3">
+                            <h3>Colour echo</h3>
+                            <p>One orange detail in the photo ties the image back to the brand without adding a single extra graphic.</p>
+                        </li>
+                        <li class="sq-anatomy__note" data-note="4">
+                            <h3>Safe margins</h3>
+                            <p>Text and image share the same 10% margin, so every slide in the series lines up when you swipe. Later I broke this rule on purpose.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= Campaigns: the Andrew Hallam series ================= -->
+        <section class="standard-article-intro">
+            <div class="standard-article-tag">
+                <div class="standard-article-divider"></div>
+                <span class="standard-article-category">CAMPAIGNS</span>
+            </div>
+            <div class="standard-article-content">
+                <h1 class="standard-article-title">ONE VOICE, MANY STORIES</h1>
+                <p class="standard-article-description">
+                    A big part of the work was a thought-leadership series with bestselling author Andrew Hallam. Every topic was different, so the format had to feel familiar: a bold hook on the first slide, one idea per slide, an orange and light rhythm that keeps people swiping, and a clear call to action at the end. Pick a carousel and swipe through it.
+                </p>
+            </div>
+        </section>
+
+        <!-- Player: each tab loads its set (data-set) into the carousel; the caption with the same id is shown -->
+        <section class="sq-band sq-band--grey" data-player>
+            <div class="sq-wrap sq-player__head">
+                <div class="sq-tabs" role="tablist" aria-label="Carousels">
+                    <button class="sq-pill" type="button" role="tab" data-set="lux" aria-controls="sq-cap-lux">Luxembourg wealth</button>
+                    <button class="sq-pill" type="button" role="tab" data-set="hedge" aria-controls="sq-cap-hedge">Hedge funds</button>
+                    <button class="sq-pill" type="button" role="tab" data-set="bonds" aria-controls="sq-cap-bonds">Bonds</button>
+                    <button class="sq-pill" type="button" role="tab" data-set="decade" aria-controls="sq-cap-decade">The lost decade</button>
+                </div>
+                <div class="sq-player__caption" id="sq-cap-lux" role="tabpanel">
+                    <p>Turns a survey number into a simple wealth test and ends on the tax advantage of investing from Luxembourg.</p>
+                </div>
+                <div class="sq-player__caption" id="sq-cap-hedge" role="tabpanel" hidden>
+                    <p>Puts hedge fund returns next to global stocks, 1.53% against 9.91% a year, and lets the gap tell the story.</p>
+                </div>
+                <div class="sq-player__caption" id="sq-cap-bonds" role="tabpanel" hidden>
+                    <p>Uses decades of market history to show why giving up on an unloved asset class is usually the wrong move.</p>
+                </div>
+                <div class="sq-player__caption" id="sq-cap-decade" role="tabpanel" hidden>
+                    <p>Follows Lucy through the "lost decade" of the 2000s to show that steady investing beats perfect timing.</p>
+                </div>
+            </div>
+            <div class="sq-carousel">
+                <div class="sq-carousel__viewport" tabindex="0" role="region" aria-roledescription="carousel">
+                    <ul class="sq-carousel__track"></ul>
+                </div>
+                <div class="sq-carousel__bar">
+                    <span class="sq-carousel__count" data-count aria-live="polite"></span>
+                    <span class="sq-carousel__progress"><span data-progress></span></span>
+                    <span class="sq-carousel__buttons">
+                        <button class="sq-btn" type="button" data-prev aria-label="Previous slide"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></button>
+                        <button class="sq-btn" type="button" data-next aria-label="Next slide"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+                    </span>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= AI imagery ================= -->
+        <section class="text-within-image-intro">
+            <div class="text-within-image-tag">
+                <div class="text-within-image-divider"></div>
+                <span class="text-within-image-category">AI IMAGERY</span>
+            </div>
+            <div class="text-within-image-content">
+                <h1 class="text-within-image-title">A RIDER THAT NEVER EXISTED</h1>
+                <p class="text-within-image-description">
+                    In "Lessons in cycling &amp; building wealth", Andrew compares Zone 2 cycling training to long-term investing. The rider in this carousel is AI-generated. I prompted for the Swissquote orange kit, alpine roads and soft daylight, and kept the same rider in every scene, so the set reads like one real photoshoot and sits right inside the brand.
+                </p>
+            </div>
+        </section>
+
+        <!-- --o = the point each image zooms into (where the rider is) -->
+        <section class="sq-band sq-band--light">
+            <div class="sq-wrap">
+                <ul class="sq-ai__grid">
+                    <li>
+                        <button class="sq-ai__frame" type="button" style="--o: 47% 66%;" aria-pressed="false" aria-label="Zoom into the rider on slide 1">
+                            <img src="images/swissquote/cycling-01.webp" srcset="images/swissquote/cycling-01-s.webp 540w, images/swissquote/cycling-01.webp 1080w" sizes="(max-width: 600px) 92vw, 380px" width="1080" height="1080" alt="Cover slide with the AI-generated rider in Swissquote orange on an alpine road" loading="lazy">
+                        </button>
+                        <p class="sq-ai__label"><b>01</b> The cover</p>
+                    </li>
+                    <li>
+                        <button class="sq-ai__frame" type="button" style="--o: 52% 72%;" aria-pressed="false" aria-label="Zoom into the rider on slide 5">
+                            <img src="images/swissquote/cycling-05.webp" srcset="images/swissquote/cycling-05-s.webp 540w, images/swissquote/cycling-05.webp 1080w" sizes="(max-width: 600px) 92vw, 380px" width="1080" height="1080" alt="Slide 5: the same rider leading a group of cyclists" loading="lazy">
+                        </button>
+                        <p class="sq-ai__label"><b>05</b> Boring works</p>
+                    </li>
+                    <li>
+                        <button class="sq-ai__frame" type="button" style="--o: 49% 62%;" aria-pressed="false" aria-label="Zoom into the rider on slide 8">
+                            <img src="images/swissquote/cycling-08.webp" srcset="images/swissquote/cycling-08-s.webp 540w, images/swissquote/cycling-08.webp 1080w" sizes="(max-width: 600px) 92vw, 380px" width="1080" height="1080" alt="Last slide: the same rider standing with arms wide, Swissquote logo on the jersey" loading="lazy">
+                        </button>
+                        <p class="sq-ai__label"><b>08</b> The call to action</p>
+                    </li>
+                </ul>
+                <div class="sq-ai__foot">
+                    <ul class="sq-chips">
+                        <li>Locked in every prompt</li>
+                        <li>Swissquote orange kit</li>
+                        <li>Alpine roads</li>
+                        <li>Soft daylight</li>
+                        <li>One rider, every scene</li>
+                    </ul>
+                    <button class="sq-link" type="button" data-open="cycling">
+                        See the full carousel
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= Premium: full bleed ================= -->
+        <section class="standard-article-intro">
+            <div class="standard-article-tag">
+                <div class="standard-article-divider"></div>
+                <span class="standard-article-category">PREMIUM</span>
+            </div>
+            <div class="standard-article-content">
+                <h1 class="standard-article-title">GOING FULL BLEED</h1>
+                <p class="standard-article-description">
+                    At one point Swissquote wanted to brainstorm how its content could look more premium. My idea was to let the images go full bleed. Until then every photo sat inside a safe margin. Running images edge to edge made the slides instantly cleaner, calmer and more elegant: a look that speaks to the 1% of people with serious money to invest.
+                </p>
+            </div>
+        </section>
+
+        <!-- Pairs: data-before / data-after = set:slide, *-date = label under each slide -->
+        <section class="sq-band sq-band--light">
+            <div class="sq-wrap sq-compare show-guides" data-compare>
+                <div class="sq-compare__top">
+                    <div class="sq-compare__pairs" role="group" aria-label="Choose a pair">
+                        <button class="sq-pill" type="button" data-pair aria-pressed="true" data-before="lux:1" data-after="ride:1" data-before-date="Mar 2026" data-after-date="Jul 2026">01</button>
+                        <button class="sq-pill" type="button" data-pair aria-pressed="false" data-before="cycling:1" data-after="lombard:1" data-before-date="Apr 2026" data-after-date="Jun 2026">02</button>
+                        <button class="sq-pill" type="button" data-pair aria-pressed="false" data-before="numbers:1" data-after="lombard:7" data-before-date="Mar 2026" data-after-date="Jun 2026">03</button>
+                    </div>
+                    <button class="sq-pill" type="button" data-guides aria-pressed="true">Safe-area guides</button>
+                </div>
+                <div class="sq-compare__grid">
+                    <figure class="sq-compare__item" data-slot="before">
+                        <div class="sq-compare__frame">
+                            <img src="images/swissquote/lux-01.webp" srcset="images/swissquote/lux-01-s.webp 540w, images/swissquote/lux-01.webp 1080w" sizes="(max-width: 600px) 92vw, 576px" width="1080" height="1080" alt="Wealth in Luxembourg, slide 1" loading="lazy">
+                        </div>
+                        <figcaption><b>Before: safe margins</b><span>Mar 2026</span></figcaption>
+                    </figure>
+                    <figure class="sq-compare__item sq-compare__item--after" data-slot="after">
+                        <div class="sq-compare__frame">
+                            <img src="images/swissquote/ride-01.webp" srcset="images/swissquote/ride-01-s.webp 540w, images/swissquote/ride-01.webp 1080w" sizes="(max-width: 600px) 92vw, 576px" width="1080" height="1080" alt="One mission that matters, slide 1" loading="lazy">
+                        </div>
+                        <figcaption><b>After: full bleed</b><span>Jul 2026</span></figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= Campaigns: the ride ================= -->
+        <section class="standard-article-intro">
+            <div class="standard-article-tag">
+                <div class="standard-article-divider"></div>
+                <span class="standard-article-category">CAMPAIGNS</span>
+            </div>
+            <div class="standard-article-content">
+                <h1 class="standard-article-title">ONE MISSION THAT MATTERS</h1>
+                <p class="standard-article-description">
+                    When Andrew joined a team of 15 riders cycling from Barcelona to Paris to raise money for cancer treatment, the story already had real photos and real numbers. So I let both lead: full-bleed event photography, huge figures and as little text as possible. 3,333 km, 54,000 metres of climbing, 25 days in the saddle.
+                </p>
+            </div>
+        </section>
+
+        <!-- Player without tabs: data-player = the set it shows -->
+        <section class="sq-band sq-band--grey" data-player="ride">
+            <div class="sq-carousel">
+                <div class="sq-carousel__viewport" tabindex="0" role="region" aria-roledescription="carousel">
+                    <ul class="sq-carousel__track"></ul>
+                </div>
+                <div class="sq-carousel__bar">
+                    <span class="sq-carousel__count" data-count aria-live="polite"></span>
+                    <span class="sq-carousel__progress"><span data-progress></span></span>
+                    <span class="sq-carousel__buttons">
+                        <button class="sq-btn" type="button" data-prev aria-label="Previous slide"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></button>
+                        <button class="sq-btn" type="button" data-next aria-label="Next slide"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+                    </span>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= Overview: all carousels ================= -->
+        <section class="standard-article-intro">
+            <div class="standard-article-tag">
+                <div class="standard-article-divider"></div>
+                <span class="standard-article-category">OVERVIEW</span>
+            </div>
+            <div class="standard-article-content">
+                <h1 class="standard-article-title">THE FULL COLLECTION</h1>
+                <p class="standard-article-description">
+                    Eight carousels and 66 slides, from data stories to event coverage. Open any of them and swipe through.
+                </p>
+            </div>
+        </section>
+
+        <!-- data-open = the set that opens in the lightbox -->
+        <section class="sq-band" style="padding-top: 0;">
+            <ul class="sq-wrap sq-collection">
+                <li><button class="sq-cover" type="button" data-open="lux"><span class="sq-cover__img"><img src="images/swissquote/lux-01-s.webp" width="540" height="540" alt="" loading="lazy"></span><span class="sq-cover__title">Wealth in Luxembourg</span><span class="sq-cover__meta">Mar 2026 · 10 slides</span></button></li>
+                <li><button class="sq-cover" type="button" data-open="hedge"><span class="sq-cover__img"><img src="images/swissquote/hedge-01-s.webp" width="540" height="540" alt="" loading="lazy"></span><span class="sq-cover__title">Do hedge funds beat the market?</span><span class="sq-cover__meta">Mar 2026 · 9 slides</span></button></li>
+                <li><button class="sq-cover" type="button" data-open="numbers"><span class="sq-cover__img"><img src="images/swissquote/numbers-01-s.webp" width="540" height="540" alt="" loading="lazy"></span><span class="sq-cover__title">2025 in numbers</span><span class="sq-cover__meta">Mar 2026 · 5 slides</span></button></li>
+                <li><button class="sq-cover" type="button" data-open="cycling"><span class="sq-cover__img"><img src="images/swissquote/cycling-01-s.webp" width="540" height="540" alt="" loading="lazy"></span><span class="sq-cover__title">Lessons in cycling &amp; wealth</span><span class="sq-cover__meta">Apr 2026 · 8 slides</span></button></li>
+                <li><button class="sq-cover" type="button" data-open="bonds"><span class="sq-cover__img"><img src="images/swissquote/bonds-01-s.webp" width="540" height="540" alt="" loading="lazy"></span><span class="sq-cover__title">You hate bonds. What now?</span><span class="sq-cover__meta">Apr 2026 · 8 slides</span></button></li>
+                <li><button class="sq-cover" type="button" data-open="decade"><span class="sq-cover__img"><img src="images/swissquote/decade-01-s.webp" width="540" height="540" alt="" loading="lazy"></span><span class="sq-cover__title">The lost decade</span><span class="sq-cover__meta">Jun 2026 · 9 slides</span></button></li>
+                <li><button class="sq-cover" type="button" data-open="lombard"><span class="sq-cover__img"><img src="images/swissquote/lombard-01-s.webp" width="540" height="540" alt="" loading="lazy"></span><span class="sq-cover__title">Liquidity without liquidating</span><span class="sq-cover__meta">Jun 2026 · 9 slides</span></button></li>
+                <li><button class="sq-cover" type="button" data-open="ride"><span class="sq-cover__img"><img src="images/swissquote/ride-01-s.webp" width="540" height="540" alt="" loading="lazy"></span><span class="sq-cover__title">One mission that matters</span><span class="sq-cover__meta">Jul 2026 · 8 slides</span></button></li>
+            </ul>
+        </section>
+
+
+        <!-- ================= Reflection ================= -->
+        <section class="motivation-article-intro">
+            <div class="motivation-article-tag">
+                <div class="motivation-article-divider"></div>
+                <span class="motivation-article-category">REFLECTION</span>
+            </div>
+            <div class="motivation-article-content">
+                <h1 class="motivation-article-title">MEASURING SUCCESS</h1>
+
+                <!-- Orange Shape with Centered Text -->
+                <div class="orange-shape">
+                    <p class="pink-shape-text">
+                        "Designing for a bank taught me that premium is a decision, not a decoration. The strongest slides were the ones where I removed something: a margin, a line of text, a second idea. Being trusted as the lead designer on a client this size pushed me to think like a partner, not just someone who executes."
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- See Next Project Section -->
+        <section class="see-next-project">
+            <a href="partout_cbr.html" class="next-project-link">
+                <div class="next-project-image" style="background-image: url('images/next_partout.png');">
+                    <div class="next-project-text-green">SEE NEXT PROJECT</div>
+                </div>
+            </a>
+        </section>
+
+    </main>
+
+    <!-- ================= Lightbox (opened by the collection covers and "See the full carousel") ================= -->
+    <dialog class="sq-lightbox" aria-label="Carousel viewer">
+        <div class="sq-lightbox__bar">
+            <h2 class="sq-lightbox__title" data-title></h2>
+            <button class="sq-btn" type="button" data-close aria-label="Close">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+            </button>
+        </div>
+        <div class="sq-lightbox__body">
+            <div class="sq-carousel">
+                <div class="sq-carousel__viewport" tabindex="0" role="region" aria-roledescription="carousel">
+                    <ul class="sq-carousel__track"></ul>
+                </div>
+                <div class="sq-carousel__bar">
+                    <span class="sq-carousel__count" data-count aria-live="polite"></span>
+                    <span class="sq-carousel__progress"><span data-progress></span></span>
+                    <span class="sq-carousel__buttons">
+                        <button class="sq-btn" type="button" data-prev aria-label="Previous slide"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></button>
+                        <button class="sq-btn" type="button" data-next aria-label="Next slide"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- ================= Footer ================= -->
+    <footer class="site-footer">
+        <div class="site-footer__main" style="background-image: url('images/footer.svg');">
+            <div class="site-footer__cols">
+                <div class="site-footer__brand">
+                    <a href="index.html" aria-label="Artem Arzumanian, home"><img src="images/logo.svg" alt=""></a>
+                    <p>Creative designer &amp; developer<br>from Eindhoven, NL</p>
+                </div>
+                <nav class="site-footer__col" aria-label="Projects">
+                    <h3>Projects</h3>
+                    <ul>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="sakura_creative.html">Sakura Creative</a></li>
+                        <li><a href="partout_cbr.html">Partout CBR</a></li>
+                        <li><a href="swissquote.html">Swissquote</a></li>
+                    </ul>
+                </nav>
+                <div class="site-footer__col">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="mailto:artemarzumanyan358@gmail.com?subject=Hi%20Artem">Email</a></li>
+                        <li><a href="https://www.linkedin.com/in/artem-arzumanian-358b90312/" target="_blank" rel="noopener">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <blockquote class="site-footer__quote">
+                Do not fear the height of the mountain, <br> only fear having a short ambition.
+            </blockquote>
+            <button class="site-footer__top" type="button" data-to-top>Back to top <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+        </div>
+    </footer>
+
+    <!-- ================= Full-screen menu (opened by "Projects") ================= -->
+    <!-- Rows: href = page, --accent = colour the row fills with on hover. -->
+    <div class="site-menu" id="site-menu" role="dialog" aria-modal="true" aria-label="Projects" inert>
+        <div class="site-menu__bar">
+            <button class="site-menu__close" type="button" aria-label="Close menu">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+            </button>
+            <a href="index.html" class="site-menu__logo" aria-label="Artem Arzumanian, home">
+                <img src="images/logo.svg" alt="">
+            </a>
+            <a href="mailto:artemarzumanyan358@gmail.com?subject=Hi%20Artem" class="site-menu__cta">
+                Let’s talk <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </a>
+        </div>
+
+        <ul class="site-menu__list">
+            <li>
+                <a href="portfolio.html" class="site-menu__link" style="--accent: #8095C6;">
+                    <span class="site-menu__num">01</span>
+                    <span class="site-menu__label">Portfolio</span>
+                    <span class="site-menu__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+                </a>
+            </li>
+            <li>
+                <a href="sakura_creative.html" class="site-menu__link" style="--accent: #F8CDCB;">
+                    <span class="site-menu__num">02</span>
+                    <span class="site-menu__label">Sakura Creative</span>
+                    <span class="site-menu__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+                </a>
+            </li>
+            <li>
+                <a href="partout_cbr.html" class="site-menu__link" style="--accent: #BBDF32;">
+                    <span class="site-menu__num">03</span>
+                    <span class="site-menu__label">Partout CBR</span>
+                    <span class="site-menu__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+                </a>
+            </li>
+            <li>
+                <a href="swissquote.html" class="site-menu__link" style="--accent: #FA5B35;">
+                    <span class="site-menu__num">04</span>
+                    <span class="site-menu__label">Swissquote</span>
+                    <span class="site-menu__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="site-menu__foot">
+            <a href="mailto:artemarzumanyan358@gmail.com?subject=Hi%20Artem">Email <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+            <a href="https://www.linkedin.com/in/artem-arzumanian-358b90312/" target="_blank" rel="noopener">LinkedIn <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+    </div>
+
+    <a href="index.html#contact" class="talk-tab">Let's Talk</a>
+
+    <script src="script/swissquote.js" defer></script>
+    <script src="script/nav.js" defer></script>
+    <script src="script/contact.js" defer></script>
+</body>
+</html>
