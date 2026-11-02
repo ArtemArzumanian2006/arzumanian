@@ -1,0 +1,561 @@
+/* ==========================================================================
+   brandzaak.css — styles for brandzaak.html only
+   Loaded after style.css. Every class starts with "bz-" so nothing here
+   touches the other pages. The page reuses the shared project sections from
+   style.css (cover, challenge, article intros, reflection).
+   ========================================================================== */
+
+/* ---------- Body font (same fix as swissquote.css / yomi.css) ---------- */
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url('fonts/Vazirmatn/Vazirmatn-Regular.woff') format('woff');
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url('fonts/Vazirmatn/Vazirmatn-Medium.woff') format('woff');
+    font-weight: 500;
+    font-display: swap;
+}
+
+/* ---------- Tokens (BrandZaak colours, sampled from the ads) ---------- */
+.bz-page {
+    --bz-board: #1D1D1B;     /* chalkboard */
+    --bz-chalk: #EFECE4;
+    --bz-yellow: #F3B332;
+    --bz-olive: #7E7D57;
+    --bz-cream: #DBC3AC;
+    --bz-grey: #8D8A8A;      /* same grey as the article tags */
+    --bz-ease: cubic-bezier(0.76, 0, 0.24, 1);
+    --bz-body: 'Vazirmatn', sans-serif;
+}
+.bz-page *,
+.bz-page *::before,
+.bz-page *::after { box-sizing: border-box; }
+
+/* The style.css phone rule for the home hero shifts this header sideways */
+.bz-page .site-header--page { left: auto; right: auto; top: auto; }
+
+/* A full-width band that holds one visual */
+.bz-band {
+    margin: 0 0 60px;
+    padding: clamp(56px, 7vw, 120px) 0;
+    overflow: hidden;
+}
+.bz-band--board {
+    background: var(--bz-board);
+    color: var(--bz-chalk);
+}
+.bz-band--light {
+    background: #F2F1EE;
+    color: #333;
+}
+
+.bz-wrap {
+    width: min(1200px, 100% - 40px);
+    margin: 0 auto;
+}
+.bz-band img { display: block; max-width: 100%; height: auto; }
+
+/* Small uppercase label */
+.bz-kicker {
+    margin: 0;
+    font: 400 18px / 1 var(--font-display);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--bz-grey);
+}
+.bz-band--board .bz-kicker { color: rgba(239, 236, 228, 0.55); }
+
+
+/* ==========================================================================
+   1. Story reel: the stories slide sideways while you scroll down
+      (script/brandzaak.js pins it; on phones it's a normal swipe row)
+   ========================================================================== */
+.bz-reel {
+    position: relative;
+    margin: 0 0 60px;
+    background: var(--bz-board);
+    color: var(--bz-chalk);
+}
+.bz-reel__sticky {
+    padding: clamp(48px, 6vw, 96px) 0;
+}
+.bz-reel__track {
+    display: flex;
+    gap: clamp(12px, 1.4vw, 22px);
+    margin: 0;
+    padding: 0 max(20px, (100% - 1200px) / 2);
+    list-style: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 20px;
+    scrollbar-width: none;
+}
+.bz-reel__track::-webkit-scrollbar { display: none; }
+.bz-reel__track li {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+}
+.bz-reel__track img {
+    display: block;
+    height: min(62vh, 560px);
+    width: auto;
+    aspect-ratio: 9 / 16;
+    border-radius: 6px;
+    box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.8);
+}
+.bz-reel__bar {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    width: min(1200px, 100% - 40px);
+    margin: clamp(24px, 3vw, 40px) auto 0;
+}
+.bz-reel__count {
+    min-width: 72px;
+    font: 400 24px / 1 var(--font-display);
+    letter-spacing: 0.04em;
+    font-variant-numeric: tabular-nums;
+}
+.bz-reel__count b { font-weight: 500; color: var(--bz-yellow); }
+.bz-reel__progress {
+    flex: 1;
+    height: 2px;
+    background: rgba(239, 236, 228, 0.15);
+}
+.bz-reel__progress span {
+    display: block;
+    height: 100%;
+    background: var(--bz-yellow);
+    transform-origin: 0 50%;
+    transform: scaleX(var(--p, 0.1));
+}
+.bz-reel__buttons { display: flex; gap: 10px; }
+.bz-reel .bz-btn { color: var(--bz-chalk); }
+.bz-reel .bz-btn:disabled { opacity: 0.25; pointer-events: none; }
+
+/* "Skip": jumps past the reel */
+.bz-reel__skip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: rgba(239, 236, 228, 0.55);
+    font: 400 18px / 1 var(--font-display);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.25s ease;
+}
+.bz-reel__skip svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.35s ease; }
+.bz-reel__skip:hover { color: var(--bz-chalk); }
+.bz-reel__skip:hover svg { transform: translateY(3px); }
+.bz-reel__skip:focus-visible { outline: 2px solid var(--bz-yellow); outline-offset: 4px; }
+
+/* Pinned version (desktop): the section is as tall as the sideways travel,
+   the inside sticks to the screen and the track moves left */
+.bz-reel.is-pinned .bz-reel__sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+.bz-reel.is-pinned .bz-reel__track {
+    overflow: visible;
+    width: max-content;
+    will-change: transform;
+    cursor: grab;
+    touch-action: pan-y;                 /* sideways swipes go to the reel */
+    user-select: none;
+    -webkit-user-select: none;
+}
+.bz-reel.is-pinned .bz-reel__track.is-dragging { cursor: grabbing; }
+.bz-reel__track img { -webkit-user-drag: none; }
+.bz-reel.is-pinned { overscroll-behavior-x: none; }    /* no browser back-swipe while swiping the reel */
+.bz-reel:not(.is-pinned) .bz-reel__skip { display: none; }
+
+
+/* ==========================================================================
+   2. Image rows (chalk trio, rounds)
+   ========================================================================== */
+.bz-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(14px, 2vw, 32px);
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+.bz-row img {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 6px;
+    transition: transform 0.7s var(--bz-ease);
+}
+.bz-row li:hover img { transform: translateY(-8px); }
+.bz-row figure { margin: 0; }
+.bz-row figcaption {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+    font: 400 22px / 1 var(--font-display);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+.bz-row figcaption b { font-weight: 500; color: var(--bz-yellow); }
+.bz-band--light .bz-row figcaption { color: #333; }
+.bz-band--light .bz-row figcaption b { color: #B07E12; }
+
+/* Arrows between the rounds */
+.bz-row--steps li { position: relative; }
+.bz-row--steps li + li::before {
+    content: '';
+    position: absolute;
+    left: calc(clamp(14px, 2vw, 32px) / -2);
+    top: 50%;
+    width: 36px;
+    height: 36px;
+    margin: -36px 0 0 -18px;
+    border-radius: 50%;
+    background: var(--bz-yellow) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231D1D1B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center / 18px no-repeat;
+    z-index: 1;
+}
+
+
+/* ==========================================================================
+   3. Depth: the ad + three zoomed details
+   ========================================================================== */
+.bz-depth {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: clamp(32px, 6vw, 96px);
+    align-items: center;
+}
+.bz-depth__ad { border-radius: 6px; }
+.bz-depth__list {
+    display: grid;
+    gap: clamp(18px, 2.4vw, 32px);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.bz-depth__list li {
+    display: grid;
+    grid-template-columns: clamp(96px, 10vw, 150px) 1fr;
+    gap: clamp(16px, 2vw, 28px);
+    align-items: center;
+}
+.bz-depth__list img {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 2px solid rgba(239, 236, 228, 0.35);
+}
+.bz-depth__list h3 {
+    margin: 0 0 6px;
+    font: 400 26px / 1 var(--font-display);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+.bz-depth__list p {
+    margin: 0;
+    font: 400 15px / 1.5 var(--bz-body);
+    color: rgba(239, 236, 228, 0.7);
+}
+.bz-band--light .bz-depth__list img { border-color: rgba(0, 0, 0, 0.12); }
+.bz-band--light .bz-depth__list p { color: #555; }
+.bz-depth__ad { box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.45); }
+
+
+/* ==========================================================================
+   4. Secret bag: the ad with a zoom circle on the hidden label
+   ========================================================================== */
+.bz-secret {
+    position: relative;
+    width: min(760px, 100%);
+    margin: 0 auto;
+}
+.bz-secret__ad { border-radius: 6px; }
+.bz-secret__zoom {
+    position: absolute;
+    right: -14%;
+    bottom: -8%;
+    width: 46%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 6px solid var(--bz-yellow);
+    box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6);
+    object-fit: cover;
+}
+.bz-secret__note {
+    position: absolute;
+    left: -6%;
+    bottom: 10%;
+    max-width: 230px;
+    padding: 14px 18px 12px;
+    border-radius: 6px;
+    background: var(--bz-chalk);
+    color: var(--bz-board);
+    font: 400 22px / 1.05 var(--font-display);
+    text-transform: uppercase;
+    rotate: -4deg;
+    box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.6);
+}
+
+
+/* ==========================================================================
+   5. Origins: the band takes the colour of the picked coffee
+   ========================================================================== */
+.bz-origins {
+    --c: #FAC525;
+    background: var(--c);
+    color: var(--bz-board);
+    transition: background-color 0.7s var(--bz-ease);
+}
+.bz-origins__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(32px, 6vw, 96px);
+    align-items: center;
+}
+.bz-origins__ad {
+    border-radius: 6px;
+    box-shadow: 0 40px 70px -40px rgba(0, 0, 0, 0.6);
+    transition: opacity 0.35s ease, transform 0.6s var(--bz-ease);
+}
+.bz-origins__ad.is-fading { opacity: 0; transform: translateY(12px); }
+.bz-origins__name {
+    margin: 0;
+    font: 500 clamp(64px, 8vw, 132px) / 0.85 var(--font-display);
+    text-transform: uppercase;
+}
+.bz-origins__notes {
+    margin: 16px 0 0;
+    font: 400 clamp(18px, 1.6vw, 22px) / 1.45 var(--bz-body);
+    max-width: 26em;
+}
+.bz-origins__picker {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: clamp(28px, 3.5vw, 48px);
+}
+.bz-origin {
+    padding: 10px 18px 7px;
+    border: 2px solid var(--bz-board);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--bz-board);
+    font: 400 20px / 1 var(--font-display);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.bz-origin:hover { background: rgba(29, 29, 27, 0.1); }
+.bz-origin[aria-pressed="true"] { background: var(--bz-board); color: var(--s, #fff); }
+.bz-origin:focus-visible { outline: 2px solid var(--bz-board); outline-offset: 4px; }
+
+
+/* ==========================================================================
+   6. Formats: the same quiz ad as a story and as a feed post
+   ========================================================================== */
+.bz-formats {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: clamp(20px, 4vw, 64px);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.bz-formats figure { margin: 0; }
+.bz-formats img { border-radius: 6px; box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.35); }
+.bz-formats li:first-child img { width: clamp(180px, 22vw, 330px); }
+.bz-formats li:last-child img { width: clamp(260px, 36vw, 540px); }
+.bz-formats figcaption {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 14px;
+    font: 400 22px / 1 var(--font-display);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #333;
+}
+.bz-formats figcaption span { color: var(--bz-grey); }
+
+
+/* ==========================================================================
+   7. Collection grid + lightbox
+   ========================================================================== */
+.bz-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(10px, 1.4vw, 20px);
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+.bz-tile {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    border-radius: 6px;
+    background: none;
+    overflow: hidden;
+    cursor: zoom-in;
+}
+.bz-tile img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    transition: transform 0.8s var(--bz-ease), filter 0.4s ease;
+}
+.bz-tile:hover img,
+.bz-tile:focus-visible img { transform: scale(1.06); }
+.bz-tile:focus-visible { outline: 2px solid var(--bz-yellow); outline-offset: 3px; }
+
+.bz-lightbox {
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: var(--bz-board);
+    color: var(--bz-chalk);
+}
+.bz-lightbox::backdrop { background: rgba(13, 13, 13, 0.6); }
+.bz-lightbox[open] {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    animation: bz-fade 0.35s ease;
+}
+@keyframes bz-fade { from { opacity: 0; } }
+.bz-lightbox__bar,
+.bz-lightbox__foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px clamp(20px, 5vw, 64px);
+}
+.bz-lightbox__stage {
+    display: grid;
+    place-items: center;
+    min-height: 0;
+    padding: 0 20px;
+}
+.bz-lightbox__stage img {
+    max-width: min(100%, 900px);
+    max-height: calc(100svh - 220px);    /* room for the top and bottom bars */
+    border-radius: 6px;
+    object-fit: contain;
+}
+.bz-lightbox__count {
+    font: 400 24px / 1 var(--font-display);
+    letter-spacing: 0.04em;
+    font-variant-numeric: tabular-nums;
+}
+.bz-lightbox__count b { font-weight: 500; color: var(--bz-yellow); }
+
+/* Round arrow button */
+.bz-btn {
+    display: inline-grid;
+    place-items: center;
+    width: 56px;
+    height: 56px;
+    padding: 0;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+.bz-btn svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.bz-btn:hover { background: var(--bz-yellow); border-color: var(--bz-yellow); color: var(--bz-board); }
+.bz-btn:focus-visible { outline: 2px solid var(--bz-yellow); outline-offset: 4px; }
+.bz-lightbox__nav { display: flex; gap: 10px; }
+
+
+/* ==========================================================================
+   8. Reflection colour block
+   ========================================================================== */
+.coffee-shape {
+    background-color: #F4EEE6;
+    text-align: left;
+    padding: 50px;
+}
+
+
+/* ==========================================================================
+   Phones and small tablets (stacks the shared sections on this page only)
+   ========================================================================== */
+@media (max-width: 900px) {
+    .bz-page .project-cover-container { display: grid; }
+    .bz-page .project-cover-image { grid-area: 1 / 1; height: 100%; min-height: 420px; }
+    .bz-page .project-cover-content {
+        grid-area: 1 / 1;
+        position: relative;
+        top: auto;
+        left: auto;
+        width: auto;
+        transform: none;
+        padding: 48px 6vw 32px;
+    }
+    .bz-page .project-cover-content .flex-container { flex-direction: column; gap: 0; }
+    .bz-page .project-text { font-size: 44px; }
+    .bz-page .challenge-section { height: auto; padding: 80px 20px; }
+    .bz-page .challenge-container { flex-direction: column; gap: 56px; }
+    .bz-page .challenge-image { justify-content: center; width: 100%; }
+    .bz-page :is(.standard-article-intro, .text-within-image-intro, .motivation-article-intro) {
+        flex-direction: column;
+        gap: 0;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .bz-page :is(.standard-article-tag, .text-within-image-tag, .motivation-article-tag) { margin-top: 0; }
+    .bz-page :is(.standard-article-content, .text-within-image-content, .motivation-article-content) { padding: 0; }
+    .bz-page :is(.standard-article-description, .text-within-image-description) { text-align: left; }
+    .bz-page .coffee-shape { padding: 28px; }
+
+    .bz-depth { grid-template-columns: 1fr; }
+    .bz-origins__grid { grid-template-columns: 1fr; }
+    .bz-grid { grid-template-columns: repeat(3, 1fr); }
+    .bz-secret { width: 84%; }
+}
+
+@media (max-width: 600px) {
+    .bz-row { grid-template-columns: 1fr; }
+    .bz-row--steps li + li::before {
+        left: 50%;
+        top: calc(clamp(14px, 2vw, 32px) / -2);
+        margin: -18px 0 0 -18px;
+        rotate: 90deg;
+    }
+    .bz-grid { grid-template-columns: 1fr 1fr; }
+    .bz-reel__track img { height: 64vh; }
+    .bz-secret__note { left: -4%; bottom: auto; top: 38%; font-size: 18px; max-width: 170px; }
+    .bz-origin { font-size: 17px; padding: 9px 14px 6px; }
+    .bz-formats { gap: 14px; }
+    .bz-btn { width: 48px; height: 48px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bz-page .bz-row img,
+    .bz-page .bz-tile img,
+    .bz-page .bz-origins,
+    .bz-page .bz-origins__ad { transition-duration: 0.01s; }
+}

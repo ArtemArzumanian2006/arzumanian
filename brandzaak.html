@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to external stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="next-project.css">
+    <link rel="stylesheet" href="brandzaak.css">
+    <!-- Page transitions: must load in the head, without defer -->
+    <script src="script/transition.js"></script>
+    <!-- Page title -->
+    <title>Arzumanian | BrandZaak</title>
+</head>
+<body class="bz-page">
+    <!-- Header: logo + "Projects" (opens the full-screen menu at the bottom of the page) -->
+    <header class="site-header site-header--page">
+        <a href="index.html" class="site-header__logo" aria-label="Artem Arzumanian, home">
+            <img src="images/logo.svg" alt="">
+        </a>
+        <nav aria-label="Main">
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+                Projects
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- ================= Cover ================= -->
+        <!-- images/brandzaak_project_cover.webp = the cover you design (1920 × 812, like the other covers) -->
+        <section class="project-cover">
+            <div class="project-cover-container">
+                <img src="images/brandzaak_project_cover.webp" alt="" class="project-cover-image">
+                <div class="project-cover-content">
+                    <div class="flex-container">
+                        <!-- Column 1: Brand and Project -->
+                        <div class="left-column">
+                            <div class="brand-section">
+                                <h1 class="brand-title">BRAND</h1>
+                                <img src="images/brandzaak/brandzaak_logo.webp" alt="BrandZaak" class="brand-logo">
+                            </div>
+                            <div class="project-section">
+                                <h1 class="project-title">PROJECT</h1>
+                                <p class="project-text">BRANDZAAK</p>
+                            </div>
+                        </div>
+                        <!-- Column 2: Responsibilities and Description -->
+                        <div class="right-column">
+                            <div class="responsibilities-section">
+                                <h1 class="responsibilities-title">RESPONSIBILITIES</h1>
+                                <p class="responsibilities-text">Social media ads<br>Art direction<br>Campaign design</p>
+                            </div>
+                            <div class="description-section">
+                                <h1 class="description-title">DESCRIPTION</h1>
+                                <p class="description-text">
+                                    At Dapper I designed ads for BrandZaak, a Rotterdam coffee roastery, bringing their coffee collections to life with chalk, warmth and taste.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= Challenge ================= -->
+        <section class="challenge-section">
+            <div class="challenge-container">
+                <div class="challenge-text">
+                    <h1 class="challenge-title">THE CHALLENGE</h1>
+                    <p class="challenge-description">
+                        Next to Swissquote, I designed for BrandZaak, a coffee roastery that sells freshly roasted beans online to coffee lovers and businesses. The task was to promote their coffee collections with ads for Instagram, LinkedIn and their website. Every ad had to feel as warm and crafted as the coffee itself, and lead people to one action: taste, take the quiz or order.
+                    </p>
+                </div>
+                <div class="challenge-image">
+                    <img src="images/brandzaak/brandzaak_pic.webp" width="1400" height="1536" alt="BrandZaak ad with latte art, in a polaroid frame">
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= Context ================= -->
+        <section class="standard-article-intro">
+            <div class="standard-article-tag">
+                <div class="standard-article-divider"></div>
+                <span class="standard-article-category">CONTEXT</span>
+            </div>
+            <div class="standard-article-content">
+                <h1 class="standard-article-title">DOOR HET VUUR VOOR KOFFIE</h1>
+                <p class="standard-article-description">
+                    "Through fire for coffee." BrandZaak was started in Rotterdam in 2013 by two brothers who wanted the whole country drinking fresh coffee. They roast every day, pack the beans the same day and ship them straight to people's homes and offices.
+                </p>
+            </div>
+        </section>
+
+        <!-- Full-width image: images/brandzaak/brandzaak_coffee.webp (the photo you add) -->
+        <section class="prj-image-section1">
+            <img src="images/brandzaak/brandzaak_coffee.webp" alt="BrandZaak coffee" loading="lazy">
+        </section>
+
+
+        <!-- ================= Stories reel ================= -->
+        <section class="text-within-image-intro">
+            <div class="text-within-image-tag">
+                <div class="text-within-image-divider"></div>
+                <span class="text-within-image-category">CAMPAIGNS</span>
+            </div>
+            <div class="text-within-image-content">
+                <h1 class="text-within-image-title">STORIES THAT STOP THE THUMB</h1>
+                <p class="text-within-image-description">
+                    A big part of the work was Instagram stories: full screen and seen for only a few seconds. I designed them for three campaigns, the Roasters Pick, the Single Origins Collection and an organic Guatemala highlight, together with the content managers who wrote the copy. Keep scrolling.
+                </p>
+            </div>
+        </section>
+
+        <!-- On desktop the row slides sideways while you scroll (script/brandzaak.js) -->
+        <section class="bz-reel" data-reel aria-label="Instagram stories">
+            <div class="bz-reel__sticky">
+                <ul class="bz-reel__track">
+                    <li><img src="images/brandzaak/story-01.webp" width="640" height="1138" alt="Story: Jullie meest gekozen smaken in 1 pakket, Roasters Pick" loading="lazy"></li>
+                    <li><img src="images/brandzaak/story-02.webp" width="640" height="1138" alt="Story: Roasters Pick with chalk-drawn beans" loading="lazy"></li>
+                    <li><img src="images/brandzaak/story-03.webp" width="640" height="1138" alt="Story: Roasters Pick with a chalk-drawn espresso machine" loading="lazy"></li>
+                    <li><img src="images/brandzaak/story-roasters-1.webp" width="640" height="1138" alt="Story: Ontdek onze meest gekozen smaken in één pakket" loading="lazy"></li>
+                    <li><img src="images/brandzaak/story-roasters-2.webp" width="640" height="1138" alt="Story: Roasters Pick with the olive KOFFIE band" loading="lazy"></li>
+                    <li><img src="images/brandzaak/story-roasters-3.webp" width="640" height="1138" alt="Story: Roasters Pick, three bags" loading="lazy"></li>
+                    <li><img src="images/brandzaak/story-04.webp" width="640" height="1138" alt="Story: 6 koffiebonen, 1 proefpakket, with a portafilter" loading="lazy"></li>
+                    <li><img src="images/brandzaak/story-05.webp" width="640" height="1138" alt="Story: Single Origins Collection with a pour-over" loading="lazy"></li>
+                    <li><img src="images/brandzaak/story-06.webp" width="640" height="1138" alt="Story: Single Origins Collection with latte art" loading="lazy"></li>
+                    <li><img src="images/brandzaak/story-07.webp" width="640" height="1138" alt="Story: Single Origins Collection, latte art from above" loading="lazy"></li>
+                    <li><img src="images/brandzaak/story-08.webp" width="640" height="1138" alt="Story: Intense biologische koffie, Guatemala" loading="lazy"></li>
+                    <li><img src="images/brandzaak/story-09.webp" width="640" height="1138" alt="Story: Guatemala with the label as a callout" loading="lazy"></li>
+                    <li><img src="images/brandzaak/story-10.webp" width="640" height="1138" alt="Story: Guatemala, close-up of the bag" loading="lazy"></li>
+                    <li><img src="images/brandzaak/story-11.webp" width="640" height="1138" alt="Story: Guatemala, bag in the spotlight" loading="lazy"></li>
+                </ul>
+                <div class="bz-reel__bar">
+                    <span class="bz-reel__count" data-count></span>
+                    <span class="bz-reel__progress"><span data-progress></span></span>
+                    <span class="bz-reel__buttons">
+                        <button class="bz-btn" type="button" data-reel-prev aria-label="Previous story"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></button>
+                        <button class="bz-btn" type="button" data-reel-next aria-label="Next story"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+                    </span>
+                    <button class="bz-reel__skip" type="button" data-reel-skip>Skip <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></button>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= Chalk ================= -->
+        <section class="standard-article-intro">
+            <div class="standard-article-tag">
+                <div class="standard-article-divider"></div>
+                <span class="standard-article-category">STYLE</span>
+            </div>
+            <div class="standard-article-content">
+                <h1 class="standard-article-title">CHALK ON THE BOARD</h1>
+                <p class="standard-article-description">
+                    BrandZaak's website is built on a dark chalkboard with hand-drawn doodles, like the menu board in a cosy coffee bar. I carried that into the ads: chalk swirls, sketched beans and an espresso machine drawn line by line, so every ad feels like it comes from the same warm, in-house place.
+                </p>
+            </div>
+        </section>
+
+        <section class="bz-band bz-band--board">
+            <ul class="bz-wrap bz-row">
+                <li><img src="images/brandzaak/chalk-1.webp" srcset="images/brandzaak/chalk-1-s.webp 540w, images/brandzaak/chalk-1.webp 1080w" sizes="(max-width: 600px) 92vw, 380px" width="1080" height="1080" alt="Ad: Drink je nog steeds dezelfde koffie? with chalk swirls" loading="lazy"></li>
+                <li><img src="images/brandzaak/chalk-2.webp" srcset="images/brandzaak/chalk-2-s.webp 540w, images/brandzaak/chalk-2.webp 1080w" sizes="(max-width: 600px) 92vw, 380px" width="1080" height="1080" alt="Ad: Wij werken alleen met de beste bonen, chalk-drawn beans" loading="lazy"></li>
+                <li><img src="images/brandzaak/chalk-3.webp" srcset="images/brandzaak/chalk-3-s.webp 540w, images/brandzaak/chalk-3.webp 1080w" sizes="(max-width: 600px) 92vw, 380px" width="1080" height="1080" alt="Ad: Vandaag gebrand, morgen in huis, chalk-drawn espresso machine" loading="lazy"></li>
+            </ul>
+        </section>
+
+
+        <!-- ================= Depth ================= -->
+        <section class="text-within-image-intro">
+            <div class="text-within-image-tag">
+                <div class="text-within-image-divider"></div>
+                <span class="text-within-image-category">PHOTOGRAPHY</span>
+            </div>
+            <div class="text-within-image-content">
+                <h1 class="text-within-image-title">BEANS IN THE FOREGROUND</h1>
+                <p class="text-within-image-description">
+                    To make flat product shots feel cinematic, I placed coffee beans at different depths. The closest ones are big and out of focus, the ones further back are small and sharp, and the bags sit right in the focus plane. It adds depth and pulls the eye straight to the product.
+                </p>
+            </div>
+        </section>
+
+        <section class="bz-band bz-band--light">
+            <div class="bz-wrap bz-depth">
+                <img class="bz-depth__ad" src="images/brandzaak/roasters-1.webp" srcset="images/brandzaak/roasters-1-s.webp 540w, images/brandzaak/roasters-1.webp 1080w" sizes="(max-width: 900px) 92vw, 640px" width="1080" height="1080" alt="Roasters Pick ad with coffee beans at different depths" loading="lazy">
+                <ul class="bz-depth__list">
+                    <li>
+                        <img src="images/brandzaak/depth-near.webp" width="440" height="440" alt="" loading="lazy">
+                        <div><h3>Close</h3><p>Big and blurred, like it's right in front of the lens.</p></div>
+                    </li>
+                    <li>
+                        <img src="images/brandzaak/depth-focus.webp" width="440" height="440" alt="" loading="lazy">
+                        <div><h3>In focus</h3><p>The product, sharp enough to read the label.</p></div>
+                    </li>
+                    <li>
+                        <img src="images/brandzaak/depth-far.webp" width="440" height="440" alt="" loading="lazy">
+                        <div><h3>Further back</h3><p>Smaller beans that give the dark background some depth.</p></div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+
+        <!-- ================= Secret bag ================= -->
+        <section class="standard-article-intro">
+            <div class="standard-article-tag">
+                <div class="standard-article-divider"></div>
+                <span class="standard-article-category">CONCEPT</span>
+            </div>
+            <div class="standard-article-content">
+                <h1 class="standard-article-title">A SECRET IN THE BAG</h1>
+                <p class="standard-article-description">
+                    Sometimes the collection came with a surprise: a special coffee you could win, and the taste kept changing. To show it without spoiling it, I covered the bag's label with the beans themselves and added a chalk note. The copy tells you there's something special, the bag keeps the secret.
+                </p>
+            </div>
+        </section>
+
+        <section class="bz-band bz-band--light">
+            <div class="bz-secret">
+                <img class="bz-secret__ad" src="images/brandzaak/secret-bag.webp" srcset="images/brandzaak/secret-bag-s.webp 540w, images/brandzaak/secret-bag.webp 1080w" sizes="(max-width: 900px) 84vw, 760px" width="1080" height="1080" alt="Single Origins ad: Waarom kiezen als je alles kunt proeven? with a special bag whose label is hidden under beans" loading="lazy">
+                <img class="bz-secret__zoom" src="images/brandzaak/secret-zoom.webp" width="600" height="600" alt="Close-up: beans cover the label, with a chalk note: Tijdelijke special" loading="lazy">
+                <p class="bz-secret__note">No label, no spoilers</p>
+            </div>
+        </section>
+
+
+        <!-- ================= Origins ================= -->
+        <section class="text-within-image-intro">
+            <div class="text-within-image-tag">
+                <div class="text-within-image-divider"></div>
+                <span class="text-within-image-category">CAMPAIGNS</span>
+            </div>
+            <div class="text-within-image-content">
+                <h1 class="text-within-image-title">EVERY TASTE ITS OWN COLOUR</h1>
+                <p class="text-within-image-description">
+                    For the Single Origins Collection every coffee got its own ad. The colour of each bag's label leads the design, so every taste feels different before you've read a word. Pick an origin.
+                </p>
+            </div>
+        </section>
+
+        <!-- Origin buttons: data-colour = band colour (the bag's label), data-src = ad, data-notes = taste -->
+        <section class="bz-band bz-origins" data-origins>
+            <div class="bz-wrap bz-origins__grid">
+                <img class="bz-origins__ad" data-ad src="images/brandzaak/origin-brasil.webp" width="1080" height="1080" alt="Ad: De zoete verleiding uit Brazilië" loading="lazy">
+                <div>
+                    <p class="bz-origins__name" data-name aria-live="polite">Brasil</p>
+                    <p class="bz-origins__notes" data-notes>Sweet and balanced, with caramel and milk chocolate.</p>
+                    <div class="bz-origins__picker" role="group" aria-label="Origin">
+                        <button class="bz-origin" type="button" aria-pressed="true" style="--s: #FAC525;"
+                            data-colour="#FAC525" data-name="Brasil" data-src="images/brandzaak/origin-brasil.webp"
+                            data-alt="Ad: De zoete verleiding uit Brazilië"
+                            data-notes="Sweet and balanced, with caramel and milk chocolate.">Brasil</button>
+                        <button class="bz-origin" type="button" aria-pressed="false" style="--s: #DF6941;"
+                            data-colour="#DF6941" data-name="Honduras" data-src="images/brandzaak/origin-honduras.webp"
+                            data-alt="Ad: Een uitblinker in alle koffiebereidingen"
+                            data-notes="A coffee for every method, with walnut and milk chocolate.">Honduras</button>
+                        <button class="bz-origin" type="button" aria-pressed="false" style="--s: #81B5CE;"
+                            data-colour="#81B5CE" data-name="Costa Rica" data-src="images/brandzaak/origin-costa-rica.webp"
+                            data-alt="Ad: Koffiebonen met een enorm rijke koffiesmaak"
+                            data-notes="Rich and nutty, with a nice balance and low acidity.">Costa Rica</button>
+                        <button class="bz-origin" type="button" aria-pressed="false" style="--s: #C0AB51;"
+                            data-colour="#C0AB51" data-name="Guatemala" data-src="images/brandzaak/origin-guatemala.webp"
+                            data-alt="Ad: Intense biologische koffie met veel karakter"
+                            data-notes="Organic and intense, with dark chocolate, caramel and nuts.">Guatemala</button>
+                        <button class="bz-origin" type="button" aria-pressed="false" style="--s: #D7A3B4;"
+                            data-colour="#D7A3B4" data-name="Ethiopia" data-src="images/brandzaak/origin-ethiopia.webp"
+                            data-alt="Ad: Koffie voor de echte fijnproevers"
+                            data-notes="For real connoisseurs: floral, with jasmine and natural sweetness.">Ethiopia</button>
+                        <button class="bz-origin" type="button" aria-pressed="false" style="--s: #D9C1AA;"
+                            data-colour="#D9C1AA" data-name="Decaf" data-src="images/brandzaak/origin-decaf.webp"
+                            data-alt="Ad: Minimale cafeïne, maximale smaak"
+                            data-notes="Minimal caffeine, full taste, with caramel and dark chocolate.">Decaf</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= Rounds ================= -->
+        <section class="standard-article-intro">
+            <div class="standard-article-tag">
+                <div class="standard-article-divider"></div>
+                <span class="standard-article-category">DESIGN</span>
+            </div>
+            <div class="standard-article-content">
+                <h1 class="standard-article-title">ROUND BY ROUND</h1>
+                <p class="standard-article-description">
+                    The origin ads went through several rounds. The first put the bag on a gold pedestal. Then I pulled the label out as a callout so the taste notes were readable, and in the final round a block in the label's colour behind the bag made every ad recognisable at a glance.
+                </p>
+            </div>
+        </section>
+
+        <section class="bz-band bz-band--light">
+            <ul class="bz-wrap bz-row bz-row--steps">
+                <li><figure><img src="images/brandzaak/round-1.webp" srcset="images/brandzaak/round-1-s.webp 540w, images/brandzaak/round-1.webp 1080w" sizes="(max-width: 600px) 92vw, 380px" width="1080" height="1080" alt="Round 1: the Brasil bag on a gold pedestal" loading="lazy"><figcaption><b>01</b> Pedestal</figcaption></figure></li>
+                <li><figure><img src="images/brandzaak/round-2.webp" srcset="images/brandzaak/round-2-s.webp 540w, images/brandzaak/round-2.webp 1080w" sizes="(max-width: 600px) 92vw, 380px" width="1080" height="1080" alt="Round 2: the label pulled out as a callout" loading="lazy"><figcaption><b>02</b> Label callout</figcaption></figure></li>
+                <li><figure><img src="images/brandzaak/round-3.webp" srcset="images/brandzaak/round-3-s.webp 540w, images/brandzaak/round-3.webp 1080w" sizes="(max-width: 600px) 92vw, 380px" width="1080" height="1080" alt="Round 3: a yellow colour block behind the bag" loading="lazy"><figcaption><b>03</b> Colour block</figcaption></figure></li>
+            </ul>
+        </section>
+
+
+        <!-- ================= Formats ================= -->
+        <section class="text-within-image-intro">
+            <div class="text-within-image-tag">
+                <div class="text-within-image-divider"></div>
+                <span class="text-within-image-category">FORMATS</span>
+            </div>
+            <div class="text-within-image-content">
+                <h1 class="text-within-image-title">ONE IDEA, EVERY FORMAT</h1>
+                <p class="text-within-image-description">
+                    Every design was made for stories and the feed, and adapted for LinkedIn and the website. This is the coffee quiz, which matches people with their perfect coffee in under 30 seconds.
+                </p>
+            </div>
+        </section>
+
+        <section class="bz-band bz-band--light">
+            <ul class="bz-formats">
+                <li><figure><img src="images/brandzaak/quiz-story.webp" width="720" height="1280" alt="Quiz ad as a story: Welke koffie past nou écht bij jou?" loading="lazy"><figcaption>Story <span>9:16</span></figcaption></figure></li>
+                <li><figure><img src="images/brandzaak/quiz-3.webp" srcset="images/brandzaak/quiz-3-s.webp 540w, images/brandzaak/quiz-3.webp 1080w" sizes="(max-width: 600px) 60vw, 540px" width="1080" height="1080" alt="Quiz ad as a feed post" loading="lazy"><figcaption>Feed <span>1:1</span></figcaption></figure></li>
+            </ul>
+        </section>
+
+
+        <!-- ================= Collection ================= -->
+        <section class="standard-article-intro">
+            <div class="standard-article-tag">
+                <div class="standard-article-divider"></div>
+                <span class="standard-article-category">OVERVIEW</span>
+            </div>
+            <div class="standard-article-content">
+                <h1 class="standard-article-title">THE COLLECTION</h1>
+                <p class="standard-article-description">
+                    24 ads across five campaigns. Click any of them to see it up close.
+                </p>
+            </div>
+        </section>
+
+        <!-- data-full = the large image the lightbox shows -->
+        <section class="bz-band" style="padding-top: 0;">
+            <ul class="bz-wrap bz-grid">
+                <li><button class="bz-tile" type="button" data-full="images/brandzaak/chalk-1.webp"><img src="images/brandzaak/chalk-1-s.webp" width="540" height="540" alt="Ad: Drink je nog steeds dezelfde koffie?" loading="lazy"></button></li>
+                <li><button class="bz-tile" type="button" data-full="images/brandzaak/chalk-2.webp"><img src="images/brandzaak/chalk-2-s.webp" width="540" height="540" alt="Ad: Wij werken alleen met de beste bonen" loading="lazy"></button></li>
+                <li><button class="bz-tile" type="button" data-full="images/brandzaak/chalk-3.webp"><img src="images/brandzaak/chalk-3-s.webp" width="540" height="540" alt="Ad: Vandaag gebrand. Morgen in huis." loading="lazy"></button></li>
+                <li><button class="bz-tile" type="button" data-full="images/brandzaak/photo-1.webp"><img src="images/brandzaak/photo-1-s.webp" width="540" height="540" alt="Ad: Serieus goede koffie" loading="lazy"></button></li>
+                <li><button class="bz-tile" type="button" data-full="images/brandzaak/photo-2.webp"><img src="images/brandzaak/photo-2-s.webp" width="540" height="540" alt="Ad: Zet 'm zoals jij wilt" loading="lazy"></button></li>
+                <li><button class="bz-tile" type="button" data-full="images/brandzaak/photo-3.webp"><img src="images/brandzaak/photo-3-s.webp" width="540" height="540" alt="Ad: Meer dan 100.000 koffieliefhebbers gingen je voor" loading="lazy"></button></li>
+                <li><button class="bz-tile" type="button" data-full="images/brandzaak/origin-brasil.webp"><img src="images/brandzaak/origin-brasil-s.webp" width="540" height="540" alt="Ad: De zoete verleiding uit Brazilië" loading="lazy"></button></li>
+                <li><button class="bz-tile" type="button" data-full="images/brandzaak/origin-honduras.webp"><img src="images/brandzaak/origin-honduras-s.webp" width="540" height="540" alt="Ad: Een uitblinker in alle koffiebereidingen" loading="lazy"></button></li>
+                <li><button class="bz-tile" type="button" data-full="images/brandzaak/origin-costa-rica.webp"><img src="images/brandzaak/origin-costa-rica-s.webp" width="540" height="540" alt="Ad: Koffiebonen met een enorm rijke koffiesmaak" loading="lazy"></button></li>
+                <li><button class="bz-tile" type="button" data-full="images/brandzaak/origin-guatemala.webp"><img src="images/brandzaak/origin-guatemala-s.webp" width="540" height="540" alt="Ad: Intense biologische koffie met veel karakter" loading="lazy"></button></li>
+                <li><button class="bz-tile" type="button" data-full="images/brandzaak/origin-ethiopia.webp"><img src="images/brandzaak/origin-ethiopia-s.webp" width="540" height="540" alt="Ad: Koffie voor de echte fijnproevers" loading="lazy"></button></li>
+                <li><button class="bz-tile" type="button" data-full="images/brandzaak/origin-decaf.webp"><img src="images/brandzaak/origin-decaf-s.webp" width="540" height="540" alt="Ad: Minimale cafeïne, maximale smaak" loading="lazy"></button></li>
+                <li><button class="bz-tile" type="button" data-full="images/brandzaak/roasters-1.webp"><img src="images/brandzaak/roasters-1-s.webp" width="540" height="540" alt="Ad: Roasters Pick: ontdek onze meest gekozen smaken" loading="lazy"></button></li>
+                <li><button class="bz-tile" type="button" data-full="images/brandzaak/roasters-2.webp"><img src="images/brandzaak/roasters-2-s.webp" width="540" height="540" alt="Ad: Roasters Pick with the KOFFIE band" loading="lazy"></button></li>
+                <li><button class="bz-tile" type="button" data-full="images/brandzaak/roasters-3.webp"><img src="images/brandzaak/roasters-3-s.webp" width="540" height="540" alt="Ad: Roasters Pick, centred" loading="lazy"></button></li>
+                <li><button class="bz-tile" type="button" data-full="images/brandzaak/single-origins-1.webp"><img src="images/brandzaak/single-origins-1-s.webp" width="540" height="540" alt="Ad: Single Origins: waarom kiezen als je alles kunt proeven?" loading="lazy"></button></li>
+                <li><button class="bz-tile" type="button" data-full="images/brandzaak/single-origins-2.webp"><img src="images/brandzaak/single-origins-2-s.webp" width="540" height="540" alt="Ad: Single Origins, olive version" loading="lazy"></button></li>
+                <li><button class="bz-tile" type="button" data-full="images/brandzaak/single-origins-3.webp"><img src="images/brandzaak/single-origins-3-s.webp" width="540" height="540" alt="Ad: Single Origins, the full line-up" loading="lazy"></button></li>
+                <li><button class="bz-tile" type="button" data-full="images/brandzaak/quiz-1.webp"><img src="images/brandzaak/quiz-1-s.webp" width="540" height="540" alt="Ad: Quiz: welke koffie past nou écht bij jou?" loading="lazy"></button></li>
+                <li><button class="bz-tile" type="button" data-full="images/brandzaak/quiz-2.webp"><img src="images/brandzaak/quiz-2-s.webp" width="540" height="540" alt="Ad: Quiz with chalk beans and an espresso machine" loading="lazy"></button></li>
+                <li><button class="bz-tile" type="button" data-full="images/brandzaak/quiz-3.webp"><img src="images/brandzaak/quiz-3-s.webp" width="540" height="540" alt="Ad: Quiz with latte art" loading="lazy"></button></li>
+                <li><button class="bz-tile" type="button" data-full="images/brandzaak/quiz-4.webp"><img src="images/brandzaak/quiz-4-s.webp" width="540" height="540" alt="Ad: Quiz with the bag line-up, beige" loading="lazy"></button></li>
+                <li><button class="bz-tile" type="button" data-full="images/brandzaak/quiz-5.webp"><img src="images/brandzaak/quiz-5-s.webp" width="540" height="540" alt="Ad: Quiz with the bag line-up, pink" loading="lazy"></button></li>
+                <li><button class="bz-tile" type="button" data-full="images/brandzaak/quiz-6.webp"><img src="images/brandzaak/quiz-6-s.webp" width="540" height="540" alt="Ad: Quiz, yellow version" loading="lazy"></button></li>
+            </ul>
+        </section>
+
+
+        <!-- ================= Reflection ================= -->
+        <section class="motivation-article-intro">
+            <div class="motivation-article-tag">
+                <div class="motivation-article-divider"></div>
+                <span class="motivation-article-category">REFLECTION</span>
+            </div>
+            <div class="motivation-article-content">
+                <h1 class="motivation-article-title">MEASURING SUCCESS</h1>
+
+                <!-- Coffee Shape with Centered Text -->
+                <div class="coffee-shape">
+                    <p class="pink-shape-text">
+                        "Designing for a coffee brand taught me to design for a feeling. Nobody can taste an ad, so the chalk, the warm light and the beans had to do it for them. Working inside an existing brand style while still giving every campaign its own character was the real challenge, and the part I enjoyed most."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Next project: the same card as on the home page. Hovering it shows a round
+             button that follows the cursor (next-project.css, script/next-project.js).
+             --accent = circle colour, --accent-ink = arrow colour. -->
+        <section class="next-project" aria-label="Next project">
+            <p class="next-project__label">Up next</p>
+            <a href="portfolio.html" class="next-card" style="--accent: #8095C6;">
+                <img src="images/Portfolio.svg" alt="" loading="lazy">
+                <span class="visually-hidden">Next project: Portfolio</span>
+                <span class="next-card__arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                </span>
+            </a>
+        </section>
+
+    </main>
+
+    <!-- ================= Lightbox (opened by the collection) ================= -->
+    <dialog class="bz-lightbox" aria-label="Ad viewer">
+        <div class="bz-lightbox__bar">
+            <span class="bz-lightbox__count" data-count aria-live="polite"></span>
+            <button class="bz-btn" type="button" data-close aria-label="Close">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+            </button>
+        </div>
+        <div class="bz-lightbox__stage">
+            <img data-image src="" alt="">
+        </div>
+        <div class="bz-lightbox__foot">
+            <span></span>
+            <span class="bz-lightbox__nav">
+                <button class="bz-btn" type="button" data-prev aria-label="Previous ad"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></button>
+                <button class="bz-btn" type="button" data-next aria-label="Next ad"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            </span>
+        </div>
+    </dialog>
+
+    <!-- ================= Footer ================= -->
+    <footer class="site-footer">
+        <div class="site-footer__main" style="background-image: url('images/footer.svg');">
+            <div class="site-footer__cols">
+                <div class="site-footer__brand">
+                    <a href="index.html" aria-label="Artem Arzumanian, home"><img src="images/logo.svg" alt=""></a>
+                    <p>Creative designer &amp; developer<br>from Eindhoven, NL</p>
+                </div>
+                <nav class="site-footer__col" aria-label="Projects">
+                    <h3>Projects</h3>
+                    <ul>
+                        <li><a href="swissquote.html">Swissquote</a></li>
+                        <li><a href="yomi.html">Yomi</a></li>
+                        <li><a href="brandzaak.html">BrandZaak</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="sakura_creative.html">Sakura Creative</a></li>
+                        <li><a href="partout_cbr.html">Partout CBR</a></li>
+                    </ul>
+                </nav>
+                <div class="site-footer__col">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="mailto:artemarzumanyan358@gmail.com?subject=Hi%20Artem">Email</a></li>
+                        <li><a href="https://www.linkedin.com/in/artem-arzumanian-358b90312/" target="_blank" rel="noopener">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <blockquote class="site-footer__quote">
+                Do not fear the height of the mountain, <br> only fear having a short ambition.
+            </blockquote>
+            <button class="site-footer__top" type="button" data-to-top>Back to top <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+        </div>
+    </footer>
+
+    <!-- ================= Full-screen menu (opened by "Projects") ================= -->
+    <!-- Rows: href = page, --accent = colour the row fills with on hover. -->
+    <div class="site-menu" id="site-menu" role="dialog" aria-modal="true" aria-label="Projects" inert>
+        <div class="site-menu__bar">
+            <button class="site-menu__close" type="button" aria-label="Close menu">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+            </button>
+            <a href="index.html" class="site-menu__logo" aria-label="Artem Arzumanian, home">
+                <img src="images/logo.svg" alt="">
+            </a>
+            <a href="mailto:artemarzumanyan358@gmail.com?subject=Hi%20Artem" class="site-menu__cta">
+                Let’s talk <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </a>
+        </div>
+
+        <ul class="site-menu__list">
+            <li>
+                <a href="swissquote.html" class="site-menu__link" style="--accent: #FA5B35;">
+                    <span class="site-menu__num">01</span>
+                    <span class="site-menu__label">Swissquote</span>
+                    <span class="site-menu__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+                </a>
+            </li>
+            <li>
+                <a href="yomi.html" class="site-menu__link" style="--accent: #C33149;">
+                    <span class="site-menu__num">02</span>
+                    <span class="site-menu__label">Yomi</span>
+                    <span class="site-menu__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+                </a>
+            </li>
+            <li>
+                <a href="brandzaak.html" class="site-menu__link" style="--accent: #ED9D46;">
+                    <span class="site-menu__num">03</span>
+                    <span class="site-menu__label">BrandZaak</span>
+                    <span class="site-menu__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+                </a>
+            </li>
+            <li>
+                <a href="portfolio.html" class="site-menu__link" style="--accent: #8095C6;">
+                    <span class="site-menu__num">04</span>
+                    <span class="site-menu__label">Portfolio</span>
+                    <span class="site-menu__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+                </a>
+            </li>
+            <li>
+                <a href="sakura_creative.html" class="site-menu__link" style="--accent: #F8CDCB;">
+                    <span class="site-menu__num">05</span>
+                    <span class="site-menu__label">Sakura Creative</span>
+                    <span class="site-menu__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+                </a>
+            </li>
+            <li>
+                <a href="partout_cbr.html" class="site-menu__link" style="--accent: #BBDF32;">
+                    <span class="site-menu__num">06</span>
+                    <span class="site-menu__label">Partout CBR</span>
+                    <span class="site-menu__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="site-menu__foot">
+            <a href="mailto:artemarzumanyan358@gmail.com?subject=Hi%20Artem">Email <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+            <a href="https://www.linkedin.com/in/artem-arzumanian-358b90312/" target="_blank" rel="noopener">LinkedIn <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+    </div>
+
+    <a href="index.html#contact" class="talk-tab">Let's Talk</a>
+
+    <script src="script/brandzaak.js" defer></script>
+    <script src="script/next-project.js" defer></script>
+    <script src="script/nav.js" defer></script>
+    <script src="script/contact.js" defer></script>
+</body>
+</html>
