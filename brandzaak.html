@@ -219,7 +219,34 @@
             </div>
         </section>
 
-        <section class="bz-band bz-band--light">
+        <section class="bz-band bz-band--light bz-band--beans" data-beans>
+                <!-- Coffee beans lying around the ad (brandzaak.css, script/brandzaak.js).
+                     --x / --y = position, --w = size, --r = rotation.
+                     Depth of field: big beans are close and sharp, the smaller a bean
+                     the further away it is and the blurrier it gets (set in brandzaak.css).
+                     bz-bean--near = big close bean that drifts a little while you scroll
+                     (--d = how much it drifts).
+                     bz-bean--flip = mirrored, so the beans don't all look the same.
+                     bz-bean--phone = also shown on phones.
+                     Photo: images/brandzaak/coffee-bean.webp -->
+            <div class="bz-beans" aria-hidden="true">
+                <img class="bz-bean bz-bean--near bz-bean--phone" style="--x: 4%; --y: 14%; --w: 150px; --r: 30deg; --i: 0; --d: 0.35;" src="images/brandzaak/coffee-bean.webp" width="480" height="335" alt="" loading="lazy">
+                <img class="bz-bean" style="--x: 15%; --y: 28%; --w: 54px; --r: -25deg; --i: 1;" src="images/brandzaak/coffee-bean.webp" width="480" height="335" alt="" loading="lazy">
+                <img class="bz-bean bz-bean--flip" style="--x: 19.5%; --y: 34%; --w: 40px; --r: 70deg; --i: 2;" src="images/brandzaak/coffee-bean.webp" width="480" height="335" alt="" loading="lazy">
+                <img class="bz-bean" style="--x: 12%; --y: 39%; --w: 46px; --r: 140deg; --i: 3;" src="images/brandzaak/coffee-bean.webp" width="480" height="335" alt="" loading="lazy">
+                <img class="bz-bean bz-bean--flip" style="--x: 18%; --y: 57%; --w: 36px; --r: 20deg; --i: 4;" src="images/brandzaak/coffee-bean.webp" width="480" height="335" alt="" loading="lazy">
+                <img class="bz-bean bz-bean--near" style="--x: 8%; --y: 74%; --w: 90px; --r: -50deg; --i: 5; --d: 0.25;" src="images/brandzaak/coffee-bean.webp" width="480" height="335" alt="" loading="lazy">
+                <img class="bz-bean" style="--x: 13%; --y: 91%; --w: 44px; --r: 200deg; --i: 6;" src="images/brandzaak/coffee-bean.webp" width="480" height="335" alt="" loading="lazy">
+                <img class="bz-bean bz-bean--phone bz-bean--flip" style="--x: 30%; --y: 5%; --w: 34px; --r: 100deg; --i: 7;" src="images/brandzaak/coffee-bean.webp" width="480" height="335" alt="" loading="lazy">
+                <img class="bz-bean bz-bean--phone" style="--x: 70%; --y: 4.5%; --w: 40px; --r: -20deg; --i: 8;" src="images/brandzaak/coffee-bean.webp" width="480" height="335" alt="" loading="lazy">
+                <img class="bz-bean" style="--x: 84%; --y: 16%; --w: 58px; --r: 35deg; --i: 9;" src="images/brandzaak/coffee-bean.webp" width="480" height="335" alt="" loading="lazy">
+                <img class="bz-bean bz-bean--flip" style="--x: 89%; --y: 22%; --w: 42px; --r: -80deg; --i: 10;" src="images/brandzaak/coffee-bean.webp" width="480" height="335" alt="" loading="lazy">
+                <img class="bz-bean" style="--x: 86%; --y: 29%; --w: 38px; --r: 160deg; --i: 11;" src="images/brandzaak/coffee-bean.webp" width="480" height="335" alt="" loading="lazy">
+                <img class="bz-bean bz-bean--flip" style="--x: 80.5%; --y: 47%; --w: 44px; --r: 10deg; --i: 12;" src="images/brandzaak/coffee-bean.webp" width="480" height="335" alt="" loading="lazy">
+                <img class="bz-bean bz-bean--near bz-bean--phone" style="--x: 97%; --y: 62%; --w: 170px; --r: -30deg; --i: 13; --d: 0.4;" src="images/brandzaak/coffee-bean.webp" width="480" height="335" alt="" loading="lazy">
+                <img class="bz-bean" style="--x: 91%; --y: 91%; --w: 40px; --r: 60deg; --i: 14;" src="images/brandzaak/coffee-bean.webp" width="480" height="335" alt="" loading="lazy">
+                <img class="bz-bean bz-bean--phone" style="--x: 38%; --y: 97%; --w: 36px; --r: -40deg; --i: 15;" src="images/brandzaak/coffee-bean.webp" width="480" height="335" alt="" loading="lazy">
+            </div>
             <div class="bz-secret">
                 <img class="bz-secret__ad" src="images/brandzaak/secret-bag.webp" srcset="images/brandzaak/secret-bag-s.webp 540w, images/brandzaak/secret-bag.webp 1080w" sizes="(max-width: 900px) 84vw, 760px" width="1080" height="1080" alt="Single Origins ad: Waarom kiezen als je alles kunt proeven? with a special bag whose label is hidden under beans" loading="lazy">
                 <img class="bz-secret__zoom" src="images/brandzaak/secret-zoom.webp" width="600" height="600" alt="Close-up: beans cover the label, with a chalk note: Tijdelijke special" loading="lazy">

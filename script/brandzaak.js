@@ -3,7 +3,8 @@
    1. Story reel: on desktop the stories slide sideways while you scroll
       down (or swipe / drag / arrows / skip); on phones a normal swipe row
    2. Origin picker (band colour + ad + taste notes)
-   3. Collection lightbox
+   3. Coffee beans around the secret bag
+   4. Collection lightbox
    ========================================================================== */
 (() => {
     'use strict';
@@ -182,7 +183,38 @@
     });
 
 
-    /* ---------- 3. Collection lightbox ---------- */
+    /* ---------- 3. Coffee beans around the secret bag ----------
+       The beans tumble in when the section comes into view; the big blurred
+       ones drift a little while you scroll, like they're closer to the camera. */
+    document.querySelectorAll('[data-beans]').forEach((band) => {
+        if (!('IntersectionObserver' in window) || reducedMotion) {
+            band.classList.add('is-in');
+            return;
+        }
+        new IntersectionObserver((entries, obs) => {
+            if (entries[0].isIntersecting) {
+                band.classList.add('is-in');
+                obs.disconnect();
+            }
+        }, { threshold: 0.25 }).observe(band);
+
+        let ticking = false;
+        const drift = () => {
+            ticking = false;
+            const r = band.getBoundingClientRect();
+            if (r.bottom < 0 || r.top > window.innerHeight) return;
+            // 0 when the section is centred on screen, negative above, positive below
+            const offset = (r.top + r.height / 2) - window.innerHeight / 2;
+            band.style.setProperty('--shift', `${(offset * -1).toFixed(1)}px`);
+        };
+        window.addEventListener('scroll', () => {
+            if (!ticking) { ticking = true; requestAnimationFrame(drift); }
+        }, { passive: true });
+        drift();
+    });
+
+
+    /* ---------- 4. Collection lightbox ---------- */
     const dialog = document.querySelector('.bz-lightbox');
     const tiles = [...document.querySelectorAll('.bz-tile')];
     if (dialog && tiles.length && typeof dialog.showModal === 'function') {

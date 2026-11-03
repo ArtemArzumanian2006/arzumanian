@@ -279,9 +279,55 @@
    ========================================================================== */
 .bz-secret {
     position: relative;
+    z-index: 1;
     width: min(760px, 100%);
     margin: 0 auto;
 }
+
+/* Coffee beans lying around the ad. They tumble in when the section comes
+   into view; the big blurred "close" ones drift a little while you scroll
+   (script/brandzaak.js sets --shift on the section). */
+.bz-band--beans { position: relative; }
+.bz-beans {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+.bz-bean {
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    width: calc(var(--w) * 1.4);    /* the photo is landscape: --w is the bean's short side */
+    height: auto;
+    translate: -50% -50%;
+    rotate: var(--r);
+    /* Depth of field: the smaller (further away) the bean, the blurrier.
+       64px and bigger = sharp, 34px = about 3px blur. Then a contact shadow
+       and a soft shadow on the table. */
+    filter:
+        blur(max(0px, (64px - var(--w)) / 9))
+        drop-shadow(0 2px 1px rgba(40, 25, 10, 0.35))
+        drop-shadow(0 10px 10px rgba(40, 25, 10, 0.18));
+    opacity: 0;
+    scale: 1.3;
+    transition: opacity 0.4s ease, scale 0.7s cubic-bezier(0.2, 0.9, 0.3, 1.2), rotate 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transition-delay: calc(var(--i) * 45ms);
+}
+.bz-band--beans.is-in .bz-bean {
+    opacity: 1;
+    scale: 1;
+}
+.bz-band--beans:not(.is-in) .bz-bean { rotate: calc(var(--r) - 40deg); }
+/* Big close beans: sharp, a deeper shadow, and they drift while you scroll */
+.bz-bean--near {
+    filter:
+        drop-shadow(0 4px 3px rgba(40, 25, 10, 0.35))
+        drop-shadow(0 26px 24px rgba(40, 25, 10, 0.22));
+    translate: -50% calc(-50% + var(--shift, 0px) * var(--d));
+    transition: opacity 0.8s ease, scale 1s ease;
+    transition-delay: 0s;
+}
+.bz-bean--flip { transform: scaleX(-1); }
 .bz-secret__ad { border-radius: 6px; }
 .bz-secret__zoom {
     position: absolute;
@@ -504,6 +550,8 @@
    Phones and small tablets (stacks the shared sections on this page only)
    ========================================================================== */
 @media (max-width: 900px) {
+    .bz-bean:not(.bz-bean--phone) { display: none; }
+    .bz-bean { width: calc(var(--w) * 0.91); }
     .bz-page .project-cover-container { display: grid; }
     .bz-page .project-cover-image { grid-area: 1 / 1; height: 100%; min-height: 420px; }
     .bz-page .project-cover-content {
@@ -547,13 +595,16 @@
     }
     .bz-grid { grid-template-columns: 1fr 1fr; }
     .bz-reel__track img { height: 64vh; }
-    .bz-secret__note { left: -4%; bottom: auto; top: 38%; font-size: 18px; max-width: 170px; }
+    .bz-secret__note { left: -4%; bottom: -6%; font-size: 16px; max-width: 150px; padding: 10px 12px 8px; }
+    .bz-secret__zoom { right: -6%; bottom: -10%; width: 44%; border-width: 4px; }
     .bz-origin { font-size: 17px; padding: 9px 14px 6px; }
     .bz-formats { gap: 14px; }
     .bz-btn { width: 48px; height: 48px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
+    .bz-bean { transition: none; }
+    .bz-bean--near { translate: -50% -50%; }
     .bz-page .bz-row img,
     .bz-page .bz-tile img,
     .bz-page .bz-origins,
