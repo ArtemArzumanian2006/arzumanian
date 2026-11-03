@@ -6,6 +6,7 @@
     <!-- Link to external stylesheet and font-awesome library -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="next-project.css">
+    <link rel="stylesheet" href="polaroid-hand.css">
     <!-- Page transitions: must load in the head, without defer -->
     <script src="script/transition.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -64,15 +65,27 @@
 
 
 
-    <section class="challenge-section">
+    <section class="challenge-section ph-section">
         <div class="challenge-container">
             <div class="challenge-text">
                 <h1 class="challenge-title">THE CHALLENGE</h1>
                 <p class="challenge-description">
                     The team got introduced to a task from a client “Partout” to come up with creative solutions for improving driving passing rates. The challenge was to come up with digital proof of concepts that can help teens get their drivers license faster and in the first try.                 </p>
             </div>
+            <!-- A hand carries the polaroid in and sticks it down while you scroll
+                 (polaroid-hand.css, script/polaroid-hand.js).
+                 --hand-x / --hand-y = where the palm presses, --hand-size = hand size -->
             <div class="challenge-image">
-                <img src="images/partout_pic.png" alt="Sakura Picture">
+                <div class="ph-scene" data-polaroid-hand style="--hand-x: 70%; --hand-y: 18%;">
+                    <div class="ph-carry">
+                        <img class="ph-photo__shadow" src="images/partout_pic.png" alt="">
+                        <img class="ph-photo" src="images/partout_pic.png" alt="Hands on a steering wheel, in a polaroid frame">
+                        <div class="ph-hand" aria-hidden="true">
+                            <img class="ph-hand__shadow" src="images/polaroid-hand/hand-shadow.webp" alt="">
+                            <img class="ph-hand__img" src="images/polaroid-hand/hand.webp" alt="">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -568,6 +581,7 @@
 
     <a href="index.html#contact" class="talk-tab">Let's Talk</a>
 
+    <script src="script/polaroid-hand.js" defer></script>
     <script src="script/next-project.js" defer></script>
     <script src="script/nav.js" defer></script>
     <script src="script/contact.js" defer></script>

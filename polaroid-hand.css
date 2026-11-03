@@ -1,0 +1,95 @@
+/* ==========================================================================
+   polaroid-hand.css — a hand carries the polaroid in from the side and
+   sticks it in place while you scroll (script/polaroid-hand.js).
+
+   Markup (inside .challenge-image):
+     <div class="ph-scene" data-polaroid-hand>
+         <div class="ph-carry">
+             <img class="ph-photo__shadow" src="(polaroid)" alt="">
+             <img class="ph-photo" src="(polaroid)" alt="...">
+             <div class="ph-hand"> shadow + hand images </div>
+         </div>
+     </div>
+
+   Tweak per page on .ph-scene:
+     --hand-x / --hand-y  where the palm presses, in % of the polaroid
+     --hand-size          hand image width, in % of the polaroid width
+   ========================================================================== */
+
+/* The hand and arm reach past the screen edge: clip that sideways overflow
+   (clip, not hidden, so nothing else on the page changes) */
+.ph-section { overflow-x: clip; }
+
+.ph-scene {
+    --hand-x: 70%;
+    --hand-y: 18%;
+    --hand-size: 224cqw;
+    position: relative;
+    width: 80%;                          /* same size as the old polaroid image */
+    container-type: inline-size;         /* lets the hand size itself in cqw */
+}
+.ph-scene img { max-width: none; }       /* style.css limits .challenge-image img to 80% */
+
+.ph-carry {
+    position: relative;
+    will-change: transform;
+}
+
+.ph-photo {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Shadow under the polaroid: darker and further away while it's lifted */
+.ph-photo__shadow {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: auto;
+    filter: brightness(0) blur(18px);
+    opacity: 0;
+    will-change: transform, opacity;
+}
+
+/* The hand: positioned on the palm point, so it scales around the palm */
+.ph-hand {
+    position: absolute;
+    z-index: 2;
+    left: var(--hand-x);
+    top: var(--hand-y);
+    width: 0;
+    height: 0;
+    visibility: hidden;                  /* shown once the script runs */
+    will-change: transform;
+}
+.ph-scene.is-ready .ph-hand { visibility: visible; }
+
+.ph-hand__img,
+.ph-hand__shadow {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: auto;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+/* hand.webp is 1157 × 626; the palm point sits at 18.71% / 17.49% of it */
+.ph-hand__img {
+    width: var(--hand-size);
+    translate: -18.71% -17.49%;
+}
+/* hand-shadow.webp is the same hand with a 40px margin (1237 × 706),
+   so its palm point is at 20.73% / 21.17% */
+.ph-hand__shadow {
+    width: calc(var(--hand-size) * 1237 / 1157);
+    translate: -20.73% -21.17%;
+    will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ph-hand { display: none; }
+}
