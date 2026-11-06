@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to external stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="next-project.css">
+    <link rel="stylesheet" href="dapper.css">
+    <!-- Page transitions: must load in the head, without defer -->
+    <script src="script/transition.js"></script>
+    <!-- Page title -->
+    <title>Arzumanian | Dapper</title>
+</head>
+<body class="dp-page">
+    <!-- Header: logo + "Projects" (opens the full-screen menu at the bottom of the page) -->
+    <header class="site-header site-header--page">
+        <a href="index.html" class="site-header__logo" aria-label="Artem Arzumanian, home">
+            <img src="images/logo.svg" alt="">
+        </a>
+        <nav aria-label="Main">
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+                Projects
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- ================= Cover ================= -->
+        <!-- images/dapper_project_cover.webp = the cover you design (1920 × 812, like the other covers) -->
+        <section class="project-cover">
+            <div class="project-cover-container">
+                <img src="images/dapper_project_cover.webp" alt="" class="project-cover-image">
+                <div class="project-cover-content">
+                    <div class="flex-container">
+                        <!-- Column 1: Brand and Project -->
+                        <div class="left-column">
+                            <div class="brand-section">
+                                <h1 class="brand-title">BRAND</h1>
+                                <img src="images/dapper/dapper_logo.webp" alt="Dapper, the demand agency" class="brand-logo">
+                            </div>
+                            <div class="project-section">
+                                <h1 class="project-title">PROJECT</h1>
+                                <p class="project-text">DAPPER</p>
+                            </div>
+                        </div>
+                        <!-- Column 2: Responsibilities and Description -->
+                        <div class="right-column">
+                            <div class="responsibilities-section">
+                                <h1 class="responsibilities-title">RESPONSIBILITIES</h1>
+                                <p class="responsibilities-text">Graphic design<br>Merch &amp; print<br>Office signage</p>
+                            </div>
+                            <div class="description-section">
+                                <h1 class="description-title">DESCRIPTION</h1>
+                                <p class="description-text">
+                                    As an in-house designer I also designed for Dapper itself: an award entry, office signs, merch and an internal campaign.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= Challenge ================= -->
+        <section class="challenge-section">
+            <div class="challenge-container">
+                <div class="challenge-text">
+                    <h1 class="challenge-title">THE CHALLENGE</h1>
+                    <p class="challenge-description">
+                        Next to client work like Swissquote and BrandZaak, I designed for Dapper itself, the B2B demand agency in Rotterdam I work for. That meant a bit of everything: an award entry, signs for the office, merch and an internal campaign. Each piece had to feel like Dapper: bold, playful and never boring.
+                    </p>
+                </div>
+                <div class="challenge-image">
+                    <img src="images/dapper/dapper_pic.webp" width="1200" height="1688" alt="Dapper 2026 yearbook cover, in a polaroid frame">
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= Award entry ================= -->
+        <section class="text-within-image-intro">
+            <div class="text-within-image-tag">
+                <div class="text-within-image-divider"></div>
+                <span class="text-within-image-category">AWARD ENTRY</span>
+            </div>
+            <div class="text-within-image-content">
+                <h1 class="text-within-image-title">NOW STREAMING: B2B</h1>
+                <p class="text-within-image-description">
+                    Dapper entered an award for successful LinkedIn campaigns with a series my colleagues made: famous scenes from Pulp Fiction, Suits and The Wolf of Wall Street, rewritten as B2B marketing stories. I got a lot of copy from our content marketers and one big banner to fit it all in. My idea: make it look like Netflix, a screen everyone already knows how to read.
+                </p>
+            </div>
+        </section>
+
+        <!-- Hotspots: --x / --y = position on the banner.
+             Notes: data-focus = "left top width height" of the area the note talks about (in %). -->
+        <section class="dp-band dp-band--black">
+            <div class="dp-wrap dp-wrap--wide dp-award" data-award>
+                <figure class="dp-award__figure">
+                    <img src="images/dapper/award-banner.webp" srcset="images/dapper/award-banner-s.webp 1200w, images/dapper/award-banner.webp 2400w" sizes="(max-width: 1480px) 96vw, 1440px" width="2400" height="1200" alt="Award entry designed as a Netflix screen: Pulp Fiction as the main show, the results as big numbers, and Suits and The Wolf of Wall Street as your next watch" loading="lazy">
+                    <span class="dp-award__focus" aria-hidden="true"></span>
+                    <button class="dp-hotspot" type="button" data-note="1" style="--x: 12.5%; --y: 52%;" aria-label="Note 1: the side menu"><span>1</span></button>
+                    <button class="dp-hotspot" type="button" data-note="2" style="--x: 41%; --y: 25%;" aria-label="Note 2: the show"><span>2</span></button>
+                    <button class="dp-hotspot" type="button" data-note="3" style="--x: 84.5%; --y: 19%;" aria-label="Note 3: the results"><span>3</span></button>
+                    <button class="dp-hotspot" type="button" data-note="4" style="--x: 25.5%; --y: 75.8%;" aria-label="Note 4: the execution"><span>4</span></button>
+                    <button class="dp-hotspot" type="button" data-note="5" style="--x: 69.5%; --y: 71.3%;" aria-label="Note 5: your next watch"><span>5</span></button>
+                </figure>
+                <ol class="dp-award__notes">
+                    <li class="dp-award__note" data-note="1" data-focus="0% 11.5% 14.6% 88.5%">
+                        <h3>The side menu</h3>
+                        <p>Netflix's menu holds the background and the idea, so the long copy reads like browsing, not like a report.</p>
+                    </li>
+                    <li class="dp-award__note" data-note="2" data-focus="15.3% 21% 30.5% 52.5%">
+                        <h3>The show</h3>
+                        <p>Pulp Fiction gets a real title treatment, a match score and a season tag. The description tells how it was made.</p>
+                    </li>
+                    <li class="dp-award__note" data-note="3" data-focus="85.6% 15% 14% 39%">
+                        <h3>The results</h3>
+                        <p>1M+ impressions per video and double the inbound leads, big enough to read from across the room.</p>
+                    </li>
+                    <li class="dp-award__note" data-note="4" data-focus="15.3% 73.5% 42.5% 26%">
+                        <h3>The execution</h3>
+                        <p>How the series was made, released and spread, split into three short columns.</p>
+                    </li>
+                    <li class="dp-award__note" data-note="5" data-focus="57.4% 69% 42.2% 30.5%">
+                        <h3>Your next watch</h3>
+                        <p>The other two recreations, Suits and The Wolf of Wall Street, lined up as the next shows.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+
+        <!-- ================= Meeting rooms ================= -->
+        <section class="standard-article-intro">
+            <div class="standard-article-tag">
+                <div class="standard-article-divider"></div>
+                <span class="standard-article-category">OFFICE</span>
+            </div>
+            <div class="standard-article-content">
+                <h1 class="standard-article-title">MEET THE ROOMS</h1>
+                <p class="standard-article-description">
+                    The team voted on movie names for the meeting rooms, each with "meet" worked into the title. I turned them into door signs that borrow the look of each film's logo, so you get the reference before you've read a word. Simple and white, they're now on the office doors, together with a sign for our podcast and photo studio.
+                </p>
+            </div>
+        </section>
+
+        <section class="dp-band dp-band--dark">
+            <ul class="dp-wrap dp-doors">
+                <li><figure class="dp-door">
+                    <div class="dp-door__glass"><img src="images/dapper/sign-catch.webp" width="1200" height="806" alt="Door sign: Meet me if you can" loading="lazy"></div>
+                    <figcaption>Meet me if you can <span>after Catch Me If You Can</span></figcaption>
+                </figure></li>
+                <li><figure class="dp-door">
+                    <div class="dp-door__glass"><img src="images/dapper/sign-lord.webp" width="1200" height="630" alt="Door sign: The Lord of the Meetings" loading="lazy"></div>
+                    <figcaption>The Lord of the Meetings <span>after The Lord of the Rings</span></figcaption>
+                </figure></li>
+                <li><figure class="dp-door">
+                    <div class="dp-door__glass"><img src="images/dapper/sign-club.webp" width="1047" height="1142" alt="Door sign: Meeting Club" loading="lazy"></div>
+                    <figcaption>Meeting Club <span>after Fight Club</span></figcaption>
+                </figure></li>
+                <li><figure class="dp-door">
+                    <div class="dp-door__glass"><img src="images/dapper/sign-studio.webp" width="1200" height="310" alt="Door sign: Studio, with a microphone and a camera aperture" loading="lazy"></div>
+                    <figcaption>Studio <span>for podcasts and photo shoots</span></figcaption>
+                </figure></li>
+            </ul>
+        </section>
+
+
+        <!-- ================= Merch ================= -->
+        <section class="text-within-image-intro">
+            <div class="text-within-image-tag">
+                <div class="text-within-image-divider"></div>
+                <span class="text-within-image-category">MERCH</span>
+            </div>
+            <div class="text-within-image-content">
+                <h1 class="text-within-image-title">MERCH YOU'D WEAR OUTSIDE</h1>
+                <p class="text-within-image-description">
+                    Management wanted merch that's more street style: something people want to wear outside the office and that makes others ask about the company. I came up with the direction and designed the full set: the Dapper plant in the centre, like Iron Man's arc reactor, with wireframe graphics around it.
+                </p>
+            </div>
+        </section>
+
+        <section class="dp-band dp-band--light">
+            <div class="dp-wrap dp-merch">
+                <figure class="dp-card dp-suitcase" data-flip>
+                    <img src="images/dapper/merch-1.webp" width="1200" height="1699" alt="Suitcase, front: Dapper stickers and a wireframe graphic, Peak Perform, Peak Rest" loading="lazy">
+                    <img src="images/dapper/merch-2.webp" width="1200" height="1699" alt="Suitcase, back" loading="lazy">
+                    <div class="dp-flip" role="group" aria-label="Side">
+                        <button type="button" data-side="front" aria-pressed="true">Front</button>
+                        <button type="button" data-side="back" aria-pressed="false">Back</button>
+                    </div>
+                </figure>
+                <div class="dp-merch__side">
+                    <div class="dp-merch__pair">
+                        <figure class="dp-card"><img src="images/dapper/headphones-1.webp" width="900" height="900" alt="Headphones with the Dapper plant in the centre of the ear cup" loading="lazy"></figure>
+                        <figure class="dp-card"><img src="images/dapper/headphones-2.webp" width="900" height="900" alt="Headphones, other side, with a wireframe star graphic" loading="lazy"></figure>
+                    </div>
+                    <div class="dp-merch__prints">
+                        <figure class="dp-card"><img src="images/dapper/merch-3.webp" width="1200" height="1699" alt="Suitcase print, front" loading="lazy"></figure>
+                        <figure class="dp-card"><img src="images/dapper/merch-4.webp" width="1200" height="1699" alt="Suitcase print, back" loading="lazy"></figure>
+                        <figure class="dp-card"><img src="images/dapper/merch-7.webp" width="1200" height="1699" alt="Headphone prints, left and right" loading="lazy"></figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= Peak Performance Week ================= -->
+        <section class="standard-article-intro">
+            <div class="standard-article-tag">
+                <div class="standard-article-divider"></div>
+                <span class="standard-article-category">CAMPAIGN</span>
+            </div>
+            <div class="standard-article-content">
+                <h1 class="standard-article-title">PEAK PERFORMANCE WEEK</h1>
+                <p class="standard-article-description">
+                    A week at Dapper about sharp habits: early to bed, healthy food, no cheap dopamine and a clean desk. I designed the poster series for the office and a set of phone wallpapers for the team. Sports photography, huge type and short lines to push you through the week.
+                </p>
+            </div>
+        </section>
+
+        <section class="dp-band dp-band--dark" data-posters>
+            <ul class="dp-posters" tabindex="0" aria-label="Peak Performance Week posters. Scroll sideways.">
+                <li><img src="images/dapper/ppw-1-s.webp" srcset="images/dapper/ppw-1-s.webp 500w, images/dapper/ppw-1.webp 1000w" sizes="(max-width: 600px) 64vw, 330px" width="1000" height="1413" alt="Poster: Peak Performance Week, cyclist" loading="lazy"></li>
+                <li><img src="images/dapper/ppw-2-s.webp" srcset="images/dapper/ppw-2-s.webp 500w, images/dapper/ppw-2.webp 1000w" sizes="(max-width: 600px) 64vw, 330px" width="1000" height="1413" alt="Poster: PPW, sprinter in the starting blocks" loading="lazy"></li>
+                <li><img src="images/dapper/ppw-3-s.webp" srcset="images/dapper/ppw-3-s.webp 500w, images/dapper/ppw-3.webp 1000w" sizes="(max-width: 600px) 64vw, 330px" width="1000" height="1413" alt="Poster: PPW, It's you against you" loading="lazy"></li>
+                <li><img src="images/dapper/ppw-4-s.webp" srcset="images/dapper/ppw-4-s.webp 500w, images/dapper/ppw-4.webp 1000w" sizes="(max-width: 600px) 64vw, 330px" width="1000" height="1413" alt="Poster: PPW, runner" loading="lazy"></li>
+                <li><img src="images/dapper/ppw-5-s.webp" srcset="images/dapper/ppw-5-s.webp 500w, images/dapper/ppw-5.webp 1000w" sizes="(max-width: 600px) 64vw, 330px" width="1000" height="1413" alt="Poster: PPW, surfer" loading="lazy"></li>
+                <li><img src="images/dapper/ppw-6-s.webp" srcset="images/dapper/ppw-6-s.webp 500w, images/dapper/ppw-6.webp 1000w" sizes="(max-width: 600px) 64vw, 330px" width="1000" height="1413" alt="Poster: Peak Performance Week, gymnast" loading="lazy"></li>
+                <li><img src="images/dapper/ppw-7-s.webp" srcset="images/dapper/ppw-7-s.webp 500w, images/dapper/ppw-7.webp 1000w" sizes="(max-width: 600px) 64vw, 330px" width="1000" height="1413" alt="Poster: the four rules of Peak Performance Week" loading="lazy"></li>
+            </ul>
+            <div class="dp-wrap dp-posters__bar">
+                <span class="dp-posters__progress"><span data-progress></span></span>
+                <span class="dp-posters__hint" aria-hidden="true">Drag</span>
+            </div>
+
+            <!-- Each phone shows its wallpapers in turn (script/dapper.js) -->
+            <ul class="dp-phones" aria-label="Phone wallpapers for the team">
+                <li class="dp-phone" data-phone><div class="dp-phone__screen">
+                    <img class="is-on" src="images/dapper/wall-1.webp" width="393" height="852" alt="Wallpaper: Never stop peak performing" loading="lazy">
+                    <img src="images/dapper/wall-4.webp" width="393" height="852" alt="Wallpaper: Peak is you" loading="lazy">
+                    <img src="images/dapper/wall-7.webp" width="393" height="852" alt="Wallpaper: Peak starts here" loading="lazy">
+                    <img src="images/dapper/wall-10.webp" width="393" height="852" alt="Wallpaper: PPW26" loading="lazy">
+                </div></li>
+                <li class="dp-phone" data-phone><div class="dp-phone__screen">
+                    <img class="is-on" src="images/dapper/wall-2.webp" width="393" height="852" alt="Wallpaper: Peak starts here, runner on a track" loading="lazy">
+                    <img src="images/dapper/wall-5.webp" width="393" height="852" alt="Wallpaper: Peak Performance" loading="lazy">
+                    <img src="images/dapper/wall-8.webp" width="393" height="852" alt="Wallpaper: Peak Forward" loading="lazy">
+                    <img src="images/dapper/wall-11.webp" width="393" height="852" alt="Wallpaper: You own it" loading="lazy">
+                </div></li>
+                <li class="dp-phone" data-phone><div class="dp-phone__screen">
+                    <img class="is-on" src="images/dapper/wall-3.webp" width="393" height="852" alt="Wallpaper: Reach your peak" loading="lazy">
+                    <img src="images/dapper/wall-6.webp" width="393" height="852" alt="Wallpaper: Own the week" loading="lazy">
+                    <img src="images/dapper/wall-9.webp" width="393" height="852" alt="Wallpaper: Peak Flow" loading="lazy">
+                    <img src="images/dapper/wall-12.webp" width="393" height="852" alt="Wallpaper: Locked in" loading="lazy">
+                </div></li>
+            </ul>
+        </section>
+
+
+        <!-- ================= Reflection ================= -->
+        <section class="motivation-article-intro">
+            <div class="motivation-article-tag">
+                <div class="motivation-article-divider"></div>
+                <span class="motivation-article-category">REFLECTION</span>
+            </div>
+            <div class="motivation-article-content">
+                <h1 class="motivation-article-title">MEASURING SUCCESS</h1>
+
+                <!-- Mint Shape with Centered Text -->
+                <div class="mint-shape">
+                    <p class="pink-shape-text">
+                        "Designing for your own company is a different kind of pressure: your colleagues are the client, and they walk past your work every day. It taught me to make things that are clear at a glance but still hide a detail that makes people smile, like a door sign that's also a movie reference."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Next project: the same card as on the home page. Hovering it shows a round
+             button that follows the cursor (next-project.css, script/next-project.js).
+             --accent = circle colour, --accent-ink = arrow colour. -->
+        <section class="next-project" aria-label="Next project">
+            <p class="next-project__label">Up next</p>
+            <a href="yomi.html" class="next-card" style="--accent: #C33149;">
+                <img src="images/Yomi.svg" alt="" loading="lazy">
+                <span class="visually-hidden">Next project: Yomi</span>
+                <span class="next-card__arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                </span>
+            </a>
+        </section>
+
+    </main>
+
+    <!-- ================= Footer ================= -->
+    <footer class="site-footer">
+        <div class="site-footer__main" style="background-image: url('images/footer.svg');">
+            <div class="site-footer__cols">
+                <div class="site-footer__brand">
+                    <a href="index.html" aria-label="Artem Arzumanian, home"><img src="images/logo.svg" alt=""></a>
+                    <p>Creative designer &amp; developer<br>from Eindhoven, NL</p>
+                </div>
+                <nav class="site-footer__col" aria-label="Projects">
+                    <h3>Projects</h3>
+                    <ul>
+                        <li><a href="swissquote.html">Swissquote</a></li>
+                        <li><a href="dapper.html">Dapper</a></li>
+                        <li><a href="yomi.html">Yomi</a></li>
+                        <li><a href="brandzaak.html">BrandZaak</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="sakura_creative.html">Sakura Creative</a></li>
+                        <li><a href="partout_cbr.html">Partout CBR</a></li>
+                    </ul>
+                </nav>
+                <div class="site-footer__col">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="mailto:artemarzumanyan358@gmail.com?subject=Hi%20Artem">Email</a></li>
+                        <li><a href="https://www.linkedin.com/in/artem-arzumanian-358b90312/" target="_blank" rel="noopener">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <blockquote class="site-footer__quote">
+                Do not fear the height of the mountain, <br> only fear having a short ambition.
+            </blockquote>
+            <button class="site-footer__top" type="button" data-to-top>Back to top <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+        </div>
+    </footer>
+
+    <!-- ================= Full-screen menu (opened by "Projects") ================= -->
+    <!-- Rows: href = page, --accent = colour the row fills with on hover. -->
+    <div class="site-menu" id="site-menu" role="dialog" aria-modal="true" aria-label="Projects" inert>
+        <div class="site-menu__bar">
+            <button class="site-menu__close" type="button" aria-label="Close menu">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+            </button>
+            <a href="index.html" class="site-menu__logo" aria-label="Artem Arzumanian, home">
+                <img src="images/logo.svg" alt="">
+            </a>
+            <a href="mailto:artemarzumanyan358@gmail.com?subject=Hi%20Artem" class="site-menu__cta">
+                Let’s talk <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </a>
+        </div>
+
+        <ul class="site-menu__list">
+            <li>
+                <a href="swissquote.html" class="site-menu__link" style="--accent: #FA5B35;">
+                    <span class="site-menu__num">01</span>
+                    <span class="site-menu__label">Swissquote</span>
+                    <span class="site-menu__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+                </a>
+            </li>
+            <li>
+                <a href="dapper.html" class="site-menu__link" style="--accent: #4FC078;">
+                    <span class="site-menu__num">02</span>
+                    <span class="site-menu__label">Dapper</span>
+                    <span class="site-menu__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+                </a>
+            </li>
+            <li>
+                <a href="yomi.html" class="site-menu__link" style="--accent: #C33149;">
+                    <span class="site-menu__num">03</span>
+                    <span class="site-menu__label">Yomi</span>
+                    <span class="site-menu__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+                </a>
+            </li>
+            <li>
+                <a href="brandzaak.html" class="site-menu__link" style="--accent: #ED9D46;">
+                    <span class="site-menu__num">04</span>
+                    <span class="site-menu__label">BrandZaak</span>
+                    <span class="site-menu__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+                </a>
+            </li>
+            <li>
+                <a href="portfolio.html" class="site-menu__link" style="--accent: #8095C6;">
+                    <span class="site-menu__num">05</span>
+                    <span class="site-menu__label">Portfolio</span>
+                    <span class="site-menu__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+                </a>
+            </li>
+            <li>
+                <a href="sakura_creative.html" class="site-menu__link" style="--accent: #F8CDCB;">
+                    <span class="site-menu__num">06</span>
+                    <span class="site-menu__label">Sakura Creative</span>
+                    <span class="site-menu__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+                </a>
+            </li>
+            <li>
+                <a href="partout_cbr.html" class="site-menu__link" style="--accent: #BBDF32;">
+                    <span class="site-menu__num">07</span>
+                    <span class="site-menu__label">Partout CBR</span>
+                    <span class="site-menu__arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="site-menu__foot">
+            <a href="mailto:artemarzumanyan358@gmail.com?subject=Hi%20Artem">Email <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+            <a href="https://www.linkedin.com/in/artem-arzumanian-358b90312/" target="_blank" rel="noopener">LinkedIn <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+    </div>
+
+    <a href="index.html#contact" class="talk-tab">Let's Talk</a>
+
+    <script src="script/dapper.js" defer></script>
+    <script src="script/next-project.js" defer></script>
+    <script src="script/nav.js" defer></script>
+    <script src="script/contact.js" defer></script>
+</body>
+</html>
