@@ -2385,8 +2385,7 @@
     font: 500 clamp(40px, min(8.5vw, 11svh), 140px) / 1 var(--font-display);
     text-transform: uppercase;
     text-decoration: none;
-    overflow: hidden;
-    isolation: isolate;
+    overflow: visible;                   /* the hover image reaches into the row above */
     transition: color 0.35s ease;
 }
 
@@ -2431,6 +2430,48 @@
 .site-menu__link:focus-visible .site-menu__arrow {
     opacity: 1;
     transform: none;
+}
+
+/* Hover image: rises out of the row's bottom line next to the name.
+   1.5 rows tall, so it also reaches halfway into the row above.
+   Odd rows (01, 03…) show it on the right, even rows (02, 04…) on the left.
+   Images: images/menu/ (exported 460px tall, transparent background).
+   Layers: colour fill (-1) < image (1) < project names (2), so the image
+   covers the grid lines but slips behind the name in the row above. */
+.site-menu__label { position: relative; }
+.site-menu__text { position: relative; z-index: 2; }
+.site-menu__media {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: calc(100% + var(--media-gap, 0.3em));
+    display: none;
+    height: 1.59em;                      /* 1.5 × the row height (1.06em) */
+    overflow: hidden;                    /* hides the image below the bottom line */
+    pointer-events: none;                /* hovering the image doesn't keep this row active */
+}
+.site-menu__list li:nth-child(even) .site-menu__media {
+    left: auto;
+    right: calc(100% + var(--media-gap, 0.3em));
+}
+.site-menu__link[href="yomi.html"],
+.site-menu__link[href="brandzaak.html"],
+.site-menu__link[href="portfolio.html"],
+.site-menu__link[href="partout_cbr.html"] { --media-gap: 0.6em; }   /* more space between name and image */
+.site-menu__media img {
+    display: block;
+    width: auto;
+    height: 100%;
+    max-width: none;
+    transform: translateY(101%);
+    transition: transform 0.55s cubic-bezier(0.76, 0, 0.24, 1);
+}
+.site-menu__link:hover .site-menu__media img,
+.site-menu__link:focus-visible .site-menu__media img { transform: none; }
+
+/* Only with a mouse: on touch screens a tap opens the page straight away */
+@media (hover: hover) and (pointer: fine) and (min-width: 700px) {
+    .site-menu__media { display: block; }
 }
 
 /* Bottom links */
@@ -2497,7 +2538,8 @@
     .site-menu__foot,
     .site-menu__link::before,
     .site-menu__label,
-    .site-menu__arrow { transition: none; }
+    .site-menu__arrow,
+    .site-menu__media img { transition: none; }
 }
 
 
